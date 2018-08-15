@@ -24,7 +24,7 @@ notifications:
   slack:  
     rooms:
       - pronto-am:oF0mkHg2sYBLgcT6Rxn2iUzv#builds
-    on_success: never
+    on_success: always
     on_failure: always
 
 after_success:
