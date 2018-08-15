@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pagination Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Pagination" class="dashAnchor"></a>
+    <a title="Pagination Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ProntoSDK Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ProntoSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Pagination Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Core.html">Core</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoSDK.html">ProntoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoError.html">ProntoError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoConfig.html">ProntoConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoPlugin.html">ProntoPlugin</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAPIClient.html">ProntoAPIClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Text.html">Text</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Push notifications.html">Push notifications</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Segment.html">Segment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device.html">Device</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PushNotification.html">PushNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAPIClientNotificationsModule.html">ProntoAPIClientNotificationsModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoNotifications.html">ProntoNotifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoNotificationsDelegate.html">ProntoNotificationsDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WebviewController.html">WebviewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoNotificationsError.html">ProntoNotificationsError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Authentication.html">Authentication</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/User.html">User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAuthentication.html">ProntoAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAPIClientUserModule.html">ProntoAPIClientUserModule</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Collections.html">Collections</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoCollectionMappable.html">ProntoCollectionMappable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoCollectionMapper.html">ProntoCollectionMapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Collections.html#/s:9ProntoSDK0A18CollectionMapValueP">ProntoCollectionMapValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Pagination.html">Pagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoFilterable.html">ProntoFilterable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PaginatedResult.html">PaginatedResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoCollection.html">ProntoCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoCollectionError.html">ProntoCollectionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Coordinate.html">Coordinate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextURL.html">TextURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SortOrder.html">SortOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SortOrder/Direction.html">– Direction</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Pagination</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Pagination</span></code></pre>
+
+                </div>
+              </div>
+            <p>Define how the pagination (offset + limit) of the list request should be</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK10PaginationV6offsetSivp"></a>
+                    <a name="//apple_ref/swift/Property/offset" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK10PaginationV6offsetSivp">offset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The initial offset</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK10PaginationV5limitSivp"></a>
+                    <a name="//apple_ref/swift/Property/limit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK10PaginationV5limitSivp">limit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The limit per page</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK10PaginationV5totalSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/total" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK10PaginationV5totalSiSgvp">total</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The total number of items for the collection</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">internal(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">total</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK10PaginationV14hasMoreResultsSbvp"></a>
+                    <a name="//apple_ref/swift/Property/hasMoreResults" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK10PaginationV14hasMoreResultsSbvp">hasMoreResults</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Does the pagination hold any more results</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hasMoreResults</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK10PaginationVACSi6offset_Si5limittcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(offset:limit:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK10PaginationVACSi6offset_Si5limittcfc">init(offset:limit:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new pagination object request</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">offset</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">limit</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK10PaginationV4nextACSgyF"></a>
+                    <a name="//apple_ref/swift/Method/next()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK10PaginationV4nextACSgyF">next()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generates a new Pagination instance for the next page</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">next</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Pagination</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>(Optional) <code>Pagination</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK10PaginationV8previousACSgyF"></a>
+                    <a name="//apple_ref/swift/Method/previous()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK10PaginationV8previousACSgyF">previous()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generates a new Pagination instance for the previous page</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">previous</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Pagination</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>(Optional) <code>Pagination</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© E-sites 2018</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

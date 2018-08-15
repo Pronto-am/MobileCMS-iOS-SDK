@@ -1,0 +1,39 @@
+included:
+  - ProntoSDK
+  - ProntoSDKTests
+excluded:
+  - Pods
+opt_in_rules:
+  - empty_count
+  - explicit_init
+  - closure_spacing
+  - overridden_super_call
+  - redundant_nil_coalescing
+  - private_outlet
+  - nimble_operator
+  - attributes
+  - operator_usage_whitespace
+  - closure_end_indentation
+  - first_where
+  - object_literal
+  - number_separator
+  - prohibited_super_call
+  - fatal_error_message
+  - vertical_parameter_alignment_on_call
+disabled_rules:
+  - todo
+  - trailing_whitespace
+  - cyclomatic_complexity
+  - object_literal
+  - vertical_parameter_alignment_on_call
+
+identifier_name:
+  excluded:
+    - id
+weak_delegate: error
+class_delegate_protocol: error
+
+line_length: 120
+number_separator:
+  minimum_length: 5
+reporter: "xcode"

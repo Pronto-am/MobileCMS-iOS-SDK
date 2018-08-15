@@ -1,0 +1,6 @@
+{
+    "error": {
+        "code": 1122,
+        "message": "This user is already registered"
+    }
+}

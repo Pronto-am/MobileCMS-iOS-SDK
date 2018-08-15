@@ -1,0 +1,56 @@
+clean: true
+author: E-sites
+author_url: https://www.e-sites.nl
+module: ProntoSDK
+module_version: 1.0
+output: documentation/
+exclude:
+  - "Pods/**/*"
+  - "ProntoSDKTests/**/*"
+  - "ProntoSDKExample/**/*"
+copyright: '© E-sites 2018'
+theme: apple
+sdk: iphone
+min_acl: public
+use_safe_filenames: true
+
+custom_categories:
+  - name: Core
+    children:
+    - ProntoSDK
+    - ProntoError
+    - ProntoConfig
+    - ProntoPlugin
+    - ProntoAPIClient
+    - Text
+
+  - name: Push notifications
+    children:
+    - Segment
+    - Device
+    - PushNotification
+    - ProntoAPIClientNotificationsModule
+    - ProntoNotifications
+    - ProntoNotificationsDelegate
+    - WebviewController
+    - ProntoNotificationsError
+
+  - name: Authentication
+    children:
+    - User
+    - ProntoAuthentication
+    - ProntoAPIClientUserModule
+
+  - name: Collections
+    children:
+    - ProntoCollectionMappable
+    - ProntoCollectionMapper
+    - ProntoCollectionMapValue
+    - Pagination
+    - ProntoFilterable
+    - PaginatedResult
+    - ProntoCollection
+    - ProntoCollectionError
+    - Coordinate
+    - TextURL
+    - SortOrder

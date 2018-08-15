@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ProntoSDK  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="ProntoSDK  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">ProntoSDK Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">ProntoSDK Reference</a>
+        <img id="carat" src="img/carat.png" />
+        ProntoSDK  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Core.html">Core</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ProntoSDK.html">ProntoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ProntoError.html">ProntoError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ProntoConfig.html">ProntoConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ProntoPlugin.html">ProntoPlugin</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ProntoAPIClient.html">ProntoAPIClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Text.html">Text</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Push notifications.html">Push notifications</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/Segment.html">Segment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Device.html">Device</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PushNotification.html">PushNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ProntoAPIClientNotificationsModule.html">ProntoAPIClientNotificationsModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ProntoNotifications.html">ProntoNotifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ProntoNotificationsDelegate.html">ProntoNotificationsDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WebviewController.html">WebviewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ProntoNotificationsError.html">ProntoNotificationsError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Authentication.html">Authentication</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/User.html">User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ProntoAuthentication.html">ProntoAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ProntoAPIClientUserModule.html">ProntoAPIClientUserModule</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Collections.html">Collections</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/ProntoCollectionMappable.html">ProntoCollectionMappable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ProntoCollectionMapper.html">ProntoCollectionMapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Collections.html#/s:9ProntoSDK0A18CollectionMapValueP">ProntoCollectionMapValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Pagination.html">Pagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ProntoFilterable.html">ProntoFilterable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/PaginatedResult.html">PaginatedResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ProntoCollection.html">ProntoCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ProntoCollectionError.html">ProntoCollectionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Coordinate.html">Coordinate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TextURL.html">TextURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SortOrder.html">SortOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SortOrder/Direction.html">– Direction</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='pronto-ios-sdk' class='heading'>Pronto iOS SDK</h1>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cococapods' class='heading'>Cococapods</h3>
+
+<p>Add the following to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'ProntoSDK'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git@git.e-sites.nl:TeamMobile-iOS/ProntoSDK.git'</span>
+</code></pre>
+
+<p><strong>Available sub-specs:</strong></p>
+
+<ul>
+<li><code>ProntoSDK/Authentication</code></li>
+<li><code>ProntoSDK/Notifications</code></li>
+<li><code>ProntoSDK/Collections</code></li>
+</ul>
+
+<p>And run:</p>
+<pre class="highlight shell"><code>pod install
+</code></pre>
+<h2 id='implementation' class='heading'>Implementation</h2>
+<h3 id='core' class='heading'>Core</h3>
+
+<p>In <code>AppDelegate.swift</code>:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ProntoSDK</span>
+
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span>
+                 <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+
+    <span class="k">let</span> <span class="nv">config</span> <span class="o">=</span> <span class="kt">ProntoConfig</span><span class="p">()</span>
+
+    <span class="c1">// Setup the API client credentials</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">clientID</span> <span class="o">=</span> <span class="s">"&lt;CLIENT_ID&gt;"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">clientSecret</span> <span class="o">=</span> <span class="s">"&lt;CLIENT_SECRET&gt;"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">encryptionKey</span> <span class="o">=</span> <span class="s">"&lt;ENCRYPTION_KEY&gt;"</span>
+
+     <span class="c1">// Activate each plugin your project uses</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">plugins</span> <span class="o">=</span> <span class="p">[</span> <span class="o">.</span><span class="n">notifications</span><span class="p">,</span> <span class="o">.</span><span class="n">authentication</span><span class="p">,</span> <span class="o">.</span><span class="n">collections</span> <span class="p">]</span>
+
+    <span class="c1">// For staging environment:</span>
+<span class="c1">//  config.domain = "prontocms.e-staging.nl"</span>
+<span class="c1">//  config.firebaseDomain = "pronto-staging.firebaseio.com"</span>
+
+    <span class="c1">// Disable logging for non-debug builds</span>
+    <span class="cp">#if DEBUG</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="kt">Logger</span><span class="p">()</span>
+    <span class="cp">#endif</span>
+
+    <span class="kt">ProntoSDK</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+
+    <span class="c1">// Do the rest of the implementation</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+</code></pre>
+<h3 id='notifications-plugin' class='heading'>Notifications plugin</h3>
+
+<p>→ 📯  <a href="docs/NOTIFICATIONS.md">Read notifications documentation</a></p>
+<h3 id='authentication-plugin' class='heading'>Authentication plugin</h3>
+
+<p>→ 🔐 <a href="docs/AUTHENTICATION.md">Read authentication documentation</a></p>
+<h3 id='collections-plugin' class='heading'>Collections plugin</h3>
+
+<p>→ 🗂 <a href="docs/COLLECTIONS.md">Read collections documentation</a></p>
+<h2 id='promises' class='heading'>Promises</h2>
+
+<p>Almost every asynchronous function ProntoSDK uses <code>Promises</code> internally:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">collection</span> <span class="o">=</span> <span class="kt">ProntoCollection</span><span class="o">&lt;</span><span class="kt">Location</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="n">collection</span><span class="o">.</span><span class="nf">list</span><span class="p">()</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">result</span> <span class="k">in</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span><span class="o">.</span><span class="k">catch</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Error fetching locations: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>If you want to convert it to your own handler <a href="docs/PROMISES.md">read the promises guide</a>.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>© E-sites 2018</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,41 @@
+{
+    "error": false,
+    "data": {
+        "id": "84cfe80f-8d23-43f7-9016-53dc0e23860b",
+        "app_user": null,
+        "firebase_token": null,
+        "apns_token": "T52FE6488A74BA264C12E42BF49C8F675D1654393A1ADAE8D9D238947905E525",
+        "name": "iPhone SE Bas",
+        "model": "iPhone SE",
+        "manufacturer": "Apple",
+        "platform": "ios",
+        "os_version": "11.2.5",
+        "app_version": "1.0.2",
+        "token_state": true,
+        "push_notifications": true,
+        "last_login": {
+            "timezone": {
+                "name": "UTC",
+                "transitions": [
+                                {
+                                "ts": -9223372036854775808,
+                                "time": "-292277022657-01-27T08:29:52+0000",
+                                "offset": 0,
+                                "isdst": false,
+                                "abbr": "UTC"
+                                }
+                                ],
+                "location": {
+                    "country_code": "??",
+                    "latitude": 0,
+                    "longitude": 0,
+                    "comments": ""
+                }
+            },
+            "offset": 0,
+            "timestamp": 1520424283
+        },
+        "language": "NL",
+        "meta_data": []
+    }
+}

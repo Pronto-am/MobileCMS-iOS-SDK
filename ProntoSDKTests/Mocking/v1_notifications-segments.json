@@ -1,0 +1,21 @@
+{
+    "error": false,
+    "data": [
+        {
+            "id": 1,
+             "name": {
+                 "nl": "Segment een",
+                 "en": "Segment one"
+             },
+            "subscribed": false
+        },
+        {
+            "id": 2,
+             "name": {
+                "nl": "Segment twee",
+                 "en": "Segment two"
+             },
+            "subscribed": true
+        }
+    ]
+}

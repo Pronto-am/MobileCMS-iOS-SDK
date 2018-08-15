@@ -1,0 +1,17 @@
+{
+    "data": {
+        "email": "bas@e-sites.nl",
+        "id": "6b87fcda-7b7f-11e8-bc93-005056010246",
+        "full_name": "Bas van Kuijck",
+        "created_at": "2018-06-29T09:33:02+00:00",
+        "updated_at": "2018-06-29T09:33:02+00:00",
+        "last_name": "van Kuijck",
+        "activated": true,
+        "first_name": "Bas",
+        "extra_data": {
+            "gender": "male"
+        },
+        "last_login": "2018-06-29T09:33:02+00:00",
+        "activation_token": "NmI4ODAzMDYtN2I3Zi0xMWU4LWJhNDMtMDA1MDU2MDEwMjQ2LWJhcysxNTMwMjY0NzgyQGUtc2l0ZXMubmw="
+    }
+}
