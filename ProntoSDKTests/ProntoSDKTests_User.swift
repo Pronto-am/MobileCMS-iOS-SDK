@@ -61,6 +61,29 @@ class ProntoSDKTestUser: ProntoSDKTests {
         }
     }
 
+    func testUnregister() {
+        let authStub = stub(http(.post, uri: "/oauth/v2/token"),
+                            mockJSONFile("oauth_token"))
+        let profileStub = stub(http(.get, uri: "/api/\(apiVersion)/users/app/profile"),
+                               mockJSONFile("\(apiVersion)_userprofile"))
+        let unregisterStub = stub(http(.delete, uri: "/api/\(apiVersion)/users/app/registration/{id}"),
+                                mockJSONFile("\(apiVersion)_userprofile"))
+        
+        waitUntil { done in
+            self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234").then { user -> Promise<Void> in
+                return self.prontoAuthentication.unregister(user: user)
+            }.catch { error in
+                XCTAssert(false, "\(error)")
+            }.always {
+                self.removeStub(profileStub)
+                self.removeStub(authStub)
+                self.removeStub(unregisterStub)
+                done()
+            }
+        }
+        
+    }
+    
     func testAnonymouseUser() {
         waitUntil { [unowned self] done in
             self.apiClient.user.profile().then { _ in

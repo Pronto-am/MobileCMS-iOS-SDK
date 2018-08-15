@@ -44,9 +44,9 @@ func application(_ application: UIApplication,
     let config = ProntoConfig()
     
     // Setup the API client credentials
-    config.clientID = "<CLIENT_ID>"
-    config.clientSecret = "<CLIENT_SECRET>"
-    config.encryptionKey = "<ENCRYPTION_KEY>"    
+    config.clientID = <#CLIENT_ID#>
+    config.clientSecret = <#CLIENT_SECRET#>
+    config.encryptionKey = <#ENCRYPTION_KEY#>    
     config.domain = "mypronto.site.com"
     config.firebaseDomain = "myprontoproject.firebaseio.com"
     
