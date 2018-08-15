@@ -45,18 +45,16 @@ func application(_ application: UIApplication,
     // Setup the API client credentials
     config.clientID = "<CLIENT_ID>"
     config.clientSecret = "<CLIENT_SECRET>"
-    config.encryptionKey = "<ENCRYPTION_KEY>"
+    config.encryptionKey = "<ENCRYPTION_KEY>"    
+    config.domain = "mypronto.site.com"
+    config.firebaseDomain = "myprontoproject.firebaseio.com"
     
-     // Activate each plugin your project uses
+    // Activate each plugin your project uses
     config.plugins = [ .notifications, .authentication, .collections ]
-    
-    // For staging environment:
-//  config.domain = "prontocms.e-staging.nl"
-//  config.firebaseDomain = "pronto-staging.firebaseio.com"
     
     // Disable logging for non-debug builds
     #if DEBUG
-        config.logger = Logger()
+        config.logger = Logger() // Should conform to `Cobalt.Logger` protocol
     #endif
     
     ProntoSDK.configure(config)
