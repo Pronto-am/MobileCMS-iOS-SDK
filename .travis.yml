@@ -12,3 +12,10 @@ script:
   - set -o pipefail
   - fastlane travis
   - pod lib lint --quick
+
+notifications:
+  email:
+    recipients:
+      - bas@e-sites.nl
+    on_success: never
+    on_failure: always
