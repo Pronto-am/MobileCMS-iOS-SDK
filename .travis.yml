@@ -21,6 +21,11 @@ notifications:
       - bas@e-sites.nl
     on_success: never
     on_failure: always
+  slack:  
+    rooms:
+      - pronto-am:oF0mkHg2sYBLgcT6Rxn2iUzv#builds
+    on_success: never
+    on_failure: always
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
