@@ -4,6 +4,8 @@ branches:
   only:
     - master
 
+cache: bundler
+
 before_install:
   - bundle install
   - pod install --repo-update
@@ -19,3 +21,5 @@ notifications:
       - bas@e-sites.nl
     on_success: never
     on_failure: always
+
+after_success: slather
