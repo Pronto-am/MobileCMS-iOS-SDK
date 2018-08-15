@@ -12,8 +12,8 @@ before_install:
   
 script:
   - set -o pipefail
-  - fastlane travis
   - pod lib lint --quick
+  - fastlane travis
 
 notifications:
   email:
@@ -22,4 +22,5 @@ notifications:
     on_success: never
     on_failure: always
 
-after_success: slather
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
