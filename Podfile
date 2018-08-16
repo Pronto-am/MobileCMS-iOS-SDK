@@ -22,7 +22,7 @@ target 'ProntoSDK' do
   target 'ProntoSDKTests' do
     inherit! :search_paths
     pod 'Nimble'
-    pod 'URITemplate', :git => 'https://github.com/basvankuijck/URITemplate.swift.git'
+    pod 'URITemplate'
     pod 'Mockingjay'
 
     # e-sites/ios-suite
