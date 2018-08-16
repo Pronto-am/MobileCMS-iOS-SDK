@@ -2,25 +2,30 @@ language: objective-c
 osx_image: xcode9.4
 branches:
   only:
-  - master
+    - master
+
 cache: bundler
+
 before_install:
-- bundle install
-- pod install --repo-update
+  - bundle install
+  - pod install --repo-update
+  
 script:
-- set -o pipefail
-- pod lib lint --quick
-- fastlane travis
+  - set -o pipefail
+  - pod lib lint --quick
+  - fastlane travis
+
 notifications:
   email:
     recipients:
-    - bas@e-sites.nl
+      - bas@e-sites.nl
     on_success: never
     on_failure: always
-  slack:
+  slack:  
     rooms:
-      secure: "VpbbWD8m7T4lTA3dQtLMSK1aiVI5md0F+QK8QVe0+0091/U0dADijdILkqNJOYTEn9X9RENm6z4Ekl+8uKJZG0/TxsG1xdKZ2Cq5a9So4uJ0klp5vDBa6mmjHYAMKxLzk2Gml3tH16+AxPpOU4m4I4fbRTd7rQ43bW7zXbqfvgx+GMOZFCTVtPRzWuDKe7wjVEpJvItdn5MezQsZov110za9Hz+cHj4KnDjZnST/KwmadytXicM5016zg0zsT8BCRFY/BL1y5teQssJkoa351u+4cSSfzcmz2g7FUJ6goDhj1KSyGMQs6NjRYYLQhMULpiTAAWH5Yv8KnobflAkHFq/e/w4eTqdH2VeB+3pIltGtKwn7syMdcxWuJsM9TRsHjDEh2k7Bt2/mM7rRvLzt6pHhb1JGN1v3lB/Js3PTGElFHFYgait582MpJ4hCFX5BNjoW8W5PJw9twhiL2g6Whe0IhELM4jPV+zmLeqa05ulRpqF3Ljxe4xxEgxUhu2GzkL3w9jim79zJF5xnCcfsc40Jb65qMLEuBH9X5rsnIBGOKkUvV3P57C7xr+zwlpL+tkiUOK8zN38TAuYN6kLiS3/pOjH08k24hFwUdWG3WZwrwZPYLAxf825fl382ARaW6b4XwjVrTXwjY0ojRXT49W+sNSuYOuy/5jROQg/K4IE="
+      - "VpbbWD8m7T4lTA3dQtLMSK1aiVI5md0F+QK8QVe0+0091/U0dADijdILkqNJOYTEn9X9RENm6z4Ekl+8uKJZG0/TxsG1xdKZ2Cq5a9So4uJ0klp5vDBa6mmjHYAMKxLzk2Gml3tH16+AxPpOU4m4I4fbRTd7rQ43bW7zXbqfvgx+GMOZFCTVtPRzWuDKe7wjVEpJvItdn5MezQsZov110za9Hz+cHj4KnDjZnST/KwmadytXicM5016zg0zsT8BCRFY/BL1y5teQssJkoa351u+4cSSfzcmz2g7FUJ6goDhj1KSyGMQs6NjRYYLQhMULpiTAAWH5Yv8KnobflAkHFq/e/w4eTqdH2VeB+3pIltGtKwn7syMdcxWuJsM9TRsHjDEh2k7Bt2/mM7rRvLzt6pHhb1JGN1v3lB/Js3PTGElFHFYgait582MpJ4hCFX5BNjoW8W5PJw9twhiL2g6Whe0IhELM4jPV+zmLeqa05ulRpqF3Ljxe4xxEgxUhu2GzkL3w9jim79zJF5xnCcfsc40Jb65qMLEuBH9X5rsnIBGOKkUvV3P57C7xr+zwlpL+tkiUOK8zN38TAuYN6kLiS3/pOjH08k24hFwUdWG3WZwrwZPYLAxf825fl382ARaW6b4XwjVrTXwjY0ojRXT49W+sNSuYOuy/5jROQg/K4IE="
     on_success: always
     on_failure: always
+
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
