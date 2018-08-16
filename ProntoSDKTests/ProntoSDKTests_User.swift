@@ -52,7 +52,7 @@ class ProntoSDKTestUser: ProntoSDKTests {
             self.prontoAuthentication.register(user: user, password: "1234").then { _ in
                 XCTAssert(false, "Should not reach this")
             }.catch { error in
-                XCTAssert(error == ProntoError.alreadyRegistered, "Expects ProntoError.alreadyRegistered")
+                XCTAssert(error == ProntoError.alreadyRegistered, "Expects ProntoError.alreadyRegistered, got \(error)")
             }.always {
                 self.removeStub(authStub)
                 self.removeStub(registerStub)
