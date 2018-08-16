@@ -140,11 +140,25 @@
           <section class="section">
             
             <h1 id='pronto-ios-sdk' class='heading'>Pronto iOS SDK</h1>
+
+<p><em>The official Pronto iOS SDK</em></p>
+
+<p><a href="http://cocoadocs.org/docsets/ProntoSDK"><img src="https://img.shields.io/badge/platform-ios-lightgrey.svg" alt="Platform"></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg" alt="License"></a>
+<a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html"><img src="documentation/badge.svg" alt="Documented"></a>
+<a href="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK"><img src="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg" alt="Coverage Status"></a>
+<a href="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK"><img src="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master" alt="Travis-ci"></a></p>
+
+<hr>
+
+<p><strong><a href="https://pronto-am.slack.com/messages/general/"><img src="https://a.slack-edge.com/436da/marketing/img/meta/slack_hash_128.png" width="16" /> Join our slack channel!</a></strong></p>
+
+<hr>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='cococapods' class='heading'>Cococapods</h3>
 
 <p>Add the following to your Podfile:</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'ProntoSDK'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'git@git.e-sites.nl:TeamMobile-iOS/ProntoSDK.git'</span>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'ProntoSDK'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/Pronto-am/MobileCMS-iOS-SDK.git'</span>
 </code></pre>
 
 <p><strong>Available sub-specs:</strong></p>
@@ -170,20 +184,18 @@
     <span class="k">let</span> <span class="nv">config</span> <span class="o">=</span> <span class="kt">ProntoConfig</span><span class="p">()</span>
 
     <span class="c1">// Setup the API client credentials</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">clientID</span> <span class="o">=</span> <span class="s">"&lt;CLIENT_ID&gt;"</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">clientSecret</span> <span class="o">=</span> <span class="s">"&lt;CLIENT_SECRET&gt;"</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">encryptionKey</span> <span class="o">=</span> <span class="s">"&lt;ENCRYPTION_KEY&gt;"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">clientID</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">CLIENT_ID</span><span class="err">#</span><span class="o">&gt;</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">clientSecret</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">CLIENT_SECRET</span><span class="err">#</span><span class="o">&gt;</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">encryptionKey</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">ENCRYPTION_KEY</span><span class="err">#</span><span class="o">&gt;</span>    
+    <span class="n">config</span><span class="o">.</span><span class="n">domain</span> <span class="o">=</span> <span class="s">"mypronto.site.com"</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">firebaseDomain</span> <span class="o">=</span> <span class="s">"myprontoproject.firebaseio.com"</span>
 
-     <span class="c1">// Activate each plugin your project uses</span>
+    <span class="c1">// Activate each plugin your project uses</span>
     <span class="n">config</span><span class="o">.</span><span class="n">plugins</span> <span class="o">=</span> <span class="p">[</span> <span class="o">.</span><span class="n">notifications</span><span class="p">,</span> <span class="o">.</span><span class="n">authentication</span><span class="p">,</span> <span class="o">.</span><span class="n">collections</span> <span class="p">]</span>
-
-    <span class="c1">// For staging environment:</span>
-<span class="c1">//  config.domain = "prontocms.e-staging.nl"</span>
-<span class="c1">//  config.firebaseDomain = "pronto-staging.firebaseio.com"</span>
 
     <span class="c1">// Disable logging for non-debug builds</span>
     <span class="cp">#if DEBUG</span>
-        <span class="n">config</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="kt">Logger</span><span class="p">()</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="kt">Logger</span><span class="p">()</span> <span class="c1">// Should conform to `Cobalt.Logger` protocol</span>
     <span class="cp">#endif</span>
 
     <span class="kt">ProntoSDK</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
@@ -213,12 +225,17 @@
 </code></pre>
 
 <p>If you want to convert it to your own handler <a href="docs/PROMISES.md">read the promises guide</a>.</p>
+<h2 id='references' class='heading'>References</h2>
+
+<ul>
+<li><a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html">iOS SDK reference</a> 🔗</li>
+</ul>
 
           </section>
         </section>
         <section id="footer">
           <p>© E-sites 2018</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

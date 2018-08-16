@@ -80,6 +80,25 @@ class ProntoSDKTestsAuthentication: ProntoSDKTests {
         expect(user.extraData?.keys).to(contain("gender"))
         expect(user.extraData?["gender"]) == "male"
     }
+    
+    func testPasswordReset() {
+        
+        let oauthStub = stub(http(.post, uri: "/oauth/v2/token"),
+                             mockJSONFile("oauth_token"))
+        
+        let passwordResetStub = stub(http(.post, uri: "/api/\(apiVersion)/users/app/password/reset"),
+                                     mockJSONFile("\(apiVersion)_user_passwordreset"))
+        
+        waitUntil(timeout: 5) { done in
+            self.apiClient.user.passwordResetRequest(email: "bas@e-sites.nl").catch { error in
+                XCTAssert(false, "\(error)")
+            }.always {
+                self.removeStub(oauthStub)
+                self.removeStub(passwordResetStub)
+                done()
+            }
+        }
+    }
 
     func testRefreshAccessToken2() {
         let loginStub = stub(http(.post, uri: "/oauth/v2/token"),

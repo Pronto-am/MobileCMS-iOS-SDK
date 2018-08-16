@@ -65,6 +65,7 @@
 		C3CB12A6205277F90095584D /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12A5205277F90095584D /* JSON.swift */; };
 		C3CB12AA2052BB0F0095584D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12A92052BB0F0095584D /* String.swift */; };
 		C3CB12AC2052C1710095584D /* FirebaseLogModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12AB2052C1710095584D /* FirebaseLogModule.swift */; };
+		C3CF880421259D9C00DB29AD /* v1_user_passwordreset.json in Resources */ = {isa = PBXBuildFile; fileRef = C3CF880321259D9C00DB29AD /* v1_user_passwordreset.json */; };
 		C3D6BB3120515ED9007FA9BF /* v1_notifications-devices-unregister.json in Resources */ = {isa = PBXBuildFile; fileRef = C3D6BB3020515ED9007FA9BF /* v1_notifications-devices-unregister.json */; };
 		C3D951E8210AFBBB00164EF6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D951E7210AFBBB00164EF6 /* Encodable.swift */; };
 		C3D951EA210B046100164EF6 /* ProntoNotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D951E9210B046100164EF6 /* ProntoNotificationsDelegate.swift */; };
@@ -146,6 +147,7 @@
 		C3CB12A5205277F90095584D /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		C3CB12A92052BB0F0095584D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C3CB12AB2052C1710095584D /* FirebaseLogModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLogModule.swift; sourceTree = "<group>"; };
+		C3CF880321259D9C00DB29AD /* v1_user_passwordreset.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v1_user_passwordreset.json; sourceTree = "<group>"; };
 		C3D6BB3020515ED9007FA9BF /* v1_notifications-devices-unregister.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "v1_notifications-devices-unregister.json"; sourceTree = "<group>"; };
 		C3D951E7210AFBBB00164EF6 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		C3D951E9210B046100164EF6 /* ProntoNotificationsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoNotificationsDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				C34A688D20501AD4009E3D83 /* v1_notifications-signin-device.json */,
 				C34A6891205027BF009E3D83 /* v1_notifications-segments.json */,
 				C34A689320502AD0009E3D83 /* v1_notifications-segments-subscribe.json */,
+				C3CF880321259D9C00DB29AD /* v1_user_passwordreset.json */,
 				C3D6BB3020515ED9007FA9BF /* v1_notifications-devices-unregister.json */,
 				C3B76BA120FF7E5B004B7578 /* v1_collections_all.json */,
 				C367B6B92100CFA400793F99 /* v1_collections_all_get.json */,
@@ -533,7 +536,7 @@
 		C34A684E204FFE51009E3D83 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "E-sites";
 				TargetAttributes = {
@@ -587,6 +590,7 @@
 				C3D6BB3120515ED9007FA9BF /* v1_notifications-devices-unregister.json in Resources */,
 				C37B2C1820E50AC800FD89EF /* accesstoken_expired.json in Resources */,
 				C34A689420502AD0009E3D83 /* v1_notifications-segments-subscribe.json in Resources */,
+				C3CF880421259D9C00DB29AD /* v1_user_passwordreset.json in Resources */,
 				C34A6892205027BF009E3D83 /* v1_notifications-segments.json in Resources */,
 				C37B2C1620E5075B00FD89EF /* v1_userprofile.json in Resources */,
 				C34A688420500CEC009E3D83 /* v1_notifications-register-device.json in Resources */,
@@ -905,7 +909,7 @@
 				INFOPLIST_FILE = ProntoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.esites.ProntoSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esites.pronto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -929,7 +933,7 @@
 				INFOPLIST_FILE = ProntoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.esites.ProntoSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esites.pronto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;

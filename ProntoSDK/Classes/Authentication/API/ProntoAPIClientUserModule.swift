@@ -36,6 +36,9 @@ public class ProntoAPIClientUserModule {
 
     /// Updates the user's profile
     ///
+    /// - Parameters:
+    ///   - user: `User` The user
+    ///
     /// - Returns: `Promise<User>`
     public func update(_ user: User) -> Promise<User> {
         do {
@@ -54,6 +57,27 @@ public class ProntoAPIClientUserModule {
             }
         } catch let error {
             return Promise<User>(error)
+        }
+    }
+    
+    /// Requests a password forgotten change request
+    ///
+    /// - Parameters:
+    ///  - email: String The email address
+    ///
+    /// - Returns: `Promise<Void>`
+    public func passwordResetRequest(email: String) -> Promise<Void> {
+        let request = Cobalt.Request({
+            $0.authentication = .oauth2(.clientCredentials)
+            $0.path = prontoAPIClient.versionPath(for: "/users/app/password/reset")
+            $0.httpMethod = .post
+            $0.parameters = [
+                "email": email
+            ]
+        })
+        
+        return prontoAPIClient.request(request).then { json -> Promise<Void> in
+            return Promise(())
         }
     }
 
