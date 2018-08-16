@@ -3,6 +3,7 @@
 _The official Pronto iOS SDK_
 
 [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)](http://cocoadocs.org/docsets/Natrium) 
+[![License](https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg)](LICENSE)
 [![Documented](documentation/badge.svg)](documentation/index.html)
 [![Coverage Status](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg)](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK)
 [![Travis-ci](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master)](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK)
