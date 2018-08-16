@@ -1,6 +1,6 @@
 # Pronto iOS SDK
 
-<center><img src="Assets/logo.png" height="150" /></center>
+<p align="center"><img src="Assets/logo.png" height="150" />
 
 _The official Pronto iOS SDK_
 
@@ -9,13 +9,13 @@ _The official Pronto iOS SDK_
 [![Documented](documentation/badge.svg)](https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html)
 [![Coverage Status](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg)](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK)
 [![Travis-ci](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master)](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK)
-
+</p>
 
 ----------
 
-<center>
- **[<img src="Assets/slack-icon.png" width="16" /> Join our slack channel!](https://pronto-am.slack.com/messages/general/)**
-</center>
+<p align="center">
+ <b><a href="https://pronto-am.slack.com/messages/general"><img src="Assets/slack-icon.png" width="16" /> Join our slack channel!</a></b>
+</p>
 
 ----------
 
