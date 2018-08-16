@@ -7,6 +7,12 @@ _The official Pronto iOS SDK_
 [![Coverage Status](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg)](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK)
 [![Travis-ci](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master)](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK)
 
+----------
+
+ **[<img src="https://a.slack-edge.com/436da/marketing/img/meta/slack_hash_128.png" width="16" /> Join our slack channel!](https://pronto-am.slack.com/messages/general/)**
+
+----------
+
 ## Installation
 
 ### Cococapods
