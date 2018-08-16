@@ -27,7 +27,7 @@
 Add the following to your Podfile:
 
 ```ruby
-pod 'ProntoSDK', :git => 'https://github.com/Pronto-am/MobileCMS-iOS-SDK.git'
+pod 'ProntoSDK'
 ```
 
 **Available sub-specs:**

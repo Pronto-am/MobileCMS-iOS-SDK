@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Notifications' do |ss|
-    ss.dependency 'Erbium'
     ss.dependency 'ProntoSDK/Core'
+    ss.dependency 'Erbium'
     ss.source_files = "ProntoSDK/Classes/Notifications/**/*.{h,m,swift}"
     ss.frameworks = 'UserNotifications', 'UIKit', 'WebKit'
   end
@@ -43,17 +43,18 @@ Pod::Spec.new do |s|
     ss.frameworks = 'CoreLocation'
   end
 
-  s.test_spec 'Tests' do |test_spec|
-    test_spec.source_files = 'ProntoSDKTests/**/*.{h,swift}'
-    test_spec.resources = 'ProntoSDKTests/Mocking/*.json'
-    test_spec.dependency 'Lithium'
-    test_spec.dependency 'Lithium/Cobalt'
-    test_spec.dependency 'Nimble'
-    test_spec.dependency 'URITemplate'
-    test_spec.dependency 'Mockingjay'
-    test_spec.dependency 'ProntoSDK/Collections'
-    test_spec.dependency 'ProntoSDK/Authentication'
-    test_spec.dependency 'ProntoSDK/Notifications'
-  end
+  # s.test_spec 'Tests' do |test_spec|
+  #   test_spec.dependency 'ProntoSDK/Collections'
+  #   test_spec.dependency 'ProntoSDK/Authentication'
+  #   test_spec.dependency 'ProntoSDK/Notifications'
+  #   test_spec.dependency 'Lithium'
+  #   test_spec.dependency 'Lithium/Cobalt'
+  #   test_spec.dependency 'Nimble'
+  #   test_spec.dependency 'URITemplate'
+  #   test_spec.dependency 'Mockingjay'
+    
+  #   test_spec.source_files = 'ProntoSDKTests/**/*.{h,swift}'
+  #   test_spec.resources = 'ProntoSDKTests/Mocking/*.json'
+  # end
 
 end
