@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.homepage     = "http://www.e-sites.nl"
   s.summary      = "_THE_ Swift iOS Pronto SDK"
-  s.source       = { :git => "https://git.e-sites.nl/TeamMobile-iOS/ProntoSDK.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Pronto-am/MobileCMS-iOS-SDK.git", :tag => "#{s.version}" }
   s.source_files = "ProntoSDK/ProntoSDK.h"
   s.public_header_files  = "ProntoSDK/ProntoSDK.h"
   s.platform     = :ios, '10.0'
