@@ -23,7 +23,7 @@ notifications:
     on_failure: always
   slack:  
     rooms:
-      - pronto-am:oF0mkHg2sYBLgcT6Rxn2iUzv#builds
+      - pronto-am:${SLACK_TOKEN}#builds
     on_success: always
     on_failure: always
 
