@@ -56,10 +56,10 @@ public struct Pagination {
     ///
     /// - Returns: (Optional) `Pagination`
     public func previous() -> Pagination? {
-        let offset = self.offset - limit
-        if offset <= 0 {
+        if self.offset <= 0 {
             return nil
         }
+        let offset = self.offset - limit
         var newPagination = Pagination(offset: offset, limit: limit)
         newPagination.total = self.total
         return newPagination

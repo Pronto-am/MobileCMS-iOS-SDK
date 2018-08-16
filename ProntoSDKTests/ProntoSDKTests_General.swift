@@ -49,4 +49,25 @@ class ProntoSDKTestsGeneral: ProntoSDKTests {
             XCTAssert(false, "\(error)")
         }
     }
+    
+    func testRawJSON() {
+        let array = [ "hello", "123" ]
+        let string = array.rawJSONString
+        expect(string) == "[\"hello\",\"123\"]"
+    }
+    
+    func testRandomString() {
+        let string1 = String.random(size: 16)
+        expect(string1.count) == 16
+        
+        let string2 = String.random(size: 16)
+        expect(string2.count) == 16
+        expect(string1) != string2
+    }
+    
+    func testEmailValidation() {
+        expect("bas@e-sites.nl".isValidEmail) == true
+        expect("pronto.am".isValidEmail) == false
+        
+    }
 }

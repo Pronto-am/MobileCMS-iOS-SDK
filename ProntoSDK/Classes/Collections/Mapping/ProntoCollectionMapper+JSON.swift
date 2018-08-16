@@ -17,8 +17,8 @@ extension ProntoCollectionMapper {
     ///  - object: `[String: Any]`
     ///
     /// - Throws: `ProntoCollectionError`
-    public func map(key: String, to object: inout [String: Any]) throws {
-        var tmpObject: [String: Any]? = object
+    public func map<T>(key: String, to object: inout [String: T]) throws {
+        var tmpObject: [String: T]? = object
         try map(key: key, to: &tmpObject)
         if let assignNewObject = tmpObject {
             object = assignNewObject
@@ -32,8 +32,8 @@ extension ProntoCollectionMapper {
     ///  - object: (Optional) `[String: Any]`
     ///
     /// - Throws: `ProntoCollectionError`
-    public func map(key: String, to object: inout [String: Any]?) throws {
-        object = json[key].dictionaryObject
+    public func map<T>(key: String, to object: inout [String: T]?) throws {
+        object = json[key].dictionaryObject as? [String: T]
     }
 
     /// Map an array value
@@ -43,8 +43,8 @@ extension ProntoCollectionMapper {
     ///  - object: `[Any]`
     ///
     /// - Throws: `ProntoCollectionError`
-    public func map(key: String, to object: inout [Any]) throws {
-        var tmpObject: [Any]? = object
+    public func map<T>(key: String, to object: inout [T]) throws {
+        var tmpObject: [T]? = object
         try map(key: key, to: &tmpObject)
         if let assignNewObject = tmpObject {
             object = assignNewObject
@@ -58,7 +58,7 @@ extension ProntoCollectionMapper {
     ///  - object: (Optional) `[Any]`
     ///
     /// - Throws: `ProntoCollectionError`
-    public func map(key: String, to object: inout [Any]?) throws {
-        object = json[key].arrayObject
+    public func map<T>(key: String, to object: inout [T]?) throws {
+        object = json[key].arrayObject as? [T]
     }
 }

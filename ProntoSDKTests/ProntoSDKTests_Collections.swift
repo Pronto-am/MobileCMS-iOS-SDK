@@ -33,7 +33,8 @@ class ProntoSDKTestsCollections: ProntoSDKTests {
 
         waitUntil { done in
             let collection = ProntoCollection<AllTestModel>()
-            collection.list().then { result in
+            let sortBy = SortOrder(key: "id", direction: .ascending)
+            collection.list(sortBy: sortBy).then { result in
                 expect(result.pagination.total) == 1
                 expect(result.pagination.hasMoreResults) == false
                 expect(result.items.count) == 1
@@ -114,5 +115,56 @@ class ProntoSDKTestsCollections: ProntoSDKTests {
         } else {
             XCTAssert(false, "Missing jsonString")
         }
+    }
+    
+    func testJSONCollectionMapper() {
+        let dic: [String: Any] = [
+            "map": [
+                "key": "value",
+                "array": [ 1, 2, 3 ]
+            ],
+            "mapArray": [ 5, 6, 7, 8 ]
+        ]
+        let json = JSON(dic)
+        var mapDic: [String: Any] = [:]
+        let mapper = ProntoCollectionMapper(json: json)
+        do {
+            try mapper.map(key: "map", to: &mapDic)
+            expect(mapDic["key"] as? String) == "value"
+            guard let array = mapDic["array"] as? [Int] else {
+                XCTAssert(false, "'array' not found")
+                return
+            }
+            expect(array.count) == 3
+            
+            var mapArray: [Int] = []
+            try mapper.map(key: "mapArray", to: &mapArray)
+            expect(mapArray.count) == 4
+        } catch let error {
+            XCTAssert(false, "\(error)")
+        }
+    }
+    
+    func testPagination() {
+        var pagination = Pagination(offset: 0, limit: 20)
+        expect(pagination.previous()).to(beNil())
+        pagination.offset = 20
+        
+        guard let previous = pagination.previous() else {
+            XCTAssert(false, "Should get previous")
+            return
+        }
+        expect(previous.offset) == 0
+        
+        pagination.total = 30
+        pagination.offset = 0
+        expect(pagination.hasMoreResults) == true
+        
+        guard let next = pagination.next() else {
+            XCTAssert(false, "Should get next")
+            return
+        }
+        expect(next.offset) == 20
+        expect(next.hasMoreResults) == false
     }
 }
