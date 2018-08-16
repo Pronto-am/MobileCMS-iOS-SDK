@@ -1,5 +1,7 @@
 # Pronto iOS SDK
 
+<center><img src="Assets/logo.png" height="150" /></center>
+
 _The official Pronto iOS SDK_
 
 [![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](http://cocoadocs.org/docsets/ProntoSDK)
@@ -8,11 +10,15 @@ _The official Pronto iOS SDK_
 [![Coverage Status](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg)](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK)
 [![Travis-ci](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master)](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK)
 
-----------
-
- **[<img src="https://a.slack-edge.com/436da/marketing/img/meta/slack_hash_128.png" width="16" /> Join our slack channel!](https://pronto-am.slack.com/messages/general/)**
 
 ----------
+
+<center>
+ **[<img src="Assets/slack-icon.png" width="16" /> Join our slack channel!](https://pronto-am.slack.com/messages/general/)**
+</center>
+
+----------
+
 
 ## Installation
 
