@@ -1,14 +1,14 @@
 # Pronto iOS SDK
 
 <p align="center"><img src="Assets/logo.png" height="150" />
-
-_The official Pronto iOS SDK_
-
-[![Platform](https://img.shields.io/badge/platform-ios-lightgrey.svg)](http://cocoadocs.org/docsets/ProntoSDK)
-[![License](https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg)](LICENSE)
-[![Documented](documentation/badge.svg)](https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html)
-[![Coverage Status](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg)](https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK)
-[![Travis-ci](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master)](https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK)
+<br>
+ <i>The official Pronto iOS SDK</i>
+<br><br>
+<img src="https://img.shields.io/badge/platform-ios-lightgrey.svg">
+<a href="LICENSE"><img src="https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg"></a>
+<a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html"><img src="documentation/badge.svg"></a>
+<a href="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK"><img src="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg"></a>
+<a href="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK"><img src="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master"></a>
 </p>
 
 ----------
