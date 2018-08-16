@@ -9,12 +9,13 @@
 <a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html"><img src="documentation/badge.svg"></a>
 <a href="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK"><img src="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg"></a>
 <a href="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK"><img src="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master"></a>
+<a href="https://beerpay.io/Pronto-am/MobileBundle"><img src="https://beerpay.io/Pronto-am/MobileBundle/badge.svg?style=flat" /></a>
 </p>
 
 ----------
 
 <p align="center">
- <b><a href="https://pronto-am.slack.com/messages/general"><img src="Assets/slack-icon.png" width="16" /> Join our slack channel!</a></b>
+ <b><a href="https://pronto-am.slack.com/messages/general"> <img src="Assets/slack-icon.png" width="16" /> Join our slack channel</a></b> &nbsp; <span style="color: #ccc">|</span> &nbsp; <b><img src="Assets/logo-beerpay.svg" width="16"> <a href="https://beerpay.io/Pronto-am/MobileBundle">Support us on Beerpay</a></b>
 </p>
 
 ----------

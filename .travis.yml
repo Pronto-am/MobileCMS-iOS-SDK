@@ -27,9 +27,9 @@ notifications:
     on_success: always
     on_failure: always
     template:
-      - "Build <%{build_url}|#%{build_number}> `%{commit}` of %{repository_slug} *%{result}*"
+      - "Build <%{build_url}|#%{build_number}> (`%{commit}`) of %{repository_slug} *%{result}*"
       - "Branch: %{branch}"
-      - "> _%{message}_"
+      - "> \"_%{commit_message}_\""
       - "Duration: %{duration}"
       - "Author: %{author}"
 
