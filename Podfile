@@ -16,7 +16,6 @@ target 'ProntoSDK' do
   pod 'SwiftLint'
   pod 'CryptoSwift'
   pod 'Cache'
-  pod 'EasyPeasy'
   pod 'PromisesSwift'
   pod 'RxSwift'
 

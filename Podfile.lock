@@ -11,7 +11,6 @@ PODS:
     - RxSwift
     - SwiftyJSON
   - CryptoSwift (0.11.0)
-  - EasyPeasy (1.7.0)
   - Einsteinium (1.0)
   - Erbium (4.0)
   - KeychainAccess (3.1.1)
@@ -45,7 +44,6 @@ DEPENDENCIES:
   - Cache
   - Cobalt
   - CryptoSwift
-  - EasyPeasy
   - Einsteinium
   - Erbium
   - KeychainAccess
@@ -65,7 +63,6 @@ SPEC REPOS:
     - Cache
     - Cobalt
     - CryptoSwift
-    - EasyPeasy
     - Einsteinium
     - Erbium
     - KeychainAccess
@@ -94,7 +91,6 @@ SPEC CHECKSUMS:
   Cache: 7737c595aae7d94c7c0feca2c887288624e3b07e
   Cobalt: 94fa70307ad1a48d92474671fc0aeedb2026998f
   CryptoSwift: ad5208dd2aae0a764ea4ce2c2d34bd067cae67f0
-  EasyPeasy: 2f2785ed78c6f9e9045221f2ff317730e7321bff
   Einsteinium: b245c071a5756fbbb44ad6b9b325f59029f21b54
   Erbium: 95263e95c853e4e7e861f90dd42e9686946db4ac
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
@@ -110,6 +106,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   URITemplate: 149dee5e56c304e32c6e0636959c57ebd65628c7
 
-PODFILE CHECKSUM: 13aa7d25c5351c16d9c5ff81bca490aa287a8108
+PODFILE CHECKSUM: a9a2b4ee4f0cfd360af842a7516b0c0e5e24a097
 
 COCOAPODS: 1.5.3

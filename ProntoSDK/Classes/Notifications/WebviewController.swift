@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import WebKit
-import EasyPeasy
 
 /// The WebView to open when a push notification is received
 open class WebviewController: UIViewController {
@@ -22,6 +21,7 @@ open class WebviewController: UIViewController {
         super.init(nibName: nil, bundle: nibBundleOrNil)
     }
 
+    /// :nodoc:
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -47,21 +47,36 @@ open class WebviewController: UIViewController {
         errorLabel.textAlignment = .center
         errorLabel.numberOfLines = 0
         loadingIndicator.hidesWhenStopped = true
-
-        webView.easy.layout(Edges())
-
-        errorLabel.easy.layout([
-            Left(20),
-            Right(20),
-            Top(30),
-            Height(>=0)
+        
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false        
+        
+        NSLayoutConstraint.activate([
+            webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            webView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            webView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            webView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
         ])
-
-        loadingIndicator.easy.layout([
-            CenterX(),
-            Size(20),
-            Top(30)
+        
+        NSLayoutConstraint.activate([
+            errorLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20),
+            errorLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 20),
+            errorLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 30),
+            errorLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 0)
         ])
+        
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            loadingIndicator.widthAnchor.constraint(equalToConstant: 20),
+            loadingIndicator.heightAnchor.constraint(equalToConstant: 20),
+            loadingIndicator.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 30)
+        ])
+    }
+    
+    /// :nodoc:
+    override open func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     private func _setup() {

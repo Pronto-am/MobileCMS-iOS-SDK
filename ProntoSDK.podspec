@@ -25,7 +25,6 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Notifications' do |ss|
-    ss.dependency 'EasyPeasy'
     ss.dependency 'Erbium'
     ss.dependency 'ProntoSDK/Core'
     ss.source_files = "ProntoSDK/Classes/Notifications/**/*.{h,m,swift}"
