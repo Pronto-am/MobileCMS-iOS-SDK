@@ -1,20 +1,24 @@
 language: objective-c
 osx_image: xcode9.4
+
 branches:
   only:
   - master
 cache: bundler
+
 before_install:
-- bundle install
-- pod install --repo-update
+  - bundle install
+  - pod install --repo-update
+
 script:
-- set -o pipefail
-- pod lib lint --quick
-- fastlane travis
+  - set -o pipefail
+  - pod lib lint --quick
+  - fastlane travis
+
 notifications:
   email:
     recipients:
-    - bas@e-sites.nl
+      - bas@e-sites.nl
     on_success: never
     on_failure: always
   slack:
@@ -22,5 +26,6 @@ notifications:
       - secure: MEF4BKRt7JALYTcvkD/xPHjtL72jsu6sEh6v3qgetC/W26gJhSEVALBPLBa2vsLVgDqGl7sMuvxD54AK66a3tzWwaiNzKnF53pDiU639j+Bpzv+3URg5KEtn26e0G3wARU4FbYC1tLStrQJb5K2fYOaB3urdsmbDt4CAeGBwuxjc3R1s6KUDy+UbTcSrN7GX8Zb4Y3snR7EGKu81SmmUDJeRk6LDVhJUzCGCGs3N5KOxyEUz6i7YSqPEzaX1kLGxeji1vWUrBKQ13KDGhDzbKzb4YnYgWPABmv49NTcsXd2uX6MqRCIQieeY/VU0vojY/hYj4D2utJOy+clZJ08AhsHBCXlOtbhVh/GbvGzrijPGKp5dgG6Z3ED3WI9HSRk2mZnWV9p6YzN1r08zxPXwX9oSZHSQdDxUQ1QC80YX6tasav0+1iY2plvMx47OIAJAr2rknDjNRWKGhjJEBC4fKyRYnHv0R3LwVGGw2hY/NK5Qsw3PSp0v7SpRcP3qkN3xrqui43bETswapQQjyDy1RXConIMC1hj2zm8jmXW6k/QlX1CvUYeh9UaNSqRcDQMUZ2Oj0+p11QUeonZRG8mRU2mleMwfjYwEny4aBJBoYq0X/npeVmi1RT48VPKFtCsvnuT/m+KjRGF6nwfVoNNZb2wpIBmQ5AqIiNoP8FptIfA=
     on_success: always
     on_failure: always
+    
 after_success:
-- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash)
