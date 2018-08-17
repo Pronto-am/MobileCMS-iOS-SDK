@@ -60,6 +60,18 @@ And run:
 carthage update
 ```
 
+## Development
+
+> ⚠️ [Homebrew](https://brew.sh/) is required.
+
+Run:
+
+```shell
+make install
+```
+
+And open `ProntoSDK.xcodeproj` end start development.
+
 ## Implementation
 
 ### Core
