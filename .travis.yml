@@ -9,7 +9,7 @@ cache: bundler
 before_install:
   - brew update && brew bundle
   - bundle install
-  - pod install --repo-update
+  - carthage update
 
 script:
   - set -o pipefail
