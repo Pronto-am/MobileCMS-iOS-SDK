@@ -76,7 +76,7 @@ public class ProntoAPIClientUserModule {
             ]
         })
         
-        return prontoAPIClient.request(request).then { json -> Promise<Void> in
+        return prontoAPIClient.request(request).then { _ -> Promise<Void> in
             return Promise(())
         }
     }

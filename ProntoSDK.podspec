@@ -50,7 +50,6 @@ Pod::Spec.new do |s|
   #   test_spec.dependency 'Lithium'
   #   test_spec.dependency 'Lithium/Cobalt'
   #   test_spec.dependency 'Nimble'
-  #   test_spec.dependency 'URITemplate'
   #   test_spec.dependency 'Mockingjay'
     
   #   test_spec.source_files = 'ProntoSDKTests/**/*.{h,swift}'

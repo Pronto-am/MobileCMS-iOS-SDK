@@ -8,9 +8,7 @@ platform :ios do
   lane :travis do
     workspace = "ProntoSDK.xcworkspace"
 
-    swiftlint(
-        executable: 'Pods/SwiftLint/swiftlint'
-    )
+    swiftlint
 
     # Run tests (iOS)
     scheme = "ProntoSDK"
