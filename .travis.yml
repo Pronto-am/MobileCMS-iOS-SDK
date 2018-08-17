@@ -18,7 +18,7 @@ before_install:
 script:
   - set -o pipefail
   - pod lib lint --quick
-  - fastlane travis
+  - travis_retry fastlane travis
 
 notifications:
   email:
