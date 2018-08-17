@@ -9,7 +9,7 @@ cache: bundler
 before_install:
   - brew update && brew bundle
   - bundle install
-  - carthage update
+  - carthage update --cache-builds --platform iOS
 
 script:
   - set -o pipefail
