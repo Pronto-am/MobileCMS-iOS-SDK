@@ -5,12 +5,12 @@
  <i>The official Pronto iOS SDK</i>
 <br><br>
 <a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/p/ProntoSDK.svg?style=flat"></a>
-<a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/v/ProntoSDK.svg?style= flat"></a> 
+<a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/v/ProntoSDK.svg?style=flat"></a> 
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
-<a href="LICENSE"><img src="https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg?style= flat"></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg?style=flat"></a>
 <a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html"><img src="documentation/badge.svg"></a>
 <a href="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK"><img src="https://img.shields.io/codecov/c/github/Pronto-am/MobileCMS-iOS-SDK.svg?style=flat"></a>
-<a href="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK"><img src="https://img.shields.io/travis/Pronto-am/MobileCMS-iOS-SDK/master.svg?style= flat"></a>
+<a href="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK"><img src="https://img.shields.io/travis/Pronto-am/MobileCMS-iOS-SDK/master.svg?style=flat"></a>
 <a href="https://beerpay.io/Pronto-am/MobileBundle"><img src="https://img.shields.io/beerpay/pronto-am/mobilecms-ios-sdk.svg?style=flat"/></a>
 </p>
 

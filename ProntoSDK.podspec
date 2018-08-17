@@ -51,7 +51,9 @@ Pod::Spec.new do |s|
   #   test_spec.dependency 'Lithium/Cobalt'
   #   test_spec.dependency 'Nimble'
   #   test_spec.dependency 'Mockingjay'
+ 
     
+  #   test_spec.requires_app_host = false
   #   test_spec.source_files = 'ProntoSDKTests/**/*.{h,swift}'
   #   test_spec.resources = 'ProntoSDKTests/Mocking/*.json'
   # end
