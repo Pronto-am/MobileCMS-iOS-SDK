@@ -1,4 +1,4 @@
-install:
+setup:
 	brew bundle
 	carthage bootstrap --cache-builds --platform iOS
 	@echo " "
@@ -6,4 +6,4 @@ install:
 
 help:
 	@echo "Available make commands:"
-	@echo "   $$ make install - install the dev project"
+	@echo "   $$ make setup - install the dev project"

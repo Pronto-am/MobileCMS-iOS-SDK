@@ -67,7 +67,7 @@ carthage update
 Run:
 
 ```shell
-make install
+make setup
 ```
 
 And open `ProntoSDK.xcodeproj` end start development.
