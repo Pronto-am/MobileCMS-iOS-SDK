@@ -42,7 +42,14 @@ public class ProntoAPIClientUserModule {
     /// - Returns: `Promise<User>`
     public func update(_ user: User) -> Promise<User> {
         do {
-            let obj = try user.encode()
+            let obj = try user.encode { encoder in
+                guard let codingKey = CodingUserInfoKey(rawValue: "context") else {
+                    return
+                }
+                encoder.userInfo = [
+                    codingKey: "update_profile"
+                ]
+            }
 
             let request = Cobalt.Request({
                 $0.authentication = .oauth2(.password)

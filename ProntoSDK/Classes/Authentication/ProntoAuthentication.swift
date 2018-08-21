@@ -11,17 +11,31 @@ import Promises
 import KeychainAccess
 import SwiftyJSON
 import Cobalt
+import RxSwift
 
 /// Helper class for all authentication related functions
 public class ProntoAuthentication: PluginBase {
     fileprivate enum Constants {
-        static let userIDKey = "userIDKey"
+        static let user = "stored_user"
     }
+    
+    fileprivate let disposeBag = DisposeBag()
+    
     var requiredPlugins: [ProntoPlugin] {
         return [ .authentication ]
     }
 
     private weak var apiClient: ProntoAPIClient!
+    
+    /// Returns the currently logged in user
+    public var currentUser: User? {
+        get {
+           return _getCurrentUser()
+        }
+        set {
+            _setCurrentUser(newValue)
+        }
+    }
 
     /// Default contructor
     public convenience init() {
@@ -30,6 +44,11 @@ public class ProntoAuthentication: PluginBase {
 
     init(apiClient: ProntoAPIClient) {
         self.apiClient = apiClient
+        apiClient.rx.authorizationGrantType.subscribe(onNext: { [weak self] grantType in
+            if grantType == nil {
+                self?._clear()
+            }
+        }).disposed(by: disposeBag)
         checkPlugin()
     }
 
@@ -40,11 +59,11 @@ public class ProntoAuthentication: PluginBase {
                                                object: nil)
 
         ApplicationWatcher.shared.add(plugin: .authentication) { apiClient in
-            guard let userID = ProntoSDK.keychain[ProntoAuthentication.Constants.userIDKey] else {
+            guard let user = self.currentUser else {
                 return
             }
             let parameters = [
-                "userID": userID
+                "userID": user.id
             ]
             
             try apiClient.firebaseLog.add(type: .signInUser, parameters)
@@ -53,9 +72,7 @@ public class ProntoAuthentication: PluginBase {
 
     @objc
     private func _clear() {
-        do {
-            try ProntoSDK.keychain.remove(Constants.userIDKey)
-        } catch { }
+        self.currentUser = nil
         apiClient.client.clearAccessToken()
     }
 
@@ -75,7 +92,7 @@ public class ProntoAuthentication: PluginBase {
             ProntoLogger.success("Succesfully logged in!")
             return self.apiClient.user.profile()
         }.then { user -> Promise<User> in
-            ProntoSDK.keychain[Constants.userIDKey] = user.id
+            self.currentUser = user
             return Promise(user)
         }
     }
@@ -114,5 +131,53 @@ public class ProntoAuthentication: PluginBase {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+}
+
+extension ProntoAuthentication {
+    fileprivate func _getCurrentUser() -> User? {
+        #if targetEnvironment(simulator)
+        guard let data = UserDefaults.standard.data(forKey: Constants.user) else {
+            return nil
+        }
+        #else
+        guard let data = ProntoSDK.keychain[data: Constants.user] else {
+            return nil
+        }
+        
+        #endif
+        do {
+            let json = try JSON(data: data)
+            return try json.map(to: User.self)
+        } catch let error {
+            ProntoLogger.error("Error getting: \(error)")
+            return nil
+        }
+    }
+    
+    fileprivate func _setCurrentUser(_ newValue: User?) {
+        do {
+            
+            guard let user = newValue else {
+                #if targetEnvironment(simulator)
+                UserDefaults.standard.removeObject(forKey: Constants.user)
+                UserDefaults.standard.synchronize()
+                #else
+                ProntoSDK.keychain[data: Constants.user] = nil
+                #endif
+                return
+            }
+            let dictionary = try user.encode()
+            let data = try JSON(dictionary).rawData()
+            
+            #if targetEnvironment(simulator)
+            UserDefaults.standard.set(data, forKey: Constants.user)
+            UserDefaults.standard.synchronize()
+            #else
+            ProntoSDK.keychain[data: Constants.user] = data
+            #endif
+        } catch let error {
+            ProntoLogger.error("Error setting: \(error)")
+        }
     }
 }

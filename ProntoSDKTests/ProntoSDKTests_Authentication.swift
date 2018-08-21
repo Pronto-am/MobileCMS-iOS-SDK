@@ -28,8 +28,13 @@ class ProntoSDKTestsAuthentication: ProntoSDKTests {
                                mockJSONFile("\(apiVersion)_userprofile"))
 
         waitUntil { done in
-            self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234").then { _ in
-
+            self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234").then { user in
+                guard let currentUser = self.prontoAuthentication.currentUser else {
+                    XCTAssert(false, "Expected to have 'currentUser'")
+                    return
+                }
+                expect(currentUser.id) == user.id
+                expect(currentUser.email) == user.email
             }.catch { error in
                 XCTAssert(false, "\(error)")
             }.always {

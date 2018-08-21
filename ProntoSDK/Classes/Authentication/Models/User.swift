@@ -57,8 +57,17 @@ public class User: Codable, CustomStringConvertible {
     /// :nodoc:
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(id, forKey: .id)
-//        try container.encode(isActivated, forKey: .isActivated)
+        var encodeID = true
+        if let codingKey = CodingUserInfoKey(rawValue: "context"),
+            let value = encoder.userInfo[codingKey] as? String,
+            value == "update_profile" {
+            encodeID = false
+        }
+        
+        if encodeID {
+            try container.encode(id, forKey: .id)
+            try container.encode(isActivated, forKey: .isActivated)
+        }
         try container.encode(email, forKey: .email)
         try container.encode(firstName, forKey: .firstName)
         try container.encode(lastName, forKey: .lastName)
