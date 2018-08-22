@@ -44,7 +44,7 @@ public class ProntoNotifications: PluginBase {
                 return
             }
             let string = additionalDeviceData.rawJSONString
-            ProntoSDK.keychain[string: Constants.additionalDataKeychainKey] = string
+            KeychainHelper.store(string: string, for: Constants.additionalDataKeychainKey)
         }
     }
 
@@ -67,7 +67,7 @@ public class ProntoNotifications: PluginBase {
         defer {
             _storeInKeyChain = true
         }
-        guard let string = ProntoSDK.keychain[string: Constants.additionalDataKeychainKey],
+        guard let string = KeychainHelper.string(for: Constants.additionalDataKeychainKey),
             let dictionary = JSON(parseJSON: string).dictionaryObject else {
             return
         }
@@ -85,7 +85,7 @@ public class ProntoNotifications: PluginBase {
                 return
             }
             
-            guard let string = ProntoSDK.keychain[string: Constants.additionalDataKeychainKey],
+            guard let string = KeychainHelper.string(for: Constants.additionalDataKeychainKey),
                 let dictionary = JSON(parseJSON: string).dictionaryObject else {
                     return
             }
@@ -96,9 +96,7 @@ public class ProntoNotifications: PluginBase {
 
     @objc
     private func _clear() {
-        do {
-            try ProntoSDK.keychain.remove(Constants.additionalDataKeychainKey)
-        } catch { }
+       KeychainHelper.remove(for: Constants.additionalDataKeychainKey)
     }
 
     /// Register the device to pronto.am' API

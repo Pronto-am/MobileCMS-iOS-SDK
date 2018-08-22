@@ -59,19 +59,10 @@ extension Device {
         if !UserDefaults.standard.bool(forKey: Constant.hasRegisteredDevice) {
             return nil
         }
-        let jsonData: Data
-
-        #if targetEnvironment(simulator)
-        guard let jsonDataTemp = UserDefaults.standard.data(forKey: Constant.keychainCurrentDeviceKey) else {
+        guard let jsonData = KeychainHelper.data(for: Constant.keychainCurrentDeviceKey) else {
             return nil
         }
-        jsonData = jsonDataTemp
-        #else
-        guard let jsonDataTemp = ProntoSDK.keychain[data: Constant.keychainCurrentDeviceKey] else {
-            return nil
-        }
-        jsonData = jsonDataTemp
-        #endif
+        
         let json = JSON(jsonData)
 
         do {
@@ -97,11 +88,7 @@ extension Device {
             let dictionary = try self.encode()
             let json = JSON(dictionary)
             let rawData = try json.rawData()
-            #if targetEnvironment(simulator)
-            UserDefaults.standard.set(rawData, forKey: Constant.keychainCurrentDeviceKey)
-            #else
-            ProntoSDK.keychain[data: Constant.keychainCurrentDeviceKey] = rawData
-            #endif
+            KeychainHelper.store(data: rawData, for: Constant.keychainCurrentDeviceKey)
             UserDefaults.standard.set(true, forKey: Constant.hasRegisteredDevice)
             UserDefaults.standard.synchronize()
             ProntoLogger.info("Device stored: \(self)")
@@ -111,11 +98,7 @@ extension Device {
     }
 
     static func clearCurrent() {
-        #if targetEnvironment(simulator)
-        UserDefaults.standard.removeObject(forKey: Constant.keychainCurrentDeviceKey)
-        #else
-        ProntoSDK.keychain[data: Constant.keychainCurrentDeviceKey] = nil
-        #endif
+        KeychainHelper.remove(for: Constant.keychainCurrentDeviceKey)
         UserDefaults.standard.set(false, forKey: Constant.hasRegisteredDevice)
         UserDefaults.standard.synchronize()
     }

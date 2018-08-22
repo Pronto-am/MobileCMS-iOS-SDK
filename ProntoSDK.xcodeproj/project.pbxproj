@@ -68,6 +68,7 @@
 		C3D951E8210AFBBB00164EF6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D951E7210AFBBB00164EF6 /* Encodable.swift */; };
 		C3D951EA210B046100164EF6 /* ProntoNotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D951E9210B046100164EF6 /* ProntoNotificationsDelegate.swift */; };
 		C3DFEFA52056D8F300CC744C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFEFA42056D8F300CC744C /* Text.swift */; };
+		C3FE2433212D37400061C8F6 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE2432212D37400061C8F6 /* KeychainHelper.swift */; };
 		C3FF3B6E2126C67C00DB75D2 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B632126C67B00DB75D2 /* RxCocoa.framework */; };
 		C3FF3B6F2126C67C00DB75D2 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B642126C67B00DB75D2 /* RxSwift.framework */; };
 		C3FF3B702126C67C00DB75D2 /* Einsteinium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B652126C67B00DB75D2 /* Einsteinium.framework */; };
@@ -160,6 +161,7 @@
 		C3D951E7210AFBBB00164EF6 /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		C3D951E9210B046100164EF6 /* ProntoNotificationsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoNotificationsDelegate.swift; sourceTree = "<group>"; };
 		C3DFEFA42056D8F300CC744C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		C3FE2432212D37400061C8F6 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		C3FF3B632126C67B00DB75D2 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		C3FF3B642126C67B00DB75D2 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		C3FF3B652126C67B00DB75D2 /* Einsteinium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Einsteinium.framework; path = Carthage/Build/iOS/Einsteinium.framework; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 				C3B76BA92100617E004B7578 /* Memoization.swift */,
 				C367B6AF2100ACF700793F99 /* DateFormatting.swift */,
 				C3AD68BC210A0ACD00A82A2F /* ApplicationWatcher.swift */,
+				C3FE2432212D37400061C8F6 /* KeychainHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				C3530F0820E4D99A004657F0 /* User.swift in Sources */,
 				C367B6B82100BA6600793F99 /* SortOrder.swift in Sources */,
 				C34A688720500DA4009E3D83 /* ProntoAPIClientNotificationsModule.swift in Sources */,
+				C3FE2433212D37400061C8F6 /* KeychainHelper.swift in Sources */,
 				C37B2C1A20E60D0100FD89EF /* ProntoConfig.swift in Sources */,
 				C3530F0220E4D7EA004657F0 /* ProntoAuthentication.swift in Sources */,
 				C3AD68BD210A0ACD00A82A2F /* ApplicationWatcher.swift in Sources */,

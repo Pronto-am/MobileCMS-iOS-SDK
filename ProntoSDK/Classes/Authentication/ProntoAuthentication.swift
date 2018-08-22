@@ -136,16 +136,10 @@ public class ProntoAuthentication: PluginBase {
 
 extension ProntoAuthentication {
     fileprivate func _getCurrentUser() -> User? {
-        #if targetEnvironment(simulator)
-        guard let data = UserDefaults.standard.data(forKey: Constants.user) else {
-            return nil
-        }
-        #else
-        guard let data = ProntoSDK.keychain[data: Constants.user] else {
+        guard let data = KeychainHelper.data(for: Constants.user) else {
             return nil
         }
         
-        #endif
         do {
             let json = try JSON(data: data)
             return try json.map(to: User.self)
@@ -159,23 +153,13 @@ extension ProntoAuthentication {
         do {
             
             guard let user = newValue else {
-                #if targetEnvironment(simulator)
-                UserDefaults.standard.removeObject(forKey: Constants.user)
-                UserDefaults.standard.synchronize()
-                #else
-                ProntoSDK.keychain[data: Constants.user] = nil
-                #endif
+                KeychainHelper.remove(for: Constants.user)
                 return
             }
             let dictionary = try user.encode()
             let data = try JSON(dictionary).rawData()
             
-            #if targetEnvironment(simulator)
-            UserDefaults.standard.set(data, forKey: Constants.user)
-            UserDefaults.standard.synchronize()
-            #else
-            ProntoSDK.keychain[data: Constants.user] = data
-            #endif
+            KeychainHelper.store(data: data, for: Constants.user)
         } catch let error {
             ProntoLogger.error("Error setting: \(error)")
         }

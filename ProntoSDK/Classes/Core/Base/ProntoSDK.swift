@@ -39,7 +39,6 @@ public class ProntoSDK {
     struct Constant {
         static let clearNotificationName = Notification.Name("__prontoClearNotification")
     }
-    static let keychain = Keychain(service: "com.esites.pronto")
 
     static var config: ProntoConfig!
 
@@ -64,6 +63,6 @@ public class ProntoSDK {
     /// Call this to reset all the currently active plugins
     public static func reset() {
         NotificationCenter.default.post(name: Constant.clearNotificationName, object: nil)
-        try? ProntoSDK.keychain.removeAll()
+        KeychainHelper.removeAll()
     }
 }
