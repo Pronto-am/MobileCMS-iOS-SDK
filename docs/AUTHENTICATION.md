@@ -11,6 +11,16 @@ authentication.login(email: "bas@e-sites.nl", password: "password").then { user 
 }
 ```
 
+To get the current user use:
+
+```swift
+let authentication = ProntoAuthentication()
+
+if let currentUser = authentication.currentUser {
+    // ... use currentUser
+}
+```
+
 ## Registration
 
 ```swift

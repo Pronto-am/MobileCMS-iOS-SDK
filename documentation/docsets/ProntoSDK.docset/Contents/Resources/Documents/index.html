@@ -141,24 +141,32 @@
             
             <h1 id='pronto-ios-sdk' class='heading'>Pronto iOS SDK</h1>
 
-<p><em>The official Pronto iOS SDK</em></p>
-
-<p><a href="http://cocoadocs.org/docsets/ProntoSDK"><img src="https://img.shields.io/badge/platform-ios-lightgrey.svg" alt="Platform"></a>
-<a href="LICENSE"><img src="https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg" alt="License"></a>
-<a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html"><img src="documentation/badge.svg" alt="Documented"></a>
-<a href="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK"><img src="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK/branch/master/graph/badge.svg" alt="Coverage Status"></a>
-<a href="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK"><img src="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK.svg?branch=master" alt="Travis-ci"></a></p>
+<p align="center"><img src="Assets/logo.png" height="150" width="auto" />
+<br>
+ <i>The official Pronto iOS SDK</i>
+<br><br>
+<a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/p/ProntoSDK.svg?style=flat"></a>
+<a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/v/ProntoSDK.svg?style=flat"></a> 
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg?style=flat"></a>
+<a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html"><img src="documentation/badge.svg"></a>
+<a href="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK"><img src="https://img.shields.io/codecov/c/github/Pronto-am/MobileCMS-iOS-SDK.svg?style=flat"></a>
+<a href="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK"><img src="https://img.shields.io/travis/Pronto-am/MobileCMS-iOS-SDK/master.svg?style=flat"></a>
+<a href="https://beerpay.io/Pronto-am/MobileBundle"><img src="https://img.shields.io/beerpay/pronto-am/mobilecms-ios-sdk.svg?style=flat"/></a>
+</p>
 
 <hr>
 
-<p><strong><a href="https://pronto-am.slack.com/messages/general/"><img src="https://a.slack-edge.com/436da/marketing/img/meta/slack_hash_128.png" width="16" /> Join our slack channel!</a></strong></p>
+<p align="center">
+ <b><a href="https://pronto-am.slack.com/messages/general"> <img src="Assets/slack-icon.png" width="16" /> Join our slack channel</a></b> &nbsp; <span style="color: #ccc">|</span> &nbsp; <b><img src="Assets/logo-beerpay.svg" width="16"> <a href="https://beerpay.io/Pronto-am/MobileBundle">Support us on Beerpay</a></b>
+</p>
 
 <hr>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='cococapods' class='heading'>Cococapods</h3>
 
 <p>Add the following to your Podfile:</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'ProntoSDK'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/Pronto-am/MobileCMS-iOS-SDK.git'</span>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'ProntoSDK'</span>
 </code></pre>
 
 <p><strong>Available sub-specs:</strong></p>
@@ -172,6 +180,26 @@
 <p>And run:</p>
 <pre class="highlight shell"><code>pod install
 </code></pre>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p>Add the following to your Cartfile:</p>
+<pre class="highlight ruby"><code><span class="n">github</span> <span class="s2">"Pronto-am/MobileCMS-iOS-SDK"</span>
+</code></pre>
+
+<p>And run:</p>
+<pre class="highlight shell"><code>carthage update
+</code></pre>
+<h2 id='development' class='heading'>Development</h2>
+
+<blockquote>
+<p>⚠️ <a href="https://brew.sh/">Homebrew</a> is required.</p>
+</blockquote>
+
+<p>Run:</p>
+<pre class="highlight shell"><code>make setup
+</code></pre>
+
+<p>And open <code>ProntoSDK.xcodeproj</code> end start development.</p>
 <h2 id='implementation' class='heading'>Implementation</h2>
 <h3 id='core' class='heading'>Core</h3>
 

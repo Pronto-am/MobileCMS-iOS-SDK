@@ -75,6 +75,7 @@ class ProntoSDKTestUser: ProntoSDKTests {
             }.catch { error in
                 XCTAssert(false, "\(error)")
             }.always {
+                expect(self.prontoAuthentication.currentUser).to(beNil())
                 self.removeStub(profileStub)
                 self.removeStub(authStub)
                 self.removeStub(unregisterStub)
@@ -90,6 +91,7 @@ class ProntoSDKTestUser: ProntoSDKTests {
                 XCTAssert(false, "Should not reach this")
 
             }.always {
+                expect(self.prontoAuthentication.currentUser).to(beNil())
                 done()
             }
         }

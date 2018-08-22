@@ -28,7 +28,7 @@ public class ProntoAuthentication: PluginBase {
     private weak var apiClient: ProntoAPIClient!
     
     /// Returns the currently logged in user
-    public var currentUser: User? {
+    private(set) public var currentUser: User? {
         get {
            return _getCurrentUser()
         }
