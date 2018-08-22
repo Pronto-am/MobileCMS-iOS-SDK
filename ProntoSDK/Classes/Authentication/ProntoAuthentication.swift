@@ -101,15 +101,14 @@ public class ProntoAuthentication: PluginBase {
     ///
     /// After the registration, the user needs to login manually.
     ///
+    /// - Warning: The user should have: lastName, firstName and email
+    ///
     /// - Parameters:
     ///   - user: `User` the user
     ///   - password: `String` the password
     ///
     /// - Returns: `Promise<User>`
     public func register(user: User, password: String) -> Promise<User> {
-        if !user.email.isValidEmail {
-            return Promise(ProntoError.invalidEmailAddress)
-        }
         return apiClient.user.register(user, password: password)
     }
 
