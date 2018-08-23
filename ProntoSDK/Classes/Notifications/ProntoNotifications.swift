@@ -129,7 +129,8 @@ public class ProntoNotifications: PluginBase {
                                      object: nil,
                                      queue: nil) { notification in
                                         NotificationCenter.default.removeObserver(observer)
-                                        handler?(notification.object as? ProntoNotificationsError)
+                                        let error = notification.userInfo?["error"] as? ProntoNotificationsError
+                                        handler?(error)
                         }
                     
                     UIApplication.shared.registerForRemoteNotifications()
@@ -276,7 +277,10 @@ extension ProntoNotifications {
                 NotificationCenter.default.post(name: notification, object: nil)
             }.catch { error in
                 ProntoLogger.error("Error registering device: \(error)")
-                NotificationCenter.default.post(name: notification, object: ProntoNotificationsError.underlying(error))
+                
+                NotificationCenter.default.post(name: notification,
+                                                object: nil,
+                                                userInfo: [ "error": ProntoNotificationsError.underlying(error) ])
             }
             return
         }
@@ -308,6 +312,8 @@ extension ProntoNotifications {
     public func didFailToRegisterForRemoteNotifications(with error: Error) {
         ProntoLogger.error("Error registering device: \(error)")
         let notification = Notification.Name(rawValue: Constants.didRegisterRemoteNotificationsKey)
-        NotificationCenter.default.post(name: notification, object: ProntoNotificationsError.underlying(error))
+        NotificationCenter.default.post(name: notification,
+                                        object: nil,
+                                        userInfo: [ "error": ProntoNotificationsError.underlying(error) ])
     }
 }

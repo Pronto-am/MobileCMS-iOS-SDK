@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.1.3
+- Fixed a bug in push notifications registration.
+
 ## v2.1.2
 - Refactored push notification registration. 
 
