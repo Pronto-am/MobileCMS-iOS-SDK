@@ -1,5 +1,7 @@
 # Notifications
 
+## Implementation
+
 in `AppDelegate.swift`:
 
 ```swift
@@ -40,6 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProntoNotificationsDelega
 }
 ```
 
+## Device registration
+
 To register for push notifications:
 
 ```swift
@@ -53,5 +57,48 @@ prontoNotifications.registerForRemoteNotifications(sandbox: sandbox) { error in
     // If `error` is nil -> succesful
 }
 ```
+
+To unregister:
+
+```swift
+guard let device = Device.current else {
+	return
+}
+
+ProntoAPIClient.default.notifications.unregister(device: device).then { 
+   // ...
+}
+```
+
+## Segments
+
+To get all the available segments:
+
+```swift
+guard let device = Device.current else {
+	return
+}
+
+ProntoAPIClient.default.notifications.segments(for: device).then { segments in
+   // `segments`: [Segment]
+}
+```
+
+To subscribe to a segment:
+
+```swift
+guard let device = Device.current else {
+	return
+}
+
+let segment: Segment = // Get a specific segment
+segment.isSubscribed = true
+
+ProntoAPIClient.default.notifications.subscribe(segments: [ segment ], device: device).then { 
+   // ...
+}
+```
+
+-------
 
 Read [online documentation](https://pronto.am/apidoc/index.html) for more information about API calls.
