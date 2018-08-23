@@ -27,6 +27,7 @@ public enum ProntoNotificationsError: Error {
 public class ProntoNotifications: PluginBase {
 
     fileprivate struct Constants {
+        static let didRegisterRemoteNotificationsKey = "didRegisterRemoteNotificationsKey"
         static let additionalDataKeychainKey = "additionalDataKeychainKey"
     }
 
@@ -51,8 +52,6 @@ public class ProntoNotifications: PluginBase {
     /// The ProntoNotificationsDelegate delegate (optional).
     public weak var delegate: ProntoNotificationsDelegate?
     
-    fileprivate var _registrationHandler: ((ProntoNotificationsError?) -> Void)?
-
     /// Default constructor
     private weak var apiClient: ProntoAPIClient!
 
@@ -120,14 +119,22 @@ public class ProntoNotifications: PluginBase {
         }
         
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        _registrationHandler = handler
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { [weak self] granted, _ in
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, _ in
             DispatchQueue.main.async {
                 if granted {
+                    let notification = Notification.Name(rawValue: Constants.didRegisterRemoteNotificationsKey)
+                    var observer: NSObjectProtocol!
+                    observer = NotificationCenter.default
+                        .addObserver(forName: notification,
+                                     object: nil,
+                                     queue: nil) { notification in
+                                        NotificationCenter.default.removeObserver(observer)
+                                        handler?(notification.object as? ProntoNotificationsError)
+                        }
+                    
                     UIApplication.shared.registerForRemoteNotifications()
                 } else {
                     handler?(.notAuthorized)
-                    self?._registrationHandler = nil
                 }
             }
         }
@@ -257,7 +264,8 @@ extension ProntoNotifications {
     ///   - sandbox: Is the registration done in a sandbox environmnet (aka #DEBUG) (Default = false)
     public func didRegisterForRemoteNotifications(deviceToken: Data, sandbox: Bool = false) {
         let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
-
+        let notification = Notification.Name(rawValue: Constants.didRegisterRemoteNotificationsKey)
+        
         // No current device set, register with pronto
         guard let currentDevice = Device.current else {
             apiClient.notifications.registerDevice(deviceToken: deviceTokenString,
@@ -265,12 +273,10 @@ extension ProntoNotifications {
                                                                  additionalData: additionalDeviceData)
             .then { _ in
                 ProntoLogger.success("Device succesfully registered")
-                self._registrationHandler?(nil)
-                self._registrationHandler = nil
+                NotificationCenter.default.post(name: notification, object: nil)
             }.catch { error in
                 ProntoLogger.error("Error registering device: \(error)")
-                self._registrationHandler?(.underlying(error))
-                self._registrationHandler = nil
+                NotificationCenter.default.post(name: notification, object: ProntoNotificationsError.underlying(error))
             }
             return
         }
@@ -282,8 +288,7 @@ extension ProntoNotifications {
             apiClient.notifications.signIn(device: currentDevice, additionalData: additionalDeviceData)
         }
 
-        self._registrationHandler?(nil)
-        self._registrationHandler = nil
+        NotificationCenter.default.post(name: notification, object: nil)
     }
 
     /// When the app failsto register to the apns server.
@@ -302,7 +307,7 @@ extension ProntoNotifications {
     ///   - error: `Error`
     public func didFailToRegisterForRemoteNotifications(with error: Error) {
         ProntoLogger.error("Error registering device: \(error)")
-        self._registrationHandler?(.underlying(error))
-        self._registrationHandler = nil
+        let notification = Notification.Name(rawValue: Constants.didRegisterRemoteNotificationsKey)
+        NotificationCenter.default.post(name: notification, object: ProntoNotificationsError.underlying(error))
     }
 }

@@ -1,5 +1,11 @@
 # ProntoSDK Changelog
 
+## v2.1.2
+- Refactored push notification registration. 
+
+## v2.1.1
+- Make `firstName` obligatory for user registration
+
 ## v2.1.0
 - Store current user in `ProntoAuthentication`
 
