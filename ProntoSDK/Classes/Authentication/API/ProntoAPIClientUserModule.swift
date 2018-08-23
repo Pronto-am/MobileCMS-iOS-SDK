@@ -35,10 +35,7 @@ public class ProntoAPIClientUserModule {
     }
     
     private func _checkValid(user: User) -> Promise<User>? {
-        if user.lastName.isEmpty {
-            return Promise(ProntoError.missingField("lastName"))
-            
-        } else if user.firstName.isEmpty {
+        if user.firstName.isEmpty {
             return Promise(ProntoError.missingField("firstName"))
             
         } else if user.email.isEmpty {
