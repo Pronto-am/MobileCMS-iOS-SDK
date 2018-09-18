@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ProntoSDK"
-  s.version      = "2.1.3"
+  s.version      = "2.2.0"
   s.author       = { "Bas van Kuijck" => "bas@e-sites.nl" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.homepage     = "http://www.e-sites.nl"
@@ -51,8 +51,8 @@ Pod::Spec.new do |s|
   #   test_spec.dependency 'Lithium/Cobalt'
   #   test_spec.dependency 'Nimble'
   #   test_spec.dependency 'Mockingjay'
- 
-    
+
+
   #   test_spec.requires_app_host = false
   #   test_spec.source_files = 'ProntoSDKTests/**/*.{h,swift}'
   #   test_spec.resources = 'ProntoSDKTests/Mocking/*.json'

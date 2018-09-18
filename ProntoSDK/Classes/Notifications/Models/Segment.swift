@@ -27,7 +27,7 @@ public class Segment: CustomStringConvertible, Codable, Equatable {
 
     /// :nodoc:
     public var description: String {
-        return "<Segment> [ id: \(id), name: \(name), isSubscribed: \(isSubscribed)  ]"
+        return "<Segment> [ id: \(id), name: \(String(describing: name)), isSubscribed: \(isSubscribed)  ]"
     }
 
     /// :nodoc:

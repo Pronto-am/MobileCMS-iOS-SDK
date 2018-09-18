@@ -14,7 +14,7 @@ import WebKit
 open class WebviewController: UIViewController {
     lazy var webView = WKWebView()
     private var webViewNavigationDelegate: WebviewControllerNavigationDelegate! // swiftlint:disable:this weak_delegate
-    lazy var loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    lazy var loadingIndicator = UIActivityIndicatorView(style: .gray)
     lazy var errorLabel = UILabel()
 
     private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

@@ -28,7 +28,7 @@ class ProntoSDKTests: XCTestCase {
             $0.encryptionKey = "encryption_key"
             $0.plugins = [ .notifications, .authentication, .collections ]
             let logger = Lithium.Logger()
-            logger.theme = EsitesDarkLogTheme()
+            logger.theme = EmojiLogTheme()
             $0.logger = logger
         }))
     }

@@ -21,7 +21,7 @@ class ApplicationWatcher {
         if !Bundle.main.isUnitTesting() {
             NotificationCenter.default.addObserver(self,
                                                    selector: #selector(becomeActive),
-                                                   name: .UIApplicationWillEnterForeground,
+                                                   name: UIApplication.willEnterForegroundNotification,
                                                    object: nil)
             becomeActive()
         }

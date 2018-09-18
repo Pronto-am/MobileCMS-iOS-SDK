@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.2.0
+- Updated to Swift4.2 / Xcode 10
+
 ## v2.1.3
 - Fixed a bug in push notifications registration.
 
