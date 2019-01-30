@@ -12,7 +12,7 @@
 <a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html"><img src="documentation/badge.svg"></a>
 <a href="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK"><img src="https://img.shields.io/codecov/c/github/Pronto-am/MobileCMS-iOS-SDK.svg?style=flat"></a>
 <a href="https://travis-ci.org/Pronto-am/MobileCMS-iOS-SDK"><img src="https://img.shields.io/travis/Pronto-am/MobileCMS-iOS-SDK/master.svg?style=flat"></a>
-<a href="https://beerpay.io/Pronto-am/MobileBundle"><img src="https://img.shields.io/beerpay/pronto-am/mobilecms-ios-sdk.svg?style=flat"/></a>
+<a href="https://beerpay.io/Pronto-am/MobileBundle"><img src="https://img.shields.io/beerpay/Pronto-am/MobileBundle.svg?style=flat"/></a>
 </p>
 
 
