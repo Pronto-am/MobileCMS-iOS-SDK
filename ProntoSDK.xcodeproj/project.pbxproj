@@ -42,6 +42,10 @@
 		C367B6B22100ADE600793F99 /* PaginatedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B6B12100ADE600793F99 /* PaginatedResult.swift */; };
 		C367B6B82100BA6600793F99 /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B6B72100BA6600793F99 /* SortOrder.swift */; };
 		C367B6BA2100CFA400793F99 /* v1_collections_all_get.json in Resources */ = {isa = PBXBuildFile; fileRef = C367B6B92100CFA400793F99 /* v1_collections_all_get.json */; };
+		C374D7D62212DAB600134857 /* ProntoAppUpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374D7D52212DAB600134857 /* ProntoAppUpdateCheck.swift */; };
+		C374D7D92212DB0200134857 /* ProntoAPIClientAppUpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374D7D82212DB0200134857 /* ProntoAPIClientAppUpdateCheck.swift */; };
+		C374D7DC2212DB4000134857 /* ProntoAPIClient+appupdatechecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374D7DB2212DB4000134857 /* ProntoAPIClient+appupdatechecker.swift */; };
+		C374D7DF2212DB8700134857 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374D7DE2212DB8700134857 /* AppVersion.swift */; };
 		C37B2C1620E5075B00FD89EF /* v1_userprofile.json in Resources */ = {isa = PBXBuildFile; fileRef = C37B2C1520E5075B00FD89EF /* v1_userprofile.json */; };
 		C37B2C1820E50AC800FD89EF /* accesstoken_expired.json in Resources */ = {isa = PBXBuildFile; fileRef = C37B2C1720E50AC800FD89EF /* accesstoken_expired.json */; };
 		C37B2C1A20E60D0100FD89EF /* ProntoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B2C1920E60D0100FD89EF /* ProntoConfig.swift */; };
@@ -135,6 +139,10 @@
 		C367B6B12100ADE600793F99 /* PaginatedResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedResult.swift; sourceTree = "<group>"; };
 		C367B6B72100BA6600793F99 /* SortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOrder.swift; sourceTree = "<group>"; };
 		C367B6B92100CFA400793F99 /* v1_collections_all_get.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v1_collections_all_get.json; sourceTree = "<group>"; };
+		C374D7D52212DAB600134857 /* ProntoAppUpdateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoAppUpdateCheck.swift; sourceTree = "<group>"; };
+		C374D7D82212DB0200134857 /* ProntoAPIClientAppUpdateCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoAPIClientAppUpdateCheck.swift; sourceTree = "<group>"; };
+		C374D7DB2212DB4000134857 /* ProntoAPIClient+appupdatechecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProntoAPIClient+appupdatechecker.swift"; sourceTree = "<group>"; };
+		C374D7DE2212DB8700134857 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		C37B2C1520E5075B00FD89EF /* v1_userprofile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = v1_userprofile.json; sourceTree = "<group>"; };
 		C37B2C1720E50AC800FD89EF /* accesstoken_expired.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = accesstoken_expired.json; sourceTree = "<group>"; };
 		C37B2C1920E60D0100FD89EF /* ProntoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoConfig.swift; sourceTree = "<group>"; };
@@ -266,6 +274,7 @@
 		C34A687220500648009E3D83 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C374D7D42212D9DD00134857 /* AppUpdateCheck */,
 				C3B76BA521005F16004B7578 /* Core */,
 				C34A687620500689009E3D83 /* Notifications */,
 				C3530F0020E4D7CC004657F0 /* Authentication */,
@@ -405,6 +414,41 @@
 			children = (
 				C367B69F2100701A00793F99 /* Coordinate.swift */,
 				C367B6A221007C5B00793F99 /* TextURL.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C374D7D42212D9DD00134857 /* AppUpdateCheck */ = {
+			isa = PBXGroup;
+			children = (
+				C374D7DD2212DB7B00134857 /* Models */,
+				C374D7DA2212DB3300134857 /* Extensions */,
+				C374D7D72212DAE900134857 /* API */,
+				C374D7D52212DAB600134857 /* ProntoAppUpdateCheck.swift */,
+			);
+			path = AppUpdateCheck;
+			sourceTree = "<group>";
+		};
+		C374D7D72212DAE900134857 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C374D7D82212DB0200134857 /* ProntoAPIClientAppUpdateCheck.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C374D7DA2212DB3300134857 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C374D7DB2212DB4000134857 /* ProntoAPIClient+appupdatechecker.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C374D7DD2212DB7B00134857 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C374D7DE2212DB8700134857 /* AppVersion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -658,12 +702,14 @@
 				C3B76BA420FF8A56004B7578 /* ProntoCollectionMapper.swift in Sources */,
 				C367B6972100696C00793F99 /* ProntoAPIClient+collections.swift in Sources */,
 				C3CB12A6205277F90095584D /* JSON.swift in Sources */,
+				C374D7D62212DAB600134857 /* ProntoAppUpdateCheck.swift in Sources */,
 				C3D951EA210B046100164EF6 /* ProntoNotificationsDelegate.swift in Sources */,
 				C34A687820500697009E3D83 /* ProntoNotifications.swift in Sources */,
 				C367B6B22100ADE600793F99 /* PaginatedResult.swift in Sources */,
 				C3CB12AC2052C1710095584D /* FirebaseLogModule.swift in Sources */,
 				C34A68902050264C009E3D83 /* Segment.swift in Sources */,
 				C3CB12AA2052BB0F0095584D /* String.swift in Sources */,
+				C374D7DF2212DB8700134857 /* AppVersion.swift in Sources */,
 				C34A687520500652009E3D83 /* ProntoSDK.swift in Sources */,
 				C34A687F20500C01009E3D83 /* ProntoError.swift in Sources */,
 				C3DFEFA52056D8F300CC744C /* Text.swift in Sources */,
@@ -680,6 +726,8 @@
 				C367B69D210069C300793F99 /* ProntoCollectionError.swift in Sources */,
 				C37D63AB210615EF00A4DA6F /* ProntoCollectionMapper+JSON.swift in Sources */,
 				C319597A20E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift in Sources */,
+				C374D7DC2212DB4000134857 /* ProntoAPIClient+appupdatechecker.swift in Sources */,
+				C374D7D92212DB0200134857 /* ProntoAPIClientAppUpdateCheck.swift in Sources */,
 				C367B6A321007C5B00793F99 /* TextURL.swift in Sources */,
 				C37B2C1C20E60D2900FD89EF /* ProntoPlugin.swift in Sources */,
 				C3D951E8210AFBBB00164EF6 /* Encodable.swift in Sources */,

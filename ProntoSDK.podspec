@@ -43,6 +43,11 @@ Pod::Spec.new do |s|
     ss.frameworks = 'CoreLocation'
   end
 
+  s.subspec 'AppUpdateCheck' do |ss|
+    ss.dependency 'ProntoSDK/Core'
+    ss.source_files = "ProntoSDK/Classes/AppUpdateCheck/**/*.{h,m,swift}"
+  end
+
   # s.test_spec 'Tests' do |test_spec|
   #   test_spec.dependency 'ProntoSDK/Collections'
   #   test_spec.dependency 'ProntoSDK/Authentication'

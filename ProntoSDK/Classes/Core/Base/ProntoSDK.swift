@@ -32,7 +32,7 @@ let ProntoLogger: Cobalt.Logger = ProntoSDK.config.logger ?? TempLogger() // swi
 /// config.clientID = "client_id"
 /// config.clientSecret = "client_secret"
 /// config.encryptionKey = "encryption_key"
-/// config.plugins = [ .notifications, .authentication ]
+/// config.plugins = [ .notifications, .authentication, .updateChecker ]
 /// ProntoSDK.configure(config)
 /// ```
 public class ProntoSDK {
