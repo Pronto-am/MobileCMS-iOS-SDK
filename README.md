@@ -40,6 +40,7 @@ pod 'ProntoSDK'
 - `ProntoSDK/Authentication`
 - `ProntoSDK/Notifications`
 - `ProntoSDK/Collections`
+- `ProntoSDK/AppUpdateCheck`
 
 And run:
 
