@@ -121,6 +121,10 @@ func application(_ application: UIApplication,
 
  → 🗂 [Read collections documentation](docs/COLLECTIONS.md)
 
+### Update checker plugin
+
+ → 🌟 [Read update checker documentation](docs/UPDATECHECKER.md)
+
 ## Promises
 
 Almost every asynchronous function ProntoSDK uses `Promises` internally:

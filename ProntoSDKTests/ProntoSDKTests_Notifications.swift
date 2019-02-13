@@ -16,6 +16,7 @@ import Promises
 class ProntoSDKTestsNotifications: ProntoSDKTests {
     override func setUp() {
         super.setUp()
+        ProntoSDK.config.defaultLocale = Locale(identifier: "en_US")
     }
 
     func testRegisterDevice() {
@@ -78,10 +79,10 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
                 expect(segments.count) == 2
                 expect(segments.filter { $0.isSubscribed }.count) == 1
                 if let segment = segments.first {
-                    expect(segment.name?.string()) == "Segment one"
+                    expect(segment.name?.string(for: ProntoSDK.config.defaultLocale)) == "Segment one"
                 }
                 if let segment = segments.last {
-                    expect(segment.name?.string()) == "Segment two"
+                    expect(segment.name?.string(for: ProntoSDK.config.defaultLocale)) == "Segment two"
                 }
             }.catch { error in
                 XCTAssert(false, "\(error)")

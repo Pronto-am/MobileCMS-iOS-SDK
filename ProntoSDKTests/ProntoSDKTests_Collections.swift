@@ -90,13 +90,13 @@ class ProntoSDKTestsCollections: ProntoSDKTests {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         expect(object.id) == "73E68BA2-8261-4C87-92E5-FF53207A5333"
         expect(object.bool) == true
-        expect(object.text?.string()) == "Text"
+        expect(object.text?.string(for: ProntoSDK.config.defaultLocale)) == "Text"
         if isFull {
-            expect(object.multiText?.string()).toNot(beNil())
-            expect(object.htmlText?.string()).toNot(beNil())
+            expect(object.multiText?.string(for: ProntoSDK.config.defaultLocale)).toNot(beNil())
+            expect(object.htmlText?.string(for: ProntoSDK.config.defaultLocale)).toNot(beNil())
         } else {
-            expect(object.multiText?.string()).to(beNil())
-            expect(object.htmlText?.string()).to(beNil())
+            expect(object.multiText?.string(for: ProntoSDK.config.defaultLocale)).to(beNil())
+            expect(object.htmlText?.string(for: ProntoSDK.config.defaultLocale)).to(beNil())
 
         }
         expect(object.select) == AllTestModel.Select.key1
@@ -104,7 +104,7 @@ class ProntoSDKTestsCollections: ProntoSDKTests {
         expect(dateFormatter.string(from: object.date)) == "2017-01-23"
         expect(object.multiSelect).to(contain([AllTestModel.Select.key2, AllTestModel.Select.key3]))
         expect(object.url?.url()?.absoluteString) == "https://www.pronto.am"
-        expect(object.related?.name?.string()) == "Gerelateerd"
+        expect(object.related?.name?.string(for: ProntoSDK.config.defaultLocale)) == "Gerelateerd"
         expect(object.related?.id) == "84B820FD-662A-452F-ACC4-61197AA8CC89"
         expect(object.relations.count) == 3
         if !isFull {

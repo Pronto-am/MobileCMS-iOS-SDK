@@ -11,6 +11,12 @@ import UIKit
 
 /// Delegate protocol to receive update
 public protocol ProntoAppUpdateCheckDelegate: class {
+
+    /// Function that is called after a new version is available
+    ///
+    /// - parameters:
+    ///   - updateCheck: `ProntoAppUpdateCheck`
+    ///   - newVersion: `AppVersion`
     func prontoAppUpdateCheck(_ updateCheck: ProntoAppUpdateCheck, newVersion: AppVersion)
 }
 
@@ -53,12 +59,17 @@ public class ProntoAppUpdateCheck: PluginBase {
         self.delegate = delegate
         self.shouldCheckOnAppLaunch = checkOnAppLaunch
         _updateNotificationCenter()
+        if checkOnAppLaunch {
+            check()
+        }
     }
 
+    /// :nodoc:
     public func configure() {
 
     }
 
+    /// :nodoc:
     public var requiredPlugins: [ProntoPlugin] {
         return [ .updateChecker ]
     }

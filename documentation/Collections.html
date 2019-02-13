@@ -10,7 +10,6 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Collections" class="dashAnchor"></a>
     <a title="Collections  Reference"></a>
     <header>
       <div class="content-wrapper">
@@ -134,6 +133,25 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="Update check.html">Update check</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ProntoAppUpdateCheck.html">ProntoAppUpdateCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AppVersion.html">AppVersion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/ProntoAppUpdateCheckDelegate.html">ProntoAppUpdateCheckDelegate</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -166,7 +184,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ProntoCollectionMappable</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ProntoFilterable.html">ProntoFilterable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ProntoCollectionMappable</span><span class="p">:</span> <span class="kt"><a href="Protocols/ProntoFilterable.html">ProntoFilterable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -324,7 +342,7 @@ has in total.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">PaginatedResult</span><span class="o">&lt;</span><span class="kt">CollectionType</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">CollectionType</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ProntoCollectionMappable.html">ProntoCollectionMappable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">PaginatedResult</span><span class="o">&lt;</span><span class="kt">CollectionType</span><span class="p">:</span> <span class="kt"><a href="Protocols/ProntoCollectionMappable.html">ProntoCollectionMappable</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -356,7 +374,7 @@ has in total.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ProntoCollection</span><span class="o">&lt;</span><span class="kt">CollectionType</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">PluginBase</span> <span class="k">where</span> <span class="kt">CollectionType</span> <span class="p">:</span> <span class="kt"><a href="Protocols/ProntoCollectionMappable.html">ProntoCollectionMappable</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ProntoCollection</span><span class="o">&lt;</span><span class="kt">CollectionType</span><span class="p">:</span> <span class="kt"><a href="Protocols/ProntoCollectionMappable.html">ProntoCollectionMappable</a></span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">PluginBase</span></code></pre>
 
                         </div>
                       </div>
@@ -388,7 +406,7 @@ has in total.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ProntoCollectionError</span> <span class="p">:</span> <span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ProntoCollectionError</span><span class="p">:</span> <span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                         </div>
                       </div>
@@ -420,7 +438,7 @@ has in total.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Coordinate</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt"><a href="Collections.html#/s:9ProntoSDK0A18CollectionMapValueP">ProntoCollectionMapValue</a></span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Coordinate</span><span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt"><a href="Collections.html#/s:9ProntoSDK0A18CollectionMapValueP">ProntoCollectionMapValue</a></span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                         </div>
                       </div>
@@ -457,7 +475,7 @@ has in total.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TextURL</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt"><a href="Collections.html#/s:9ProntoSDK0A18CollectionMapValueP">ProntoCollectionMapValue</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">TextURL</span><span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt"><a href="Collections.html#/s:9ProntoSDK0A18CollectionMapValueP">ProntoCollectionMapValue</a></span></code></pre>
 
                         </div>
                       </div>
@@ -501,8 +519,8 @@ has in total.</p>
           </section>
         </section>
         <section id="footer">
-          <p>© E-sites 2018</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© E-sites 2019</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

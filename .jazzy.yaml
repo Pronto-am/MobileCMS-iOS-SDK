@@ -2,13 +2,13 @@ clean: true
 author: E-sites
 author_url: https://www.e-sites.nl
 module: ProntoSDK
-module_version: 1.0
+module_version: 2.3.0
 output: documentation/
 exclude:
   - "Pods/**/*"
   - "ProntoSDKTests/**/*"
   - "ProntoSDKExample/**/*"
-copyright: '© E-sites 2018'
+copyright: '© E-sites 2019'
 theme: apple
 sdk: iphone
 min_acl: public
@@ -54,3 +54,8 @@ custom_categories:
     - Coordinate
     - TextURL
     - SortOrder
+
+  - name: Update check
+    children:
+    - ProntoAppUpdateCheck
+    - AppVersion

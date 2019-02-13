@@ -10,7 +10,6 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Section/Core" class="dashAnchor"></a>
     <a title="Core  Reference"></a>
     <header>
       <div class="content-wrapper">
@@ -134,6 +133,25 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="Update check.html">Update check</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ProntoAppUpdateCheck.html">ProntoAppUpdateCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AppVersion.html">AppVersion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Other Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/ProntoAppUpdateCheckDelegate.html">ProntoAppUpdateCheckDelegate</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -165,7 +183,7 @@
 <span class="n">config</span><span class="o">.</span><span class="n">clientID</span> <span class="o">=</span> <span class="s">"client_id"</span>
 <span class="n">config</span><span class="o">.</span><span class="n">clientSecret</span> <span class="o">=</span> <span class="s">"client_secret"</span>
 <span class="n">config</span><span class="o">.</span><span class="n">encryptionKey</span> <span class="o">=</span> <span class="s">"encryption_key"</span>
-<span class="n">config</span><span class="o">.</span><span class="n">plugins</span> <span class="o">=</span> <span class="p">[</span> <span class="o">.</span><span class="n">notifications</span><span class="p">,</span> <span class="o">.</span><span class="n">authentication</span> <span class="p">]</span>
+<span class="n">config</span><span class="o">.</span><span class="n">plugins</span> <span class="o">=</span> <span class="p">[</span> <span class="o">.</span><span class="n">notifications</span><span class="p">,</span> <span class="o">.</span><span class="n">authentication</span><span class="p">,</span> <span class="o">.</span><span class="n">updateChecker</span> <span class="p">]</span>
 <span class="kt">ProntoSDK</span><span class="o">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 </code></pre>
 
@@ -207,7 +225,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ProntoError</span> <span class="p">:</span> <span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ProntoError</span><span class="p">:</span> <span class="kt">Swift</span><span class="o">.</span><span class="kt">Error</span></code></pre>
 
                         </div>
                       </div>
@@ -271,7 +289,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ProntoPlugin</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ProntoPlugin</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -299,7 +317,7 @@
 
 <p>Always use <code><a href="Classes/ProntoAPIClient.html#/s:9ProntoSDK0A9APIClientC7defaultACvpZ">ProntoAPIClient.default</a></code></p>
 
-<p>Initialization is done through <code><a href="Classes/ProntoSDK.html#/s:9ProntoSDKAAC9configureyAA0A6ConfigCFZ">ProntoSDK.configure(...)</a></code></p>
+<p>Initialization is done through <code><a href="Classes/ProntoSDK.html#/s:9ProntoSDKAAC9configureyyAA0A6ConfigCFZ">ProntoSDK.configure(...)</a></code></p>
 
                         <a href="Classes/ProntoAPIClient.html" class="slightly-smaller">See more</a>
                       </div>
@@ -307,7 +325,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ProntoAPIClient</span> <span class="p">:</span> <span class="kt">PluginBase</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ProntoAPIClient</span><span class="p">:</span> <span class="kt">PluginBase</span></code></pre>
 
                         </div>
                       </div>
@@ -339,7 +357,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Text</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Text</span><span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">CustomStringConvertible</span></code></pre>
 
                         </div>
                       </div>
@@ -351,8 +369,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>© E-sites 2018</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>© E-sites 2019</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

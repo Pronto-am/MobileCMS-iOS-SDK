@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ProntoAppUpdateCheckDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/ProntoAppUpdateCheckDelegate" class="dashAnchor"></a>
+    <a title="ProntoAppUpdateCheckDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ProntoSDK Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ProntoSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ProntoAppUpdateCheckDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Core.html">Core</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoSDK.html">ProntoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoError.html">ProntoError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoConfig.html">ProntoConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoPlugin.html">ProntoPlugin</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAPIClient.html">ProntoAPIClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Text.html">Text</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Push notifications.html">Push notifications</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Segment.html">Segment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device.html">Device</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PushNotification.html">PushNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAPIClientNotificationsModule.html">ProntoAPIClientNotificationsModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoNotifications.html">ProntoNotifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoNotificationsDelegate.html">ProntoNotificationsDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WebviewController.html">WebviewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoNotificationsError.html">ProntoNotificationsError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Authentication.html">Authentication</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/User.html">User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAuthentication.html">ProntoAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAPIClientUserModule.html">ProntoAPIClientUserModule</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Collections.html">Collections</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoCollectionMappable.html">ProntoCollectionMappable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoCollectionMapper.html">ProntoCollectionMapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Collections.html#/s:9ProntoSDK0A18CollectionMapValueP">ProntoCollectionMapValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Pagination.html">Pagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoFilterable.html">ProntoFilterable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PaginatedResult.html">PaginatedResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoCollection.html">ProntoCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoCollectionError.html">ProntoCollectionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Coordinate.html">Coordinate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextURL.html">TextURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SortOrder.html">SortOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SortOrder/Direction.html">– Direction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Update check.html">Update check</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAppUpdateCheck.html">ProntoAppUpdateCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppVersion.html">AppVersion</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Other Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoAppUpdateCheckDelegate.html">ProntoAppUpdateCheckDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ProntoAppUpdateCheckDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ProntoAppUpdateCheckDelegate</span><span class="p">:</span> <span class="kd">class</span></code></pre>
+
+                </div>
+              </div>
+            <p>Delegate protocol to receive update</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A22AppUpdateCheckDelegateP06prontocdE0_10newVersionyAA0acdE0C_AA0cI0CtF"></a>
+                    <a name="//apple_ref/swift/Method/prontoAppUpdateCheck(_:newVersion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A22AppUpdateCheckDelegateP06prontocdE0_10newVersionyAA0acdE0C_AA0cI0CtF">prontoAppUpdateCheck(_:newVersion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Function that is called after a new version is available</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">prontoAppUpdateCheck</span><span class="p">(</span><span class="n">_</span> <span class="nv">updateCheck</span><span class="p">:</span> <span class="kt"><a href="../Classes/ProntoAppUpdateCheck.html">ProntoAppUpdateCheck</a></span><span class="p">,</span> <span class="nv">newVersion</span><span class="p">:</span> <span class="kt"><a href="../Classes/AppVersion.html">AppVersion</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>updateCheck</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ProntoAppUpdateCheck.html">ProntoAppUpdateCheck</a></code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newVersion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/AppVersion.html">AppVersion</a></code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© E-sites 2019</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

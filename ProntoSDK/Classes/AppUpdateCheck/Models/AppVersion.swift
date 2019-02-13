@@ -22,7 +22,7 @@ public class AppVersion: Decodable, CustomStringConvertible {
     var id: Int = 0
 
     /// The URL to redirect the user to, to download the update
-    public internal(set) var url: String = ""
+    public internal(set) var url: URL!
 
     /// The new version
     public internal(set) var version: String = ""
@@ -33,6 +33,7 @@ public class AppVersion: Decodable, CustomStringConvertible {
     /// Is this update a required update. (e.g. the user cannot continue without updating)
     public internal(set) var isRequired = false
 
+    /// :nodoc:
     public var description: String {
         return "<AppVersion> [ version: \(version), isRequired: \(isRequired) ]"
     }
