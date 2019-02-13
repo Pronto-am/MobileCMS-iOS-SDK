@@ -45,6 +45,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'AppUpdateCheck' do |ss|
     ss.dependency 'ProntoSDK/Core'
+    ss.dependency 'Erbium'
     ss.source_files = "ProntoSDK/Classes/AppUpdateCheck/**/*.{h,m,swift}"
   end
 

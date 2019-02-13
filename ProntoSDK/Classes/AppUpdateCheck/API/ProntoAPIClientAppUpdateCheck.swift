@@ -9,6 +9,8 @@
 import Foundation
 import Promises
 import Cobalt
+import Erbium
+import UIKit
 
 class ProntoAPIClientAppUpdateCheckModule {
     private weak var prontoAPIClient: ProntoAPIClient!
