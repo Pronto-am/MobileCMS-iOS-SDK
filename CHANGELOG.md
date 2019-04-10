@@ -1,5 +1,9 @@
 # ProntoSDK Changelog
 
+## v2.3.1
+- [Collections] Made `id`, `updateDate` and `createDate` not required
+- [Core] Made `request(_:)` function in `ProntoAPIClient` public
+
 ## v2.3.0
 - Added "Update Checker"
 

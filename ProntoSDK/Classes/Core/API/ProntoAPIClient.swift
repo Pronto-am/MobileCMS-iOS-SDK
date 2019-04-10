@@ -60,7 +60,14 @@ public class ProntoAPIClient: PluginBase {
         client.config.logger = ProntoLogger
     }
 
-    func request(_ requestObject: Cobalt.Request) -> Promise<JSON> {
+    /// Make a API request
+    ///
+    /// - Parameters:
+    ///   - requestObject: `Cobalt.Request`
+    ///
+    /// - Returns: `Promise<JSON>`
+
+    public func request(_ requestObject: Cobalt.Request) -> Promise<JSON> {
         return client.request(requestObject).recover { error throws -> Promise<JSON> in
             let prontoError = ProntoError(error: error)
             ProntoLogger.error("ProntoError: \(prontoError)")

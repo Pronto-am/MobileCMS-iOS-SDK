@@ -26,7 +26,6 @@ public class ProntoCollectionMapper {
         let mapper = ProntoCollectionMapper(json: json)
         var item = try T(mapper: mapper)
         item.id = id
-
         if let dateString = json["created_at"].string {
             item.createDate = DateFormatting.iso8601DateTimeFormatter.date(from: dateString) ?? Date()
         }

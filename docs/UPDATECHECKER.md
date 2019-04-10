@@ -29,15 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProntoAppUpdateCheckDeleg
                                                 message: "A new version (\(newVersion.version)) is available",
                                                 preferredStyle: .alert)
                                                 
-        controller.addAction(UIAlertAction(title: "Install", style: .default) { _ in
+        alertController.addAction(UIAlertAction(title: "Install", style: .default) { _ in
             UIApplication.shared.open(newVersion.url, options: [:], completionHandler: nil)
             exit(0)
         })
         if !newVersion.isRequired {
-            controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
         }
         
-        window?.rootViewController.present(controller.addAction, animated: true, completion: nil)
+        window?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }
 ```

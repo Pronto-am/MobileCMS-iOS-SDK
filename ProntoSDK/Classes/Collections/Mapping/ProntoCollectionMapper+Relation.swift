@@ -36,7 +36,8 @@ extension ProntoCollectionMapper {
         if jsonObject == .null {
             return
         }
-        object = try ProntoCollectionMapper.createCollectionEntry(type: T.self, json: jsonObject)
+        let newObject = try ProntoCollectionMapper.createCollectionEntry(type: T.self, json: jsonObject)
+        object = newObject
     }
 
     /// Map an array of collection relations

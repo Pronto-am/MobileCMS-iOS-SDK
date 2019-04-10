@@ -80,7 +80,6 @@ class ProntoSDKTestsCollections: ProntoSDKTests {
         expect(false.filterValue) == "false"
         expect((5.5).filterValue) == "5.5"
         let model = AllTestModel()
-        model.id = "5A53D389-B444-4659-9F15-1B5DE1379027"
         expect(model.filterValue) == model.id
     }
 
@@ -107,6 +106,7 @@ class ProntoSDKTestsCollections: ProntoSDKTests {
         expect(object.related?.name?.string(for: ProntoSDK.config.defaultLocale)) == "Gerelateerd"
         expect(object.related?.id) == "84B820FD-662A-452F-ACC4-61197AA8CC89"
         expect(object.relations.count) == 3
+        expect(object.relations.map { $0.id }).to(contain("1220F2CE-DB8C-425D-B3B4-D9DB0E0A988B"))
         if !isFull {
             expect(object.json).to(beNil())
 
