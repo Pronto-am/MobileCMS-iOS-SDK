@@ -30,8 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProntoAppUpdateCheckDeleg
                                                 preferredStyle: .alert)
                                                 
         alertController.addAction(UIAlertAction(title: "Install", style: .default) { _ in
-            UIApplication.shared.open(newVersion.url, options: [:], completionHandler: nil)
-            exit(0)
+            UIApplication.shared.open(newVersion.url, options: [:]) { _ in
+            	exit(0)
+            }
         })
         if !newVersion.isRequired {
             alertController.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
