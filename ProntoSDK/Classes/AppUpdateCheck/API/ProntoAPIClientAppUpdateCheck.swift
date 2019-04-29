@@ -20,11 +20,18 @@ class ProntoAPIClientAppUpdateCheckModule {
     }
 
     func check() -> Promise<AppVersion> {
+        var version = Bundle.main.version
+        let count = version.components(separatedBy: ".").count
+        if count == 1 {
+            version += ".0.0"
+        } else if count == 2 {
+            version += ".0"
+        }
         let requestObject = Cobalt.Request {
             $0.path = "/bundles/prontomobile/versions.php"
             $0.authentication = .oauth2(.clientCredentials)
             $0.parameters = [
-                "version": Bundle.main.version,
+                "version": version,
                 "platform": "ios"
             ]
         }

@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.3.2
+- [UpdateChecker] Force semantic versioning
+
 ## v2.3.1
 - [Collections] Made `id`, `updateDate` and `createDate` not required
 - [Core] Made `request(_:)` function in `ProntoAPIClient` public
