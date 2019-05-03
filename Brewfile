@@ -1,2 +1,3 @@
 brew 'swiftlint'
-brew 'carthage'
+tap 'JamitLabs/Accio'
+brew 'accio'
