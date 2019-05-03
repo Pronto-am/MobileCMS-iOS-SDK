@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2148385D0601F47F32F5A0502333E10A /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76031761469D87DBF35370B5A87F9D14 /* RxRelay.framework */; };
+		24A882493A384057BAA3EC941DD001F0 /* Nimble.framework in Accio */ = {isa = PBXBuildFile; fileRef = 5A9498B4FF722F6D66456CB41E9403DB /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		3C4F54154A33354BE79581941B3E2A9C /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE03C0C2E9D2E85674A249CAF5B25F1 /* Cache.framework */; };
+		3F4FA458E9748660577A2481D6F13AF3 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10CCB4D642158FD87F0690E6090F9419 /* RxCocoa.framework */; };
+		6C885BFF6451248031D1D7559B40F1E5 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A9498B4FF722F6D66456CB41E9403DB /* Nimble.framework */; };
+		79782DF36278A571C42B8F8EC04FD8A9 /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F9FE8C525E25D6B3E02DA3B5BE4C4A4 /* FBLPromises.framework */; };
+		89959A0FC42FF99D6DE4A4A5510CE975 /* Promises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8028884FEA8CCD044E92A57B128E1DD2 /* Promises.framework */; };
 		C3124607210065AE00ACB824 /* ProntoAPIClient+authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3124606210065AE00ACB824 /* ProntoAPIClient+authentication.swift */; };
 		C319597A20E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319597920E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift */; };
 		C319598320E5052C00AF83B4 /* oauth_token.json in Resources */ = {isa = PBXBuildFile; fileRef = C319598220E5052C00AF83B4 /* oauth_token.json */; };
@@ -75,21 +82,10 @@
 		C3DFAEE322140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFAEE222140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift */; };
 		C3DFEFA52056D8F300CC744C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFEFA42056D8F300CC744C /* Text.swift */; };
 		C3FE2433212D37400061C8F6 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE2432212D37400061C8F6 /* KeychainHelper.swift */; };
-		C3FF3B6E2126C67C00DB75D2 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B632126C67B00DB75D2 /* RxCocoa.framework */; };
-		C3FF3B6F2126C67C00DB75D2 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B642126C67B00DB75D2 /* RxSwift.framework */; };
-		C3FF3B702126C67C00DB75D2 /* Einsteinium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B652126C67B00DB75D2 /* Einsteinium.framework */; };
-		C3FF3B712126C67C00DB75D2 /* Promises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B662126C67B00DB75D2 /* Promises.framework */; };
-		C3FF3B722126C67C00DB75D2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B672126C67B00DB75D2 /* SwiftyJSON.framework */; };
-		C3FF3B732126C67C00DB75D2 /* Cobalt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B682126C67B00DB75D2 /* Cobalt.framework */; };
-		C3FF3B742126C67C00DB75D2 /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B692126C67B00DB75D2 /* Cache.framework */; };
-		C3FF3B762126C67C00DB75D2 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B6B2126C67C00DB75D2 /* KeychainAccess.framework */; };
-		C3FF3B772126C67C00DB75D2 /* Erbium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B6C2126C67C00DB75D2 /* Erbium.framework */; };
-		C3FF3B782126C67C00DB75D2 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B6D2126C67C00DB75D2 /* CryptoSwift.framework */; };
-		C3FF3B7C2126C68800DB75D2 /* Lithium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B792126C68800DB75D2 /* Lithium.framework */; };
-		C3FF3B7D2126C68800DB75D2 /* Mockingjay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B7A2126C68800DB75D2 /* Mockingjay.framework */; };
-		C3FF3B7E2126C68800DB75D2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B7B2126C68800DB75D2 /* Nimble.framework */; };
-		C3FF3B7F2126C68F00DB75D2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B672126C67B00DB75D2 /* SwiftyJSON.framework */; };
-		C3FF3B802126C69700DB75D2 /* Promises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF3B662126C67B00DB75D2 /* Promises.framework */; };
+		DE2C9D5885565FB21BE165C9DCE708F5 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56B16F76E3F166D5D50349E360065AB /* KeychainAccess.framework */; };
+		E2E3FF83EDC8826CEADFFADECB10E93C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50E6B8439E3403F16F4DB12A5362ADE /* RxSwift.framework */; };
+		F11A3D3644C709118E53C3BBF39B5A8D /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850C28A2E9E2A2A25105BFFB6E266212 /* CryptoSwift.framework */; };
+		F82403AEC7DE7B8F657E2C148EA311B2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E0DEA67CF87646884B269ED64E08DF /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +98,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		35FAFC1FB9456AC9DE209DE7D8E693B8 /* Accio */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstSubfolderSpec = 10;
+			files = (
+				24A882493A384057BAA3EC941DD001F0 /* Nimble.framework in Accio */,
+			);
+			name = Accio;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		10CCB4D642158FD87F0690E6090F9419 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Dependencies/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		1F9FE8C525E25D6B3E02DA3B5BE4C4A4 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = FBLPromises.framework; path = Dependencies/iOS/FBLPromises.framework; sourceTree = "<group>"; };
+		5A9498B4FF722F6D66456CB41E9403DB /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Dependencies/iOS/Nimble.framework; sourceTree = "<group>"; };
+		76031761469D87DBF35370B5A87F9D14 /* RxRelay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Dependencies/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		8028884FEA8CCD044E92A57B128E1DD2 /* Promises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = Promises.framework; path = Dependencies/iOS/Promises.framework; sourceTree = "<group>"; };
+		850C28A2E9E2A2A25105BFFB6E266212 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Dependencies/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		92E0DEA67CF87646884B269ED64E08DF /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SwiftyJSON.framework; path = Dependencies/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		A50E6B8439E3403F16F4DB12A5362ADE /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Dependencies/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		C3124606210065AE00ACB824 /* ProntoAPIClient+authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProntoAPIClient+authentication.swift"; sourceTree = "<group>"; };
 		C319597920E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoAPIClientUserModule.swift; sourceTree = "<group>"; };
 		C319598220E5052C00AF83B4 /* oauth_token.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oauth_token.json; sourceTree = "<group>"; };
@@ -174,19 +191,8 @@
 		C3DFAEE222140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoSDKTests_AppVersion.swift; sourceTree = "<group>"; };
 		C3DFEFA42056D8F300CC744C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		C3FE2432212D37400061C8F6 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
-		C3FF3B632126C67B00DB75D2 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		C3FF3B642126C67B00DB75D2 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		C3FF3B652126C67B00DB75D2 /* Einsteinium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Einsteinium.framework; path = Carthage/Build/iOS/Einsteinium.framework; sourceTree = "<group>"; };
-		C3FF3B662126C67B00DB75D2 /* Promises.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Promises.framework; path = Carthage/Build/iOS/Promises.framework; sourceTree = "<group>"; };
-		C3FF3B672126C67B00DB75D2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		C3FF3B682126C67B00DB75D2 /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = Carthage/Build/iOS/Cobalt.framework; sourceTree = "<group>"; };
-		C3FF3B692126C67B00DB75D2 /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/iOS/Cache.framework; sourceTree = "<group>"; };
-		C3FF3B6B2126C67C00DB75D2 /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
-		C3FF3B6C2126C67C00DB75D2 /* Erbium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Erbium.framework; path = Carthage/Build/iOS/Erbium.framework; sourceTree = "<group>"; };
-		C3FF3B6D2126C67C00DB75D2 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
-		C3FF3B792126C68800DB75D2 /* Lithium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lithium.framework; path = Carthage/Build/iOS/Lithium.framework; sourceTree = "<group>"; };
-		C3FF3B7A2126C68800DB75D2 /* Mockingjay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mockingjay.framework; path = Carthage/Build/iOS/Mockingjay.framework; sourceTree = "<group>"; };
-		C3FF3B7B2126C68800DB75D2 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		F56B16F76E3F166D5D50349E360065AB /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Dependencies/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		FBE03C0C2E9D2E85674A249CAF5B25F1 /* Cache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Dependencies/iOS/Cache.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,16 +200,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3FF3B712126C67C00DB75D2 /* Promises.framework in Frameworks */,
-				C3FF3B702126C67C00DB75D2 /* Einsteinium.framework in Frameworks */,
-				C3FF3B6F2126C67C00DB75D2 /* RxSwift.framework in Frameworks */,
-				C3FF3B6E2126C67C00DB75D2 /* RxCocoa.framework in Frameworks */,
-				C3FF3B722126C67C00DB75D2 /* SwiftyJSON.framework in Frameworks */,
-				C3FF3B742126C67C00DB75D2 /* Cache.framework in Frameworks */,
-				C3FF3B782126C67C00DB75D2 /* CryptoSwift.framework in Frameworks */,
-				C3FF3B772126C67C00DB75D2 /* Erbium.framework in Frameworks */,
-				C3FF3B762126C67C00DB75D2 /* KeychainAccess.framework in Frameworks */,
-				C3FF3B732126C67C00DB75D2 /* Cobalt.framework in Frameworks */,
+				F82403AEC7DE7B8F657E2C148EA311B2 /* SwiftyJSON.framework in Frameworks */,
+				DE2C9D5885565FB21BE165C9DCE708F5 /* KeychainAccess.framework in Frameworks */,
+				F11A3D3644C709118E53C3BBF39B5A8D /* CryptoSwift.framework in Frameworks */,
+				3C4F54154A33354BE79581941B3E2A9C /* Cache.framework in Frameworks */,
+				79782DF36278A571C42B8F8EC04FD8A9 /* FBLPromises.framework in Frameworks */,
+				89959A0FC42FF99D6DE4A4A5510CE975 /* Promises.framework in Frameworks */,
+				E2E3FF83EDC8826CEADFFADECB10E93C /* RxSwift.framework in Frameworks */,
+				2148385D0601F47F32F5A0502333E10A /* RxRelay.framework in Frameworks */,
+				3F4FA458E9748660577A2481D6F13AF3 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,18 +216,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3FF3B802126C69700DB75D2 /* Promises.framework in Frameworks */,
-				C3FF3B7D2126C68800DB75D2 /* Mockingjay.framework in Frameworks */,
 				C34A6861204FFE52009E3D83 /* ProntoSDK.framework in Frameworks */,
-				C3FF3B7C2126C68800DB75D2 /* Lithium.framework in Frameworks */,
-				C3FF3B7E2126C68800DB75D2 /* Nimble.framework in Frameworks */,
-				C3FF3B7F2126C68F00DB75D2 /* SwiftyJSON.framework in Frameworks */,
+				6C885BFF6451248031D1D7559B40F1E5 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5141166B700AC6F4B459CAD842199D8A /* ProntoSDK */ = {
+			isa = PBXGroup;
+			children = (
+				FBE03C0C2E9D2E85674A249CAF5B25F1 /* Cache.framework */,
+				850C28A2E9E2A2A25105BFFB6E266212 /* CryptoSwift.framework */,
+				1F9FE8C525E25D6B3E02DA3B5BE4C4A4 /* FBLPromises.framework */,
+				F56B16F76E3F166D5D50349E360065AB /* KeychainAccess.framework */,
+				8028884FEA8CCD044E92A57B128E1DD2 /* Promises.framework */,
+				10CCB4D642158FD87F0690E6090F9419 /* RxCocoa.framework */,
+				76031761469D87DBF35370B5A87F9D14 /* RxRelay.framework */,
+				A50E6B8439E3403F16F4DB12A5362ADE /* RxSwift.framework */,
+				92E0DEA67CF87646884B269ED64E08DF /* SwiftyJSON.framework */,
+			);
+			name = ProntoSDK;
+			sourceTree = "<group>";
+		};
+		5CBB4E0998693DB068A2A2E70F337550 /* ProntoSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A9498B4FF722F6D66456CB41E9403DB /* Nimble.framework */,
+			);
+			name = ProntoSDKTests;
+			sourceTree = "<group>";
+		};
 		C31246052100659D00ACB824 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,10 +259,10 @@
 		C34A684D204FFE51009E3D83 = {
 			isa = PBXGroup;
 			children = (
-				C3FF3B252126BBCA00DB75D2 /* Frameworks */,
 				C34A6859204FFE51009E3D83 /* ProntoSDK */,
 				C34A6864204FFE52009E3D83 /* ProntoSDKTests */,
 				C34A6858204FFE51009E3D83 /* Products */,
+				D05F341981BD09292C45E36C8B4B2D8D /* Dependencies */,
 			);
 			sourceTree = "<group>";
 		};
@@ -541,24 +566,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		C3FF3B252126BBCA00DB75D2 /* Frameworks */ = {
+		D05F341981BD09292C45E36C8B4B2D8D /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				C3FF3B792126C68800DB75D2 /* Lithium.framework */,
-				C3FF3B7A2126C68800DB75D2 /* Mockingjay.framework */,
-				C3FF3B7B2126C68800DB75D2 /* Nimble.framework */,
-				C3FF3B692126C67B00DB75D2 /* Cache.framework */,
-				C3FF3B682126C67B00DB75D2 /* Cobalt.framework */,
-				C3FF3B6D2126C67C00DB75D2 /* CryptoSwift.framework */,
-				C3FF3B652126C67B00DB75D2 /* Einsteinium.framework */,
-				C3FF3B6C2126C67C00DB75D2 /* Erbium.framework */,
-				C3FF3B6B2126C67C00DB75D2 /* KeychainAccess.framework */,
-				C3FF3B662126C67B00DB75D2 /* Promises.framework */,
-				C3FF3B632126C67B00DB75D2 /* RxCocoa.framework */,
-				C3FF3B642126C67B00DB75D2 /* RxSwift.framework */,
-				C3FF3B672126C67B00DB75D2 /* SwiftyJSON.framework */,
+				5141166B700AC6F4B459CAD842199D8A /* ProntoSDK */,
+				5CBB4E0998693DB068A2A2E70F337550 /* ProntoSDKTests */,
 			);
-			name = Frameworks;
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -584,6 +598,7 @@
 				C34A6854204FFE51009E3D83 /* Headers */,
 				C34A6855204FFE51009E3D83 /* Resources */,
 				C34A6871204FFF53009E3D83 /* swiftlint */,
+				A0EB9DDBC005D44D79C1E3E4D98FBBCF /* Accio */,
 			);
 			buildRules = (
 			);
@@ -601,6 +616,7 @@
 				C34A685C204FFE51009E3D83 /* Sources */,
 				C34A685D204FFE51009E3D83 /* Frameworks */,
 				C34A685E204FFE51009E3D83 /* Resources */,
+				35FAFC1FB9456AC9DE209DE7D8E693B8 /* Accio */,
 			);
 			buildRules = (
 			);
@@ -683,6 +699,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A0EB9DDBC005D44D79C1E3E4D98FBBCF /* Accio */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Dependencies/iOS/Cache.framework",
+				"$(SRCROOT)/Dependencies/iOS/CryptoSwift.framework",
+				"$(SRCROOT)/Dependencies/iOS/FBLPromises.framework",
+				"$(SRCROOT)/Dependencies/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Dependencies/iOS/Promises.framework",
+				"$(SRCROOT)/Dependencies/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Dependencies/iOS/RxRelay.framework",
+				"$(SRCROOT)/Dependencies/iOS/RxSwift.framework",
+				"$(SRCROOT)/Dependencies/iOS/SwiftyJSON.framework",
+			);
+			name = Accio;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cache.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CryptoSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBLPromises.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Promises.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		C34A6871204FFF53009E3D83 /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -911,6 +959,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Dependencies/iOS",
 				);
 				INFOPLIST_FILE = ProntoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -937,6 +986,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Dependencies/iOS",
 				);
 				INFOPLIST_FILE = ProntoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -956,6 +1006,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Dependencies/iOS",
 				);
 				INFOPLIST_FILE = ProntoSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
@@ -973,6 +1024,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Dependencies/iOS",
 				);
 				INFOPLIST_FILE = ProntoSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";

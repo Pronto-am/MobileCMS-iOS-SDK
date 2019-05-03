@@ -27,17 +27,7 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <CodeCoverageTargets>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C34A6856204FFE51009E3D83"
-            BuildableName = "ProntoSDK.framework"
-            BlueprintName = "ProntoSDK"
-            ReferencedContainer = "container:ProntoSDK.xcodeproj">
-         </BuildableReference>
-      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -83,9 +73,9 @@
       </MacroExpansion>
       <AdditionalOptions>
          <AdditionalOption
+            isEnabled = "YES"
             key = "NSZombieEnabled"
-            value = "YES"
-            isEnabled = "YES">
+            value = "YES">
          </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>

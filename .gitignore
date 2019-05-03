@@ -30,3 +30,7 @@ vendor/bundle
 buildkite-script-*
 test_output
 Carthage/
+
+# Accio dependency management
+Dependencies/
+.accio/
