@@ -1,3 +1,3 @@
 brew "swiftlint"
-tap "JamitLabs/Accio"
+tap "jamitLabs/accio"
 brew "accio"
