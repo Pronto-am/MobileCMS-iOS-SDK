@@ -38,6 +38,7 @@ public class Device: CustomStringConvertible, Codable, Equatable {
         return lhs.id == rhs.id
     }
 
+    /// :nodoc:
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

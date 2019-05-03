@@ -141,6 +141,7 @@ public class ProntoNotifications: PluginBase {
         }
     }
 
+    /// :nodoc:
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

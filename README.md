@@ -5,7 +5,7 @@
  <i>The official Pronto iOS SDK</i>
 <br><br>
 <a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/p/ProntoSDK.svg?style=flat"></a>
-<img src="https://img.shields.io/badge/swift-v4.2-f97a33.svg?longCache=true&style=flat">
+<img src="https://img.shields.io/badge/swift-v5.0-f97a33.svg?longCache=true&style=flat">
 <a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/v/ProntoSDK.svg?style=flat"></a> 
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/JamitLabs/Accio"><img src="https://img.shields.io/badge/Accio-supported-0A7CF5.svg?style=flat"></a>

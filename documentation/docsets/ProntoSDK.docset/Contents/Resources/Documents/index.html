@@ -13,7 +13,7 @@
     <a title="ProntoSDK  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ProntoSDK Docs</a> (98% documented)</p>
+        <p><a href="index.html">ProntoSDK Docs</a> (100% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -142,11 +142,6 @@
               <li class="nav-group-task">
                 <a href="Classes/AppVersion.html">AppVersion</a>
               </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Other Protocols.html">Other Protocols</a>
-            <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Protocols/ProntoAppUpdateCheckDelegate.html">ProntoAppUpdateCheckDelegate</a>
               </li>
@@ -165,7 +160,7 @@
  <i>The official Pronto iOS SDK</i>
 <br><br>
 <a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/p/ProntoSDK.svg?style=flat"></a>
-<img src="https://img.shields.io/badge/swift-v4.2-f97a33.svg?longCache=true&style=flat">
+<img src="https://img.shields.io/badge/swift-v5.0-f97a33.svg?longCache=true&style=flat">
 <a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/v/ProntoSDK.svg?style=flat"></a> 
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/JamitLabs/Accio"><img src="https://img.shields.io/badge/Accio-supported-0A7CF5.svg?style=flat"></a>
@@ -214,11 +209,11 @@
 <h3 id='accio' class='heading'>Accio</h3>
 
 <p>Add the following dependency to your Package.swift:</p>
-<pre class="highlight ruby"><code><span class="n">github</span> <span class="s2">"Pronto-am/MobileCMS-iOS-SDK"</span>
+<pre class="highlight swift"><code> <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/Pronto-am/MobileCMS-iOS-SDK"</span><span class="p">,</span> <span class="o">.</span><span class="nf">branch</span><span class="p">(</span><span class="s">"master"</span><span class="p">)</span>
 </code></pre>
 
 <p>And run:</p>
-<pre class="highlight shell"><code>carthage update
+<pre class="highlight shell"><code>accio install
 </code></pre>
 <h2 id='development' class='heading'>Development</h2>
 

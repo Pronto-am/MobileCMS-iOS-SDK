@@ -28,11 +28,11 @@ collection.list().closure { value, error in
 ```
 
 ## Result closures
-Using [antitypical's Result](https://github.com/antitypical/Result):
+Using [Swift 5's Result](https://developer.apple.com/documentation/swift/result):
 
 ```swift
 extension Promise {
-    func closure<U: Swift.Error>(_ handle: @escaping ((Result<Value, U>) -> Void)) {
+    func asyncResult<Failure: Swift.Error>(_ handle: @escaping ((Result<Value, Failure>) -> Void)) {
         self.then { result in
             handle(.success(result))
         }.catch { error in
@@ -46,12 +46,12 @@ And use it like so:
 
 ```swift
 let collection = ProntoCollection<Location>()
-collection.list().closure { result in
+collection.list().asyncResult { result in
     switch result {
-        case .success(let value):
+    case .success(let value):
         break
         
-        case .failure(let error):
+    case .failure(let error):
         break
     }
 }
@@ -67,9 +67,10 @@ extension Promise: ReactiveCompatible { }
 
 extension Reactive where Base: Promise {
     func asObservable() -> Observable<Value> {
-        return Observable<Value>.create { observer in
-            self.base.then { value in
+        return Observable<Value>.create { [base] observer in
+            base.then { value in
                 observer.onNext(value)
+                observer.onCompleted()
             }.catch { error in
                 observer.onError(error)
             }
@@ -83,5 +84,11 @@ And use it like so:
 
 ```swift
 let collection = ProntoCollection<Location>()
-collection.list().rx.asObservable() // ... rxswift etc.
+collection.list().rx.asObservable()
+    .asSingle()
+    .subscribe(onSuccess: { location in 
+        // Handle location
+    }, onError: { error in
+        // Handle error 
+}).disposedBy(disposeBag)
 ```

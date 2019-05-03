@@ -128,6 +128,7 @@ public class ProntoAuthentication: PluginBase {
         _clear()
     }
 
+    /// :nodoc:
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
