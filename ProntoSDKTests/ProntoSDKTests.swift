@@ -58,7 +58,6 @@ class TestLogger: Cobalt.Logger {
     }
 }
 
-
 class ProntoSDKTests: XCTestCase {
     let apiVersion = "v1"
     let apiClient = ProntoAPIClient.default
