@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.4.0
+- Accio compatible
+
 ## v2.3.2
 - [UpdateChecker] Force semantic versioning
 

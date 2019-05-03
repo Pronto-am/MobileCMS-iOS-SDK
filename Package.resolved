@@ -2,11 +2,29 @@
   "object": {
     "pins": [
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": null,
+          "revision": "75bba56748359f297a83f620d45f72cf4ebee4e7",
+          "version": "4.8.2"
+        }
+      },
+      {
         "package": "Cache",
         "repositoryURL": "https://github.com/Igor-Palaguta/Cache",
         "state": {
           "branch": null,
           "revision": "560f00a9a9549db161ca70d96eed74fc580b03e3",
+          "version": null
+        }
+      },
+      {
+        "package": "Cobalt",
+        "repositoryURL": "https://github.com/e-sites/Cobalt",
+        "state": {
+          "branch": "master",
+          "revision": "97bff49d43282a10d4a753002d7976ad4eec6409",
           "version": null
         }
       },
@@ -20,12 +38,39 @@
         }
       },
       {
+        "package": "Einsteinium",
+        "repositoryURL": "https://github.com/e-sites/Einsteinium",
+        "state": {
+          "branch": "master",
+          "revision": "05c6b7bfeba456ea88fc35f53c03e6aad1db6a2d",
+          "version": null
+        }
+      },
+      {
+        "package": "Erbium",
+        "repositoryURL": "https://github.com/e-sites/Erbium",
+        "state": {
+          "branch": "master",
+          "revision": "15bbf1243c69161674988db51eda7d61932d799d",
+          "version": null
+        }
+      },
+      {
         "package": "KeychainAccess",
         "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess",
         "state": {
           "branch": null,
           "revision": "0046db4ab8fd7be31a59e57912dbb96639ad8ce9",
           "version": "3.2.0"
+        }
+      },
+      {
+        "package": "Mockingjay",
+        "repositoryURL": "https://github.com/e-sites/Mockingjay",
+        "state": {
+          "branch": "master",
+          "revision": "496b7859898732364e7e7b7d16cd124843c69f42",
+          "version": null
         }
       },
       {

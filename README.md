@@ -8,6 +8,7 @@
 <img src="https://img.shields.io/badge/swift-v4.2-f97a33.svg?longCache=true&style=flat">
 <a href="https://cocoapods.org/pods/ProntoSDK"><img src="https://img.shields.io/cocoapods/v/ProntoSDK.svg?style=flat"></a> 
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+<a href="https://github.com/JamitLabs/Accio"><img src="https://img.shields.io/badge/Accio-supported-0A7CF5.svg?style=flat"></a>
 <a href="LICENSE"><img src="https://img.shields.io/github/license/pronto-am/mobilecms-ios-sdk.svg?style=flat"></a>
 <a href="https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html"><img src="documentation/badge.svg"></a>
 <a href="https://codecov.io/gh/pronto-am/MobileCMS-iOS-SDK"><img src="https://img.shields.io/codecov/c/github/Pronto-am/MobileCMS-iOS-SDK.svg?style=flat"></a>
@@ -60,6 +61,20 @@ And run:
 
 ```shell
 carthage update
+```
+
+### Accio
+
+Add the following dependency to your Package.swift:
+
+```swift
+ .package(url: "https://github.com/Pronto-am/MobileCMS-iOS-SDK", .branch("master")
+```
+
+And run:
+
+```shell
+accio install
 ```
 
 ## Development

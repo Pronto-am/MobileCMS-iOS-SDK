@@ -1,6 +1,26 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/bvkuijck/Desktop/workspace/ios/ProntoSDK/ProntoSDK/Classes/Authentication/ProntoAuthentication.swift",
+      "line": 131,
+      "symbol": "ProntoAuthentication.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bvkuijck/Desktop/workspace/ios/ProntoSDK/ProntoSDK/Classes/Notifications/Models/Device.swift",
+      "line": 41,
+      "symbol": "Device.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bvkuijck/Desktop/workspace/ios/ProntoSDK/ProntoSDK/Classes/Notifications/ProntoNotifications.swift",
+      "line": 144,
+      "symbol": "ProntoNotifications.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/bvkuijck/Desktop/workspace/ios/ProntoSDK"
 }

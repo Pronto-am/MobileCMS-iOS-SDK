@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "ProntoSDK",
     products: [
-        .library(name: "ProntoSDK", targets: ["ProntoSDK"])
+        .library(name: "ProntoSDK", targets: ["ProntoSDK", "ProntoSDKTests"])
     ],
     dependencies: [
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON", .upToNextMajor(from: "5.0.0")),
@@ -16,13 +16,12 @@ let package = Package(
 
         // Testing
         .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "8.0.1")),
+        .package(url: "https://github.com/e-sites/Mockingjay", .branch("master")),
 
         // E-sites
-//        .package(url: "https://github.com/e-sites/Cobalt", .branch("master")),
-        .package(url: "../#ios-suite/Erbium", .branch("master")),
-//        .package(url: "https://github.com/e-sites/Einsteinium", .branch("master")),
-//        .package(url: "https://github.com/e-sites/Lithium", .branch("master")),
-//        .package(url: "https://github.com/e-sites/Mockingjay", .branch("master"))
+        .package(url: "https://github.com/e-sites/Cobalt", .branch("master")),
+        .package(url: "https://github.com/e-sites/Erbium", .branch("master")),
+        .package(url: "https://github.com/e-sites/Einsteinium", .branch("master"))
     ],
     targets: [
         .target(
@@ -34,7 +33,9 @@ let package = Package(
                 "Cache",
                 "Promises",
                 "RxSwift",
-                "Erbium"
+                "Erbium",
+                "Einsteinium",
+                "Cobalt"
             ],
             path: "ProntoSDK"
         ),
@@ -43,7 +44,7 @@ let package = Package(
             dependencies: [
                 "Nimble",
                 "Mockingjay",
-                "Lithium"
+                "Cobalt"
             ],
             path: "ProntoSDKTests"
         )

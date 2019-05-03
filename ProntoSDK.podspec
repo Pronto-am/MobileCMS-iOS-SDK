@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "ProntoSDK"
-  s.version      = "2.3.2"
+  s.version      = "2.4.0"
   s.author       = { "Bas van Kuijck" => "bas@e-sites.nl" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.homepage     = "http://www.e-sites.nl"
   s.summary      = "_THE_ Swift iOS Pronto SDK"
-  s.source       = { :git => "https://github.com/Pronto-am/MobileCMS-iOS-SDK.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Pronto-am/MobileCMS-iOS-SDK.git", :tag => "v#{s.version}" }
   s.source_files = "ProntoSDK/ProntoSDK.h"
   s.public_header_files  = "ProntoSDK/ProntoSDK.h"
   s.platform     = :ios, '10.0'
