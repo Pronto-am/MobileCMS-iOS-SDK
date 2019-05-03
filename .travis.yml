@@ -1,6 +1,10 @@
 language: objective-c
 osx_image: xcode10.2
 
+addons:
+  homebrew:
+    brewfile: true
+
 branches:
   only:
   - master
@@ -12,8 +16,6 @@ cache:
   - .accio
 
 before_install:
-  - brew bundle
-  - bundle install
   - accio install
 
 script:
