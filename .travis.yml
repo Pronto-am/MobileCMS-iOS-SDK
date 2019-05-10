@@ -16,6 +16,7 @@ cache:
 
 script:
   - set -o pipefail
+  - bundle install --path vendor/bundle
   - pod lib lint --quick
   - travis_retry fastlane travis
 
