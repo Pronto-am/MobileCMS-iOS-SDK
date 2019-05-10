@@ -9,7 +9,7 @@ branches:
   only:
   - master
 
-cache: 
+cache:
   directories:
   - vendor/bundle
   - Carthage
@@ -17,6 +17,7 @@ cache:
 script:
   - set -o pipefail
   - bundle install --path vendor/bundle
+  - carthage bootstrap --cache-builds --platform iOS
   - pod lib lint --quick
   - travis_retry fastlane travis
 
