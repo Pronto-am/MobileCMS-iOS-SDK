@@ -23,9 +23,9 @@
         "package": "Cobalt",
         "repositoryURL": "https://github.com/e-sites/Cobalt",
         "state": {
-          "branch": "master",
-          "revision": "97bff49d43282a10d4a753002d7976ad4eec6409",
-          "version": null
+          "branch": null,
+          "revision": "fc459b1eb4b18feb7bb68b349441b478d6b0c13a",
+          "version": "5.8.2"
         }
       },
       {
@@ -87,7 +87,7 @@
         "repositoryURL": "https://github.com/google/promises",
         "state": {
           "branch": null,
-          "revision": "fec4ae186eb294ddeb123d5227dd4848e1a821f3",
+          "revision": "6b6f4fe3385ed37389fb231bc40be81de2f1230f",
           "version": "1.2.8"
         }
       },

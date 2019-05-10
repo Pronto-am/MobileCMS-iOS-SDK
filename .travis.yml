@@ -8,15 +8,11 @@ addons:
 branches:
   only:
   - master
-  - accio
 
 cache: 
   directories:
   - vendor/bundle
-  - .accio
-
-before_install:
-  - accio install
+  - Carthage
 
 script:
   - set -o pipefail

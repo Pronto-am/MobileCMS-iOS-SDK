@@ -20,6 +20,20 @@
                ReferencedContainer = "container:ProntoSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C34A685F204FFE51009E3D83"
+               BuildableName = "ProntoSDKTests.xctest"
+               BlueprintName = "ProntoSDKTests"
+               ReferencedContainer = "container:ProntoSDK.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -73,9 +87,9 @@
       </MacroExpansion>
       <AdditionalOptions>
          <AdditionalOption
-            isEnabled = "YES"
             key = "NSZombieEnabled"
-            value = "YES">
+            value = "YES"
+            isEnabled = "YES">
          </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>

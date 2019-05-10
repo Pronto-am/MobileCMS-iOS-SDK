@@ -19,7 +19,7 @@ let package = Package(
         .package(url: "https://github.com/e-sites/Mockingjay", .branch("master")),
 
         // E-sites
-        .package(url: "https://github.com/e-sites/Cobalt", .branch("master")),
+        .package(url: "https://github.com/e-sites/Cobalt", .upToNextMajor(from: "5.8.2")),
         .package(url: "https://github.com/e-sites/Erbium", .branch("master")),
         .package(url: "https://github.com/e-sites/Einsteinium", .branch("master"))
     ],

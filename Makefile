@@ -1,6 +1,6 @@
 setup:
 	brew bundle
-	accio init -p "ProntoSDK" -t "ProntoSDK"
+	carthage bootstrap --cache-builds --platform iOS
 	@echo " "
 	@echo "\033[0;33m ▸ \033[0m\033[0;32mProject ready for testing / development, open ProntoSDK.xcodeproj\033[0m"
 

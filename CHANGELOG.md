@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.4.1
+- Changed build pipeline 
+
 ## v2.4.0
 - Accio compatible
 
