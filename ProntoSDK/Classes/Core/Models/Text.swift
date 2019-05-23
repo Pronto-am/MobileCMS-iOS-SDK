@@ -10,7 +10,7 @@ import Foundation
 
 /// A holder for a localized piece of text
 public struct Text: Codable, CustomStringConvertible {
-    private var localizationDictionary: [String: String] = [:]
+    private(set) var localizationDictionary: [String: String] = [:]
 
     init() {
 

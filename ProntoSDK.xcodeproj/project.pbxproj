@@ -83,6 +83,11 @@
 		C3B76BA420FF8A56004B7578 /* ProntoCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76BA320FF8A56004B7578 /* ProntoCollectionMapper.swift */; };
 		C3B76BAA2100617E004B7578 /* Memoization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76BA92100617E004B7578 /* Memoization.swift */; };
 		C3B76BAD21006352004B7578 /* ProntoAPIClient+notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76BAC21006352004B7578 /* ProntoAPIClient+notifications.swift */; };
+		C3BCC38A2296BD00005BFECA /* ProntoAPIClient+localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCC3892296BD00005BFECA /* ProntoAPIClient+localization.swift */; };
+		C3BCC38C2296BD0C005BFECA /* ProntoLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCC38B2296BD0C005BFECA /* ProntoLocalization.swift */; };
+		C3BCC38F2296BDB4005BFECA /* ProntoAPIClientLocalizationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCC38E2296BDB4005BFECA /* ProntoAPIClientLocalizationModule.swift */; };
+		C3BCC3912296C1AF005BFECA /* v1_localization.json in Resources */ = {isa = PBXBuildFile; fileRef = C3BCC3902296C1AF005BFECA /* v1_localization.json */; };
+		C3BCC3932296C1BB005BFECA /* ProntoSDKTests_Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCC3922296C1BB005BFECA /* ProntoSDKTests_Localization.swift */; };
 		C3CB12A6205277F90095584D /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12A5205277F90095584D /* JSON.swift */; };
 		C3CB12AA2052BB0F0095584D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12A92052BB0F0095584D /* String.swift */; };
 		C3CB12AC2052C1710095584D /* FirebaseLogModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12AB2052C1710095584D /* FirebaseLogModule.swift */; };
@@ -197,6 +202,11 @@
 		C3B76BA320FF8A56004B7578 /* ProntoCollectionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoCollectionMapper.swift; sourceTree = "<group>"; };
 		C3B76BA92100617E004B7578 /* Memoization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoization.swift; sourceTree = "<group>"; };
 		C3B76BAC21006352004B7578 /* ProntoAPIClient+notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProntoAPIClient+notifications.swift"; sourceTree = "<group>"; };
+		C3BCC3892296BD00005BFECA /* ProntoAPIClient+localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProntoAPIClient+localization.swift"; sourceTree = "<group>"; };
+		C3BCC38B2296BD0C005BFECA /* ProntoLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoLocalization.swift; sourceTree = "<group>"; };
+		C3BCC38E2296BDB4005BFECA /* ProntoAPIClientLocalizationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoAPIClientLocalizationModule.swift; sourceTree = "<group>"; };
+		C3BCC3902296C1AF005BFECA /* v1_localization.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v1_localization.json; sourceTree = "<group>"; };
+		C3BCC3922296C1BB005BFECA /* ProntoSDKTests_Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoSDKTests_Localization.swift; sourceTree = "<group>"; };
 		C3CB12A5205277F90095584D /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		C3CB12A92052BB0F0095584D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C3CB12AB2052C1710095584D /* FirebaseLogModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLogModule.swift; sourceTree = "<group>"; };
@@ -315,6 +325,7 @@
 				C37B2C2B20E65E7400FD89EF /* ProntoSDKTests_User.swift */,
 				C3B76B9F20FF7DCB004B7578 /* ProntoSDKTests_Collections.swift */,
 				C3DFAEE222140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift */,
+				C3BCC3922296C1BB005BFECA /* ProntoSDKTests_Localization.swift */,
 				C34A6867204FFE52009E3D83 /* Info.plist */,
 			);
 			path = ProntoSDKTests;
@@ -323,11 +334,12 @@
 		C34A687220500648009E3D83 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C374D7D42212D9DD00134857 /* AppUpdateCheck */,
 				C3B76BA521005F16004B7578 /* Core */,
 				C34A687620500689009E3D83 /* Notifications */,
+				C374D7D42212D9DD00134857 /* AppUpdateCheck */,
 				C3530F0020E4D7CC004657F0 /* Authentication */,
 				C3B76B9620FF7901004B7578 /* Collections */,
+				C3BCC3872296BCB9005BFECA /* Localization */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -370,6 +382,7 @@
 			children = (
 				C3DFAEE022140BAC00B7E7EC /* app_version.json */,
 				C34A688320500CEC009E3D83 /* v1_notifications-register-device.json */,
+				C3BCC3902296C1AF005BFECA /* v1_localization.json */,
 				C34A688D20501AD4009E3D83 /* v1_notifications-signin-device.json */,
 				C34A6891205027BF009E3D83 /* v1_notifications-segments.json */,
 				C34A689320502AD0009E3D83 /* v1_notifications-segments-subscribe.json */,
@@ -564,6 +577,32 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C3BCC3872296BCB9005BFECA /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				C3BCC3882296BCE2005BFECA /* Extensions */,
+				C3BCC38D2296BDA4005BFECA /* API */,
+				C3BCC38B2296BD0C005BFECA /* ProntoLocalization.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		C3BCC3882296BCE2005BFECA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3BCC3892296BD00005BFECA /* ProntoAPIClient+localization.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3BCC38D2296BDA4005BFECA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C3BCC38E2296BDB4005BFECA /* ProntoAPIClientLocalizationModule.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		C3CB12A4205277EE0095584D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,6 +740,7 @@
 				C34A689420502AD0009E3D83 /* v1_notifications-segments-subscribe.json in Resources */,
 				C3CF880421259D9C00DB29AD /* v1_user_passwordreset.json in Resources */,
 				C34A6892205027BF009E3D83 /* v1_notifications-segments.json in Resources */,
+				C3BCC3912296C1AF005BFECA /* v1_localization.json in Resources */,
 				C37B2C1620E5075B00FD89EF /* v1_userprofile.json in Resources */,
 				C34A688420500CEC009E3D83 /* v1_notifications-register-device.json in Resources */,
 			);
@@ -778,6 +818,7 @@
 				C374D7D62212DAB600134857 /* ProntoAppUpdateCheck.swift in Sources */,
 				C3D951EA210B046100164EF6 /* ProntoNotificationsDelegate.swift in Sources */,
 				C34A687820500697009E3D83 /* ProntoNotifications.swift in Sources */,
+				C3BCC38A2296BD00005BFECA /* ProntoAPIClient+localization.swift in Sources */,
 				C367B6B22100ADE600793F99 /* PaginatedResult.swift in Sources */,
 				C3CB12AC2052C1710095584D /* FirebaseLogModule.swift in Sources */,
 				C34A68902050264C009E3D83 /* Segment.swift in Sources */,
@@ -797,6 +838,7 @@
 				C3B76BAA2100617E004B7578 /* Memoization.swift in Sources */,
 				C3B76B9C20FF7A73004B7578 /* Pagination.swift in Sources */,
 				C367B69D210069C300793F99 /* ProntoCollectionError.swift in Sources */,
+				C3BCC38F2296BDB4005BFECA /* ProntoAPIClientLocalizationModule.swift in Sources */,
 				C37D63AB210615EF00A4DA6F /* ProntoCollectionMapper+JSON.swift in Sources */,
 				C319597A20E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift in Sources */,
 				C374D7DC2212DB4000134857 /* ProntoAPIClient+appupdatechecker.swift in Sources */,
@@ -814,6 +856,7 @@
 				C3530F0220E4D7EA004657F0 /* ProntoAuthentication.swift in Sources */,
 				C3AD68BD210A0ACD00A82A2F /* ApplicationWatcher.swift in Sources */,
 				C3124607210065AE00ACB824 /* ProntoAPIClient+authentication.swift in Sources */,
+				C3BCC38C2296BD0C005BFECA /* ProntoLocalization.swift in Sources */,
 				C3B76BAD21006352004B7578 /* ProntoAPIClient+notifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -828,6 +871,7 @@
 				C3B4094F2057F3B600802593 /* ProntoSDKTests_General.swift in Sources */,
 				C35AB8BA20EA76410051EB19 /* Models.swift in Sources */,
 				C34A6866204FFE52009E3D83 /* ProntoSDKTests.swift in Sources */,
+				C3BCC3932296C1BB005BFECA /* ProntoSDKTests_Localization.swift in Sources */,
 				C3DFAEE322140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift in Sources */,
 				C34A688220500CB2009E3D83 /* ProntoSDKTests_Notifications.swift in Sources */,
 			);

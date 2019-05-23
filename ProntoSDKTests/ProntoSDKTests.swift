@@ -72,7 +72,7 @@ class ProntoSDKTests: XCTestCase {
             $0.encryptionKey = "123"
             $0.clientSecret = "client_secret"
             $0.encryptionKey = "encryption_key"
-            $0.plugins = [ .notifications, .authentication, .collections ]
+            $0.plugins = [ .notifications, .authentication, .collections, .localization ]
             $0.logger = TestLogger()
         }))
     }

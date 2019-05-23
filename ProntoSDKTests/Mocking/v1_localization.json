@@ -1,0 +1,63 @@
+{
+  "data": [{
+    "identifier": "welcome_user",
+    "description": null,
+    "type": "app",
+    "android": true,
+    "ios": true,
+    "translations": [{
+      "language": "en",
+      "text": "Welcome user!"
+    }, {
+      "language": "nl",
+      "text": "Welkom gebruiker"
+    }],
+    "created_at": [],
+    "updated_at": []
+  }, {
+    "identifier": "android_key",
+    "description": null,
+    "type": "app",
+    "android": true,
+    "ios": false,
+    "translations": [{
+      "language": "en",
+      "text": "Android"
+    }, {
+      "language": "nl",
+      "text": "Android"
+    }],
+    "created_at": [],
+    "updated_at": []
+  }, {
+    "identifier": "next_button",
+    "description": null,
+    "type": "app",
+    "android": true,
+    "ios": true,
+    "translations": [{
+      "language": "en",
+      "text": "Next"
+    }, {
+      "language": "nl",
+      "text": "Volgende"
+    }],
+    "created_at": [],
+    "updated_at": []
+  }, {
+    "identifier": "meta_data",
+    "description": null,
+    "type": "metadata",
+    "android": true,
+    "ios": true,
+    "translations": [{
+      "language": "en",
+      "text": "Meta data"
+    }, {
+      "language": "nl",
+      "text": "Extra informatie"
+    }],
+    "created_at": [],
+    "updated_at": []
+  }]
+}

@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.5.0
+- Added localization
+
 ## v2.4.1
 - Changed build pipeline 
 

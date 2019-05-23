@@ -26,6 +26,9 @@ public enum ProntoPlugin: String {
 
     /// App update checker
     case updateChecker
+
+    /// Localization
+    case localization
 }
 
 extension PluginBase {

@@ -42,6 +42,7 @@ pod 'ProntoSDK'
 - `ProntoSDK/Notifications`
 - `ProntoSDK/Collections`
 - `ProntoSDK/AppUpdateCheck`
+- `ProntoSDK/Localization`
 
 And run:
 
@@ -111,7 +112,7 @@ func application(_ application: UIApplication,
     config.firebaseDomain = "myprontoproject.firebaseio.com"
     
     // Activate each plugin your project uses
-    config.plugins = [ .notifications, .authentication, .collections ]
+    config.plugins = [ .notifications, .authentication, .collections, .localization, .updateChecker ]
     
     // Disable logging for non-debug builds
     #if DEBUG
@@ -140,6 +141,10 @@ func application(_ application: UIApplication,
 ### Update checker plugin
 
  → 🌟 [Read update checker documentation](docs/UPDATECHECKER.md)
+
+### Localization
+
+ → 🇪🇺 [Read localization documentation](docs/LOCALIZATION.md)
 
 ## Promises
 

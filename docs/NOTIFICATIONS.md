@@ -54,7 +54,7 @@ To register for push notifications:
 #endif
 
 prontoNotifications.registerForRemoteNotifications(sandbox: sandbox) { error in
-    // If `error` is nil -> succesful
+    // If `error` is nil -> successful
 }
 ```
 

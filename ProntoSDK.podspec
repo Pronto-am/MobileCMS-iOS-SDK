@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ProntoSDK"
-  s.version      = "2.4.1"
+  s.version      = "2.5.0"
   s.author       = { "Bas van Kuijck" => "bas@e-sites.nl" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.homepage     = "http://www.e-sites.nl"
@@ -47,6 +47,11 @@ Pod::Spec.new do |s|
     ss.dependency 'ProntoSDK/Core'
     ss.dependency 'Erbium'
     ss.source_files = "ProntoSDK/Classes/AppUpdateCheck/**/*.{h,m,swift}"
+  end
+
+  s.subspec 'Localization' do |ss|
+    ss.dependency 'ProntoSDK/Core'
+    ss.source_files = "ProntoSDK/Classes/Localization/**/*.{h,m,swift}"
   end
 
   # s.test_spec 'Tests' do |test_spec|

@@ -60,3 +60,7 @@ custom_categories:
     - ProntoAppUpdateCheck
     - AppVersion
     - ProntoAppUpdateCheckDelegate
+
+  - name: Localization
+    children:
+    - ProntoLocalization

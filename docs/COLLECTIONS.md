@@ -112,11 +112,11 @@ collection.list(sortBy: sorting, filterBy: filter)
 
 For instance if you have got the following collections defined in the CMS:
 
-- Team
- - Name
-- Players
- - Name
- - Team
+- **Team**
+  - Name
+-  **Player**
+  - Name
+  - Team
 
 With the following team entries:
 

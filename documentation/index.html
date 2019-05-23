@@ -147,6 +147,14 @@
               </li>
             </ul>
           </li>
+          <li class="nav-group-name">
+            <a href="Localization.html">Localization</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ProntoLocalization.html">ProntoLocalization</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <article class="main-content">
@@ -192,6 +200,7 @@
 <li><code>ProntoSDK/Notifications</code></li>
 <li><code>ProntoSDK/Collections</code></li>
 <li><code>ProntoSDK/AppUpdateCheck</code></li>
+<li><code>ProntoSDK/Localization</code></li>
 </ul>
 
 <p>And run:</p>
@@ -209,7 +218,7 @@
 <h3 id='accio' class='heading'>Accio</h3>
 
 <p>Add the following dependency to your Package.swift:</p>
-<pre class="highlight swift"><code> <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/Pronto-am/MobileCMS-iOS-SDK"</span><span class="p">,</span> <span class="o">.</span><span class="nf">branch</span><span class="p">(</span><span class="s">"master"</span><span class="p">)</span>
+<pre class="highlight swift"><code> <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/Pronto-am/MobileCMS-iOS-SDK"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"2.0.0"</span><span class="p">))</span>
 </code></pre>
 
 <p>And run:</p>
@@ -245,7 +254,7 @@
     <span class="n">config</span><span class="o">.</span><span class="n">firebaseDomain</span> <span class="o">=</span> <span class="s">"myprontoproject.firebaseio.com"</span>
 
     <span class="c1">// Activate each plugin your project uses</span>
-    <span class="n">config</span><span class="o">.</span><span class="n">plugins</span> <span class="o">=</span> <span class="p">[</span> <span class="o">.</span><span class="n">notifications</span><span class="p">,</span> <span class="o">.</span><span class="n">authentication</span><span class="p">,</span> <span class="o">.</span><span class="n">collections</span> <span class="p">]</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">plugins</span> <span class="o">=</span> <span class="p">[</span> <span class="o">.</span><span class="n">notifications</span><span class="p">,</span> <span class="o">.</span><span class="n">authentication</span><span class="p">,</span> <span class="o">.</span><span class="n">collections</span><span class="p">,</span> <span class="o">.</span><span class="n">localization</span><span class="p">,</span> <span class="o">.</span><span class="n">updateChecker</span> <span class="p">]</span>
 
     <span class="c1">// Disable logging for non-debug builds</span>
     <span class="cp">#if DEBUG</span>
@@ -270,6 +279,9 @@
 <h3 id='update-checker-plugin' class='heading'>Update checker plugin</h3>
 
 <p>→ 🌟 <a href="docs/UPDATECHECKER.md">Read update checker documentation</a></p>
+<h3 id='localization' class='heading'>Localization</h3>
+
+<p>→ 🇪🇺 <a href="docs/LOCALIZATION.md">Read localization documentation</a></p>
 <h2 id='promises' class='heading'>Promises</h2>
 
 <p>Almost every asynchronous function ProntoSDK uses <code>Promises</code> internally:</p>
