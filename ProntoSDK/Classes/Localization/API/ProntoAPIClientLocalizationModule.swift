@@ -9,7 +9,6 @@
 import Foundation
 import Promises
 import Alamofire
-import Erbium
 import Cobalt
 import SwiftyJSON
 

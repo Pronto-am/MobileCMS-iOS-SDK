@@ -1,0 +1,189 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+require 'net/http'
+require 'net/https'
+require 'pathname'
+require 'json'
+require 'base64'
+
+# ---------------------------------------
+
+CLIENT_ID         = "<#PRONTO_CLIENT_ID#>"
+CLIENT_SECRET     = "<#PRONTO_CLIENT_SECRET#>"
+PRONTO_HOST       = "<#PRONTO_HOST#>"
+RESOURCES_PATH    = "../ProjectName/Resources/" # Resource relative path
+
+# ---------------------------------------
+
+def puts_error(msg)
+    puts " \033[31m[ x ] \033[1mERROR\033[m\033[31m: #{msg}\033[m"
+    exit
+end
+
+def transform(text)
+  return text
+    .gsub("\r", "")
+    .gsub("\\\r", "")
+    .gsub("\n", "\\n")
+    .gsub("\\\n", "\\n")
+    .gsub("%s", "%@")
+end
+
+puts " "
+puts "\033[2m.--------------------------------------------.\033[m"
+puts "\033[2m|                                            |\033[m"
+puts "\033[2m|  \033[mPronto.am iOS Localization importer v1.0  \033[2m|\033[m"
+puts "\033[2m|                                            |\033[m"
+puts "\033[2m'--------------------------------------------'\033[m"
+puts " "
+
+# Some predefined variables
+d = "\033[2m→ \033[m"
+dir = File.expand_path(File.dirname(__FILE__))
+uri = URI.parse("https://#{PRONTO_HOST}")
+
+allowed_locales = ["da", "de-DE", "el", "en-AU", "en-CA", "en-GB", "en-US", "es-ES", "es-MX", "fi", "fr-CA", "fr-FR", "id", "it", "ja", "ko", "ms", "nl-NL", "no", "pt-BR", "pt-PT", "ru", "sv", "th", "tr", "vi", "zh-Hans", "zh-Hant", "appleTV", "iMessage", "default" ]
+
+appstore_key_mapping = {
+    "appstore.app.title" => [ "name", 30 ],
+    "appstore.app.promotionaltext" => [ "promotional_text", 170 ],
+    "appstore.app.keywords" => [ "keywords", 100 ],
+    "appstore.app.subtitle" => [ "subtitle", 30 ],
+    "appstore.app.description" => [ "description", 4000 ],
+    "appstore.app.whatsnew" => [ "release_notes", 4000 ]
+}
+
+puts "#{d}Authorising with #{PRONTO_HOST}..."
+
+# Authorizing with client_credentials
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Post.new("/oauth/v2/token")
+request.add_field('Content-Type', 'application/json')
+request.set_form_data({
+  'grant_type' => 'client_credentials'
+})
+
+base64 = Base64.urlsafe_encode64("#{CLIENT_ID}:#{CLIENT_SECRET}")
+request.add_field('Authorization', 'Basic ' + base64)
+response = http.request(request)
+body = response.body
+begin
+    json = JSON.parse(body)
+    unless access_token = json["access_token"]
+        puts_error "Cannot retrieve access_token"
+    end
+rescue
+    puts_error "Error parsing oauth JSON"
+end
+
+# Getting translations
+puts "#{d}Downloading translations from pronto API ..."
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new("/api/v1/translations")
+request.add_field('Content-Type', 'application/json')
+request.add_field('Authorization', 'Bearer ' + access_token)
+response = http.request(request)
+body = response.body
+puts body
+begin
+    json = JSON.parse(body)
+rescue
+    puts_error "Error parsing JSON"
+end
+
+# Parsing translations
+
+puts "#{d}Parsing ..."
+files_to_write = {}
+translations = json["data"]
+if translations.nil?
+    puts_error "Invalid JSON"
+    exit
+elsif translations.empty?
+  puts_error "No translations"
+  exit
+end
+
+handled_unsupported_locals = []
+
+translations.each do |translation|
+    unless translation["ios"]
+        next
+    end
+    unless type = translation["type"]
+        next
+    end
+    unless key = translation["identifier"]
+        next
+    end
+    translation["translations"].each do |langtrans|
+        unless lang = langtrans["language"]
+            next
+        end
+        text = langtrans["text"] || ""
+
+        text = transform(text)
+        line = "\"#{key}\" = \"#{text}\";"
+        filename_locale = lang
+
+        if lang == "sk"
+            filename_locale = "#{lang}-#{lang.upcase}"
+        end
+
+        case type
+        when "store"
+            locale = "#{lang}"
+            if locale.length == 2 && !allowed_locales.include?(lang)
+              locale = "#{lang}-#{lang.upcase}"
+              if lang == "en"
+                  locale = "en-GB"
+              end
+            end
+
+            if !allowed_locales.include?(locale) && !allowed_locales.include?(lang)
+              unless handled_unsupported_locals.include?(lang)
+                handled_unsupported_locals << lang
+                puts "#{d}Warning: Unsupported appstore locale: '#{locale}'"
+              end
+              next
+            end
+
+            length = appstore_key_mapping[key][1]
+            unless filename = appstore_key_mapping[key][0]
+                next
+            end
+
+            file = "#{dir}/../fastlane/metadata/#{locale}/#{filename}.txt"
+            line = text[(0..(length - 1))]
+
+        when "metadata"
+            file = "#{dir}/#{RESOURCES_PATH}/#{filename_locale}.lproj/InfoPlist.strings"
+        else
+            file = "#{dir}/#{RESOURCES_PATH}/#{filename_locale}.lproj/Localizable.strings"
+        end
+
+        files_to_write[file] ||= []
+        files_to_write[file] << line
+    end
+end
+
+puts "#{d}Writing files ..."
+files_to_write.each do |file, lines|
+    dir = File.dirname(file)
+    puts " #{d} Writing in '#{Pathname.new(dir).basename.to_s}/#{File.basename(file)}'"
+    unless File.directory?(dir)
+        FileUtils.mkdir_p dir
+    end
+    f = File.new(file, 'w+')
+    lines.each do |line|
+        f.write("#{line}\n")
+    end
+    f.close
+
+end
+puts "#{d}\033[32mFinished\033[m"

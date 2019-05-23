@@ -42,4 +42,66 @@ Localization.shared.fetch().then {
 ```swift
 localization.get(for: "welcome_user") // -> "Welcome"
 
+let dutchLocale = Locale(identifier: "nl_NL")
+localization.get(for: "welcome_user", locale: dutchLocale) // -> "Welkom"
 ```
+
+## Command line interface
+
+Download it here: [Scripts/importlocalization](Scripts/importlocalization)
+
+And create a folder in your project root named "Scripts" and save it there.
+
+Then open the (ruby) script with your favourite text editor and change the following lines:
+
+```ruby
+CLIENT_ID         = "<#PRONTO_CLIENT_ID#>"
+CLIENT_SECRET     = "<#PRONTO_CLIENT_SECRET#>"
+PRONTO_HOST       = "<#PRONTO_HOST#>"
+RESOURCES_PATH    = "../ProjectName/Resources/" # Resource relative path
+```
+
+The be able to execute it:
+
+```
+chmod +x Scripts/importlocalization
+```
+
+Then run:
+
+```
+Scripts/importlocalization
+```
+
+Your project should have a structure similar to this:
+
+```
+ProjectName/
+|
+|- fastlane/
+|  |
+|  |- metadata/
+|  |  |- en-GB/
+|  |  |  |- <metadata_files>
+|  |  |  |- <metadata_files>
+|  |  |
+|  |  |- nl-NL/
+|  |  |  |- <metadata_files>
+|  |  |  |- <metadata_files>
+|
+|- Resources/
+|  |
+|  |- en.lproj/ 
+|  |  |- Localizable.strings
+|  |  |- InfoPlist.strings
+|  |
+|  |- nl.lproj/ 
+|  |  |- Localizable.strings
+|  |  |- InfoPlist.strings
+```
+
+This CLI script will automatically generate the following files per locale:
+
+- `Localizable.strings`
+- `InfoPlist.strings`
+- Fastlane metadata files
