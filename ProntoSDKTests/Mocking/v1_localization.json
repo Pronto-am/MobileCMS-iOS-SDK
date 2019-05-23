@@ -59,5 +59,26 @@
     }],
     "created_at": [],
     "updated_at": []
+  }, {
+    "identifier": "empty",
+    "description": null,
+    "type": "app",
+    "android": true,
+    "ios": true,
+    "translations": [],
+    "created_at": [],
+    "updated_at": []
+  }, {
+    "identifier": "invalid",
+    "description": null,
+    "type": "app",
+    "android": true,
+    "ios": true,
+    "translations": [{
+      "wut": "123",
+      "bar": "foo"
+    }],
+    "created_at": [],
+    "updated_at": []
   }]
 }
