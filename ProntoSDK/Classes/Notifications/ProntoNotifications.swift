@@ -128,7 +128,7 @@ public class ProntoNotifications: PluginBase {
                         .addObserver(forName: notification,
                                      object: nil,
                                      queue: nil) { notification in
-                                        NotificationCenter.default.removeObserver(observer)
+                                        NotificationCenter.default.removeObserver(observer!)
                                         let error = notification.userInfo?["error"] as? ProntoNotificationsError
                                         handler?(error)
                         }
@@ -225,6 +225,8 @@ extension ProntoNotifications {
 //                fetchCompletionHandler(.failed)
 //            }
             fetchCompletionHandler(.newData)
+        @unknown default:
+            break
         }
     }
 

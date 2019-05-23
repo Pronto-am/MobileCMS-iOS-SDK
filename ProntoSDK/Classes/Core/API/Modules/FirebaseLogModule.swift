@@ -39,7 +39,7 @@ class FirebaseLogModule {
         do {
             let aes = try AES(key: Constants.encryptionKey, iv: initializationVector)
             let bytes = try aes.encrypt([UInt8](logParameters.rawJSONString.utf8))
-            let data = Data(bytes: bytes)
+            let data = Data(bytes)
             cipherText = data.base64EncodedString()
         } catch let error {
             ProntoLogger.error("Error encrypting: \(error)")
