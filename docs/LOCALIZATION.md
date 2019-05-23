@@ -46,6 +46,59 @@ let dutchLocale = Locale(identifier: "nl_NL")
 localization.get(for: "welcome_user", locale: dutchLocale) // -> "Welkom"
 ```
 
+## Dupnium
+
+Pronto Localization can pretty easily be used in combination with [Dupnium](https://github.com/e-sites/Dupnium):
+
+And add this to your Podfile along with the ProntoSDK reference:
+
+```ruby
+pod 'Dupnium/UI'
+```
+
+### Implementation
+
+```swift
+import Dupnium
+import ProntoSDK
+
+class DupniumInstance: Dupnium {
+    override public func string(_ key: String) -> String {
+        // Instead of retrieving the localization from a `Localizable.strings` file,
+        // it will get it from ProntoLocalization
+        return ProntoLocalization.get(for: key, locale: locale)
+    }
+}
+
+class LocalizedLabelInstance: Dupnium.LocalizedLabel {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        dupnium = DupniumInstance.shared
+    }
+}
+
+class LocalizedButtonInstance: Dupnium.LocalizedButton {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        dupnium = DupniumInstance.shared
+    }
+}
+
+```
+
+### Usage
+
+Now just set the text in interface builder's LocalizedLabelInstance to "welcome_user". And it's automatically translated to your locale.
+
+```swift
+
+typealias Dup = DupniumInstance.shared
+
+Dup["welcome_user"] // <- "Welcome user"
+
+```
+
+
 ## Command line interface
 
 Download it here: [Scripts/importlocalization](../Scripts/importlocalization)
