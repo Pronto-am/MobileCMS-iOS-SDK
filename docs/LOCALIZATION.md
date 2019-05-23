@@ -48,7 +48,7 @@ localization.get(for: "welcome_user", locale: dutchLocale) // -> "Welkom"
 
 ## Command line interface
 
-Download it here: [Scripts/importlocalization](Scripts/importlocalization)
+Download it here: [Scripts/importlocalization](../Scripts/importlocalization)
 
 And create a folder in your project root named "Scripts" and save it there.
 
