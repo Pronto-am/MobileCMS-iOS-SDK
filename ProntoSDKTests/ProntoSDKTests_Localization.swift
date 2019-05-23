@@ -62,7 +62,7 @@ class ProntoSDKTestsLocalization: ProntoSDKTests {
             expect(self.localization.get(for: "welcome_user", locale: self.dutchLocale)) == "Welkom gebruiker"
             expect(self.localization.get(for: "welcome_user", locale: self.englishLocale)) == "Welcome user!"
             expect(self.localization.get(for: "welcome_user", locale: self.italianLocal)) == "Welkom gebruiker"
-            expect(self.localization.get(for: "keep")) == "Behouden"
+            expect(self.localization.get(for: "keep", locale: self.dutchLocale)) == "Behouden"
 
         }.catch { error in
             XCTAssert(false, "\(error)")
