@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '10.0'
   s.requires_arc  = true
   s.default_subspec = 'Core'
+  s.swift_versions = [ '4.2', '5.0' ]
 
   s.subspec 'Core' do |ss|
     ss.dependency 'SwiftyJSON'
