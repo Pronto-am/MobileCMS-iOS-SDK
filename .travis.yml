@@ -17,7 +17,7 @@ cache:
 script:
   - set -o pipefail
   - carthage bootstrap --cache-builds --platform iOS
-  - pod lib lint --quick
+  - bundle exec pod lib lint --quick
   - travis_retry fastlane travis
 
 notifications:
