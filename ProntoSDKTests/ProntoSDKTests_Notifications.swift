@@ -14,6 +14,8 @@ import Promises
 @testable import ProntoSDK
 
 class ProntoSDKTestsNotifications: ProntoSDKTests {
+    lazy var prontoNotifications = ProntoNotifications()
+
     override func setUp() {
         super.setUp()
         ProntoSDK.config.defaultLocale = Locale(identifier: "en_US")
@@ -55,7 +57,7 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
                               mockJSONFile("\(apiVersion)_notifications-devices-unregister"))
 
         waitUntil { done in
-            self.apiClient.notifications.unregister(device: Device.mock())
+            self.prontoNotifications.unregister(device: Device.mock())
             .catch { error in
                 XCTAssert(false, "\(error)")
 
@@ -75,7 +77,7 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
                                 mockJSONFile("\(apiVersion)_notifications-segments"))
 
         waitUntil { done in
-            self.apiClient.notifications.segments(for: Device.mock()).then { segments in
+            self.prontoNotifications.segments(for: Device.mock()).then { segments in
                 expect(segments.count) == 2
                 expect(segments.filter { $0.isSubscribed }.count) == 1
                 if let segment = segments.first {
@@ -109,7 +111,7 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
         }
 
         waitUntil { done in
-            self.apiClient.notifications.subscribe(segments: segments, device: Device.mock()).catch { error in
+            self.prontoNotifications.update(segments: segments, device: Device.mock()).catch { error in
                 XCTAssert(false, "\(error)")
             }.always {
                 self.removeStub(segmentsSubscribeStub)

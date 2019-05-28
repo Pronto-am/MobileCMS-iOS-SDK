@@ -12,8 +12,7 @@ import Alamofire
 import Erbium
 import Cobalt
 
-/// For all (Push) notification related API requests
-public class ProntoAPIClientNotificationsModule {
+class ProntoAPIClientNotificationsModule {
     private weak var prontoAPIClient: ProntoAPIClient!
 
     init(prontoAPIClient: ProntoAPIClient) {
@@ -103,7 +102,7 @@ extension ProntoAPIClientNotificationsModule {
     ///
     /// - Returns: `Promise<Void>`
     @discardableResult
-    public func unregister(device: Device) -> Promise<Void> {
+    func unregister(device: Device) -> Promise<Void> {
         let requestObject = Cobalt.Request({
             $0.path = prontoAPIClient.versionPath(for: "/devices/registration/\(device.id)")
             $0.httpMethod = .delete
@@ -129,7 +128,7 @@ extension ProntoAPIClientNotificationsModule {
     ///
     /// - Returns: `Promise<[Segment]>`
     @discardableResult
-    public func segments(`for` device: Device) -> Promise<[Segment]> {
+    func segments(`for` device: Device) -> Promise<[Segment]> {
         let requestObject = Cobalt.Request({
             $0.path = prontoAPIClient.versionPath(for: "/notifications/segments/\(device.id)")
             $0.authentication = .oauth2(.clientCredentials)
@@ -149,7 +148,7 @@ extension ProntoAPIClientNotificationsModule {
     ///
     /// - Returns: `Promise<Void>`
     @discardableResult
-    public func subscribe(segments: [Segment], device: Device) -> Promise<Void> {
+    func subscribe(segments: [Segment], device: Device) -> Promise<Void> {
         let encodedSegments = (try? segments.encode()) ?? []
         let requestObject = Cobalt.Request({
             $0.path = prontoAPIClient.versionPath(for: "/notifications/segments")

@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.6.0
+- Refactored Notifications and Authentication
+
 ## v2.5.0
 - Added localization
 

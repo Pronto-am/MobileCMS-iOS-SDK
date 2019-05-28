@@ -25,7 +25,7 @@ public class ProntoAuthentication: PluginBase {
         return [ .authentication ]
     }
 
-    private weak var apiClient: ProntoAPIClient!
+    private(set) weak var apiClient: ProntoAPIClient!
     
     /// Returns the currently logged in user
     private(set) public var currentUser: User? {
@@ -44,7 +44,7 @@ public class ProntoAuthentication: PluginBase {
 
     init(apiClient: ProntoAPIClient) {
         self.apiClient = apiClient
-        apiClient.rx.authorizationGrantType.subscribe(onNext: { [weak self] grantType in
+        rx.authorizationGrantType.subscribe(onNext: { [weak self] grantType in
             if grantType == nil {
                 self?._clear()
             }
@@ -120,6 +120,35 @@ public class ProntoAuthentication: PluginBase {
         return apiClient.user.unregister(user).then {
             self.clear()
         }
+    }
+
+    /// Requests a password forgotten change request
+    ///
+    /// - Parameters:
+    ///  - email: String The email address
+    ///
+    /// - Returns: `Promise<Void>`
+    public func passwordResetRequest(email: String) -> Promise<Void> {
+        return apiClient.user.passwordResetRequest(email: email)
+    }
+
+    // Updates the user's profile
+    ///
+    /// - Warning: The user should have: lastName, firstName and email
+    ///
+    /// - Parameters:
+    ///   - user: `User` The user
+    ///
+    /// - Returns: `Promise<User>`
+    public func update(user: User) -> Promise<User> {
+        return apiClient.user.update(user)
+    }
+
+    /// Get the user profile of the current access-token
+    ///
+    /// - Returns: `Promise<User>`
+    public func getProfile() -> Promise<User> {
+        return apiClient.user.profile()
     }
 
     /// Logs out the currently logged in user

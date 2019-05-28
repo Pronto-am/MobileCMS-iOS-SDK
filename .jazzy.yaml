@@ -29,7 +29,6 @@ custom_categories:
     - Segment
     - Device
     - PushNotification
-    - ProntoAPIClientNotificationsModule
     - ProntoNotifications
     - ProntoNotificationsDelegate
     - WebviewController
@@ -39,7 +38,6 @@ custom_categories:
     children:
     - User
     - ProntoAuthentication
-    - ProntoAPIClientUserModule
 
   - name: Collections
     children:

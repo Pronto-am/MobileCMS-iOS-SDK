@@ -98,6 +98,7 @@
 		C3DFAEE122140BAD00B7E7EC /* app_version.json in Resources */ = {isa = PBXBuildFile; fileRef = C3DFAEE022140BAC00B7E7EC /* app_version.json */; };
 		C3DFAEE322140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFAEE222140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift */; };
 		C3DFEFA52056D8F300CC744C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFEFA42056D8F300CC744C /* Text.swift */; };
+		C3EB24E7229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB24E6229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift */; };
 		C3FE2433212D37400061C8F6 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE2432212D37400061C8F6 /* KeychainHelper.swift */; };
 		E7DB338FC20C7DE7C637D99709AF7B6B /* (null) in Carthage */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -217,6 +218,7 @@
 		C3DFAEE022140BAC00B7E7EC /* app_version.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = app_version.json; sourceTree = "<group>"; };
 		C3DFAEE222140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoSDKTests_AppVersion.swift; sourceTree = "<group>"; };
 		C3DFEFA42056D8F300CC744C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		C3EB24E6229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProntoAuthentication+authentication.swift"; sourceTree = "<group>"; };
 		C3FE2432212D37400061C8F6 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				C3124606210065AE00ACB824 /* ProntoAPIClient+authentication.swift */,
+				C3EB24E6229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				C359461D207F6AF8003E37F6 /* PushNotification.swift in Sources */,
 				C3B76B9820FF795C004B7578 /* ProntoCollection.swift in Sources */,
 				C3B76BAA2100617E004B7578 /* Memoization.swift in Sources */,
+				C3EB24E7229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift in Sources */,
 				C3B76B9C20FF7A73004B7578 /* Pagination.swift in Sources */,
 				C367B69D210069C300793F99 /* ProntoCollectionError.swift in Sources */,
 				C3BCC38F2296BDB4005BFECA /* ProntoAPIClientLocalizationModule.swift in Sources */,

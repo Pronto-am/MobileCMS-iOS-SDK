@@ -12,7 +12,7 @@ private var notificationsMemoizationKey: UInt8 = 0
 
 extension ProntoAPIClient {
     /// The Notifications module
-    public var notifications: ProntoAPIClientNotificationsModule {
+    var notifications: ProntoAPIClientNotificationsModule {
         return memoize(self, key: &notificationsMemoizationKey) {
             return ProntoAPIClientNotificationsModule(prontoAPIClient: self)
         }

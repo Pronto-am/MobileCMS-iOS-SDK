@@ -56,7 +56,7 @@ class ProntoSDKTestsAuthentication: ProntoSDKTests {
             self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234").then { _ in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
 
-                    self.apiClient.user.profile().then { user in
+                    self.prontoAuthentication.getProfile().then { user in
                         ProntoSDKTestsAuthentication.userExpectTest(user)
                     }.catch { error in
                         XCTAssert(false, "\(error)")
@@ -95,7 +95,7 @@ class ProntoSDKTestsAuthentication: ProntoSDKTests {
                                      mockJSONFile("\(apiVersion)_user_passwordreset"))
         
         waitUntil(timeout: 5) { done in
-            self.apiClient.user.passwordResetRequest(email: "bas@e-sites.nl").catch { error in
+            self.prontoAuthentication.passwordResetRequest(email: "bas@e-sites.nl").catch { error in
                 XCTAssert(false, "\(error)")
             }.always {
                 self.removeStub(oauthStub)
@@ -120,7 +120,7 @@ class ProntoSDKTestsAuthentication: ProntoSDKTests {
                 let profileStubFailed = self.stub(http(.get, uri: "/api/\(self.apiVersion)/users/app/profile"),
                                                   delay: 2,
                                                   self.mockJSONFile("accesstoken_expired", status: 400))
-                self.apiClient.user.profile().then { user in
+                self.prontoAuthentication.getProfile().then { user in
                     ProntoSDKTestsAuthentication.userExpectTest(user)
                 }.catch { error in
                     XCTAssert(false, "\(error)")
@@ -158,11 +158,11 @@ class ProntoSDKTestsAuthentication: ProntoSDKTests {
             self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234").then { _ in
                 print("... waiting ...")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.apiClient.user.profile().then { _ in
+                    self.prontoAuthentication.getProfile().then { _ in
 
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        self.apiClient.user.profile().then { _ in
+                        self.prontoAuthentication.getProfile().then { _ in
 
                         }.catch { error in
                             XCTAssert(false, "\(error)")

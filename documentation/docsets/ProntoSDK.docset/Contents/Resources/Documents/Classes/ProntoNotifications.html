@@ -63,9 +63,6 @@
                 <a href="../Classes/PushNotification.html">PushNotification</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/ProntoAPIClientNotificationsModule.html">ProntoAPIClientNotificationsModule</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/ProntoNotifications.html">ProntoNotifications</a>
               </li>
               <li class="nav-group-task">
@@ -87,9 +84,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/ProntoAuthentication.html">ProntoAuthentication</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/ProntoAPIClientUserModule.html">ProntoAPIClientUserModule</a>
               </li>
             </ul>
           </li>
@@ -320,6 +314,223 @@ Will be passed along a &lsquo;register&rsquo; of &lsquo;signin&rsquo; call.</p>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A13NotificationsC8segments3for8Promises7PromiseCySayAA7SegmentCGGAA6DeviceC_tF"></a>
+                    <a name="//apple_ref/swift/Method/segments(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A13NotificationsC8segments3for8Promises7PromiseCySayAA7SegmentCGGAA6DeviceC_tF">segments(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieve all the segments available for this particular application</p>
+
+<ul>
+<li><p>Parameters</p>
+
+<ul>
+<li>device: The <code><a href="../Classes/Device.html">Device</a></code> to show if device subscribed to the specific segment</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">segments</span><span class="p">(</span><span class="err">`</span><span class="k">for</span><span class="err">`</span> <span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/Device.html">Device</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/Segment.html">Segment</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>Promise&lt;[Segment]&gt;</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A13NotificationsC6update8segments6device8Promises7PromiseCyytGSayAA7SegmentCG_AA6DeviceCtF"></a>
+                    <a name="//apple_ref/swift/Method/update(segments:device:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A13NotificationsC6update8segments6device8Promises7PromiseCyytGSayAA7SegmentCG_AA6DeviceCtF">update(segments:device:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Promise function to subscribe to a set of segments</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">segments</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Segment.html">Segment</a></span><span class="p">],</span> <span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/Device.html">Device</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>segments</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The segments to subscribe to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>device</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current device</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>Promise&lt;Void&gt;</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A13NotificationsC6update7segment6device8Promises7PromiseCyytGAA7SegmentC_AA6DeviceCtF"></a>
+                    <a name="//apple_ref/swift/Method/update(segment:device:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A13NotificationsC6update7segment6device8Promises7PromiseCyytGAA7SegmentC_AA6DeviceCtF">update(segment:device:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Promise function to subscribe to a set of segments</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">segment</span><span class="p">:</span> <span class="kt"><a href="../Classes/Segment.html">Segment</a></span><span class="p">,</span> <span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/Device.html">Device</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>segments</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The segment to subscribe to</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>device</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The current device</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>Promise&lt;Void&gt;</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A13NotificationsC10unregister6device8Promises7PromiseCyytGAA6DeviceC_tF"></a>
+                    <a name="//apple_ref/swift/Method/unregister(device:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A13NotificationsC10unregister6device8Promises7PromiseCyytGAA6DeviceC_tF">unregister(device:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unregisters a specific Device</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">unregister</span><span class="p">(</span><span class="nv">device</span><span class="p">:</span> <span class="kt"><a href="../Classes/Device.html">Device</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>device</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/Device.html">Device</a></code>. Probably the <code><a href="../Classes/Device.html#/s:9ProntoSDK6DeviceC7currentACSgvpZ">Device.current</a></code></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>Promise&lt;Void&gt;</code></p>
                       </div>
                     </section>
                   </div>

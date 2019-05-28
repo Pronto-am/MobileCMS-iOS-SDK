@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Einsteinium
 import UserNotifications
+import Promises
 import KeychainAccess
 import SwiftyJSON
 
@@ -144,6 +145,51 @@ public class ProntoNotifications: PluginBase {
     /// :nodoc:
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+}
+
+extension ProntoNotifications {
+    /// Retrieve all the segments available for this particular application
+    ///
+    /// - Parameters
+    ///   - device: The `Device` to show if device subscribed to the specific segment
+    ///
+    /// - Returns: `Promise<[Segment]>`
+    public func segments(`for` device: Device) -> Promise<[Segment]> {
+        return apiClient.notifications.segments(for: device)
+    }
+
+    /// Promise function to subscribe to a set of segments
+    ///
+    /// - Parameters:
+    ///   - segments: The segments to subscribe to
+    ///   - device: The current device
+    ///
+    /// - Returns: `Promise<Void>`
+    public func update(segments: [Segment], device: Device) -> Promise<Void> {
+        return apiClient.notifications.subscribe(segments: segments, device: device)
+    }
+
+    /// Promise function to subscribe to a set of segments
+    ///
+    /// - Parameters:
+    ///   - segments: The segment to subscribe to
+    ///   - device: The current device
+    ///
+    /// - Returns: `Promise<Void>`
+    public func update(segment: Segment, device: Device) -> Promise<Void> {
+        return update(segments: [ segment ], device: device)
+    }
+
+    /// Unregisters a specific Device
+    ///
+    /// - Parameters:
+    ///   - device: `Device`. Probably the `Device.current`
+    ///
+    /// - Returns: `Promise<Void>`
+    @discardableResult
+    public func unregister(device: Device) -> Promise<Void> {
+        return apiClient.notifications.unregister(device: device)
     }
 }
 

@@ -65,7 +65,7 @@ guard let device = Device.current else {
 	return
 }
 
-ProntoAPIClient.default.notifications.unregister(device: device).then { 
+prontoNotifications.unregister(device: device).then { 
    // ...
 }
 ```
@@ -79,7 +79,7 @@ guard let device = Device.current else {
 	return
 }
 
-ProntoAPIClient.default.notifications.segments(for: device).then { segments in
+prontoNotifications.segments(for: device).then { segments in
    // `segments`: [Segment]
 }
 ```
@@ -94,7 +94,7 @@ guard let device = Device.current else {
 let segment: Segment = // Get a specific segment
 segment.isSubscribed = true
 
-ProntoAPIClient.default.notifications.subscribe(segments: [ segment ], device: device).then { 
+prontoNotifications.update(segments: [ segment ], device: device).then { 
    // ...
 }
 ```

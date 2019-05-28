@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ProntoSDK"
-  s.version      = "2.5.0"
+  s.version      = "2.6.0"
   s.author       = { "Bas van Kuijck" => "bas@e-sites.nl" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.homepage     = "http://www.e-sites.nl"
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '10.0'
   s.requires_arc  = true
   s.default_subspec = 'Core'
-  s.swift_versions = [ '4.2', '5.0' ]
+  s.swift_versions = [ '5.0' ]
 
   s.subspec 'Core' do |ss|
     ss.dependency 'SwiftyJSON'

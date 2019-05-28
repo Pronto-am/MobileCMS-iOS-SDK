@@ -45,13 +45,16 @@ authentication.register(user: user, password: "password").then { user in
 
 ```swift
 let authentication = ProntoAuthentication()
-let user = ... // Get the locally stored user
 
-authentication.user.update(user).then { user in
+guard let currentUser = authentication.currentUser else {
+    return
+}
+
+currentUser.firstName = "Bas"
+
+authentication.update(user: currentUser).then { user in
     print("Updated user: \(user)")
 }.catch { error in 
     print("Error updating user: \(error)")
 }
 ```
-
-Read [online documentation](https://pronto.am/apidoc/index.html) for more information about API calls.

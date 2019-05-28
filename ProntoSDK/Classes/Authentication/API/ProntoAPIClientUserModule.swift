@@ -12,7 +12,7 @@ import Cobalt
 import SwiftyJSON
 
 /// For all (app) user related API calls
-public class ProntoAPIClientUserModule {
+class ProntoAPIClientUserModule {
     private weak var prontoAPIClient: ProntoAPIClient!
 
     init(prontoAPIClient: ProntoAPIClient) {
@@ -22,7 +22,7 @@ public class ProntoAPIClientUserModule {
     /// Get the user profile of the current access-token
     ///
     /// - Returns: `Promise<User>`
-    public func profile() -> Promise<User> {
+    func profile() -> Promise<User> {
         let request = Cobalt.Request({
             $0.authentication = .oauth2(.password)
             $0.path = prontoAPIClient.versionPath(for: "/users/app/profile")
@@ -55,7 +55,7 @@ public class ProntoAPIClientUserModule {
     ///   - user: `User` The user
     ///
     /// - Returns: `Promise<User>`
-    public func update(_ user: User) -> Promise<User> {
+    func update(_ user: User) -> Promise<User> {
         if let promiseError = _checkValid(user: user) {
             return promiseError
         }
@@ -92,7 +92,7 @@ public class ProntoAPIClientUserModule {
     ///  - email: String The email address
     ///
     /// - Returns: `Promise<Void>`
-    public func passwordResetRequest(email: String) -> Promise<Void> {
+    func passwordResetRequest(email: String) -> Promise<Void> {
         let request = Cobalt.Request({
             $0.authentication = .oauth2(.clientCredentials)
             $0.path = prontoAPIClient.versionPath(for: "/users/app/password/reset")
