@@ -40,10 +40,10 @@ Localization.shared.fetch().then {
 ### Using a translation
 
 ```swift
-localization.get(for: "welcome_user") // -> "Welcome"
+Localization.shared.get(for: "welcome_user") // -> "Welcome"
 
 let dutchLocale = Locale(identifier: "nl_NL")
-localization.get(for: "welcome_user", locale: dutchLocale) // -> "Welkom"
+Localization.shared.get(for: "welcome_user", locale: dutchLocale) // -> "Welkom"
 ```
 
 ## Dupnium
@@ -65,21 +65,21 @@ import ProntoSDK
 class DupniumInstance: Dupnium {
     static let current = DupniumInstance()
 	 
-    override public func string(_ key: String) -> String {
+    override public func getString(_ key: String) -> String? {
         // Instead of retrieving the localization from a `Localizable.strings` file,
         // it will get it from ProntoLocalization
-        return ProntoLocalization.get(for: key, locale: locale)
+        return Localization.shared.get(for: key, locale: locale) ?? super.getString(key)
     }
 }
 
-class LocalizedLabelInstance: Dupnium.LocalizedLabel {
+class LocalizedLabelInstance: LocalizedLabel {
     override public func setup(_ text: String?) {
         dupnium = DupniumInstance.current
         super.setup(text)
     }
 }
 
-class LocalizedButtonInstance: Dupnium.LocalizedButton {
+class LocalizedButtonInstance: LocalizedButton {
     override public func setup(_ title: String?) {
         dupnium = DupniumInstance.current
         super.setup(title)

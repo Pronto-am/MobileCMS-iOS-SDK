@@ -28,6 +28,9 @@ public class ProntoAPIClient: PluginBase {
             $0.host = host
             $0.clientSecret = ProntoSDK.config.clientSecret
             $0.logger = ProntoLogger
+            #if !DEBUG
+            $0.maskTokens = true
+            #endif
         })
         return Cobalt.Client(config: config)
     }()

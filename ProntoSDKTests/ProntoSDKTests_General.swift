@@ -44,7 +44,7 @@ class ProntoSDKTestsGeneral: ProntoSDKTests {
             config.defaultLocale = Locale(identifier: "de_DE")
             ProntoSDK.config = nil
             ProntoSDK.configure(config)
-            expect(text.string(for: Locale(identifier: "it_IT"))) == ""
+            expect(text.string(for: Locale(identifier: "it_IT"))).to(beNil())
         } catch let error {
             XCTAssert(false, "\(error)")
         }

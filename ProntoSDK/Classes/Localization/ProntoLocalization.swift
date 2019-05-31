@@ -18,18 +18,17 @@ open class ProntoLocalization: PluginBase {
     var requiredPlugins: [ProntoPlugin] {
         return [ .localization ]
     }
+    
+    private weak var apiClient: ProntoAPIClient! = ProntoAPIClient.default
 
     /// Default constructor
-    private weak var apiClient: ProntoAPIClient!
-
-    /// Default contructor
-    public convenience init() {
-        self.init(apiClient: ProntoAPIClient.default)
+    public init() {
+        checkPlugin()
     }
 
-    init(apiClient: ProntoAPIClient) {
+    convenience init(apiClient: ProntoAPIClient) {
+        self.init()
         self.apiClient = apiClient
-        checkPlugin()
     }
 
     func configure() {
@@ -81,10 +80,6 @@ open class ProntoLocalization: PluginBase {
         guard let text = translations[key] else {
             return nil
         }
-        let string = text.string(for: locale)
-        if string.isEmpty {
-            return nil
-        }
-        return string
+        return text.string(for: locale)
     }
 }

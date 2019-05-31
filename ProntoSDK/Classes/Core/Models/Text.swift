@@ -22,9 +22,9 @@ public struct Text: Codable, CustomStringConvertible {
     ///   - `locale`: Locale (optional). If empty: ProntoSDK.config.defaultLocale is used
     ///
     /// - Returns: `String`
-    public func string(`for` locale: Locale = Locale.current) -> String {
+    public func string(`for` locale: Locale = Locale.current) -> String? {
         guard var language = locale.languageCode?.lowercased() else {
-            return ""
+            return nil
         }
         if localizationDictionary[language] == nil {
             language = ProntoSDK.config.defaultLocale.languageCode ?? "en"
@@ -33,7 +33,7 @@ public struct Text: Codable, CustomStringConvertible {
             return string
         }
         ProntoLogger.warning("Cannot find string for language '\(language)'")
-        return ""
+        return nil
     }
 
     /// :nodoc:
@@ -57,6 +57,6 @@ public struct Text: Codable, CustomStringConvertible {
 
     /// :nodoc:
     public var description: String {
-        return "<Text> [ \(string()) ] "
+        return "<Text> [ \(string() ?? "(nil)") ] "
     }
 }

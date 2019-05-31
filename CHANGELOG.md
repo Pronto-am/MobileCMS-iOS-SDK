@@ -1,5 +1,9 @@
 # ProntoSDK Changelog
 
+## v2.6.1
+- Localization fixes
+- `Text.getString()` now returns `String?` instead of `String`
+
 ## v2.6.0
 - Refactored Notifications and Authentication
 

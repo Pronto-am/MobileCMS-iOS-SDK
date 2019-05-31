@@ -25,6 +25,7 @@ class ProntoAPIClientLocalizationModule {
             $0.path = prontoAPIClient.versionPath(for: "/translations")
             $0.httpMethod = .get
             $0.authentication = .oauth2(.clientCredentials)
+            $0.loggingOption = LoggingOption(response: [ "data": .replaced("Hidden") ])
         })
 
         return prontoAPIClient
