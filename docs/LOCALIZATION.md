@@ -63,6 +63,8 @@ import Dupnium
 import ProntoSDK
 
 class DupniumInstance: Dupnium {
+    static let current = DupniumInstance()
+	 
     override public func string(_ key: String) -> String {
         // Instead of retrieving the localization from a `Localizable.strings` file,
         // it will get it from ProntoLocalization
@@ -71,16 +73,16 @@ class DupniumInstance: Dupnium {
 }
 
 class LocalizedLabelInstance: Dupnium.LocalizedLabel {
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        dupnium = DupniumInstance.shared
+    override public func setup(_ text: String?) {
+        dupnium = DupniumInstance.current
+        super.setup(text)
     }
 }
 
 class LocalizedButtonInstance: Dupnium.LocalizedButton {
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        dupnium = DupniumInstance.shared
+    override public func setup(_ title: String?) {
+        dupnium = DupniumInstance.current
+        super.setup(title)
     }
 }
 
@@ -92,12 +94,19 @@ Now just set the text in interface builder's LocalizedLabelInstance to "welcome_
 
 ```swift
 
-typealias Dup = DupniumInstance.shared
+typealias Dup = DupniumInstance.current
 
 Dup["welcome_user"] // <- "Welcome user"
 
 ```
 
+```swift
+Localization.shared.fetch().then { 
+    Dup.reloadLocalizations()
+}.catch { error in 
+    // Failure
+}
+```
 
 ## Command line interface
 
