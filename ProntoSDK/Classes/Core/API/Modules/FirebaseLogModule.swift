@@ -20,7 +20,7 @@ enum LogType: String {
 
 class FirebaseLogModule {
     fileprivate struct Constants {
-        fileprivate static let tableName: String = "logs"
+        fileprivate static let tableName: String = "pronto_logs"
         
         fileprivate static var encryptionKey: String {
             return ProntoSDK.config.encryptionKey ?? ""

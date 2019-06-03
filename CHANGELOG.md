@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.6.2
+- Use "pronto_logs" firebase realtime database table to write logs to.
+
 ## v2.6.1
 - Localization fixes
 - `Text.getString()` now returns `String?` instead of `String`
