@@ -82,7 +82,7 @@ collection.list().then { result in
 
 ```swift
 let collection = ProntoCollection<Location>()
-let pagination = Pagination(offset: 1, limit: 12) // This will get the 12 - 24th items
+let pagination = Pagination(offset: 12, limit: 12) // This will get the 12th - 24th items
 collection.list(pagination: pagination)
 ```
 
@@ -90,7 +90,7 @@ collection.list(pagination: pagination)
 
 ```swift
 let collection = ProntoCollection<Location>()
-let pagination = Pagination(offset: 1, limit: 12) // This will get the 12 - 24th items
+let pagination = Pagination(offset: 24, limit: 12) // This will get the 24th - 36th items
 let sorting = SortOrder(key: "name", direction: .ascending) // Sort A -> Z
 collection.list(sortBy: sorting, pagination: pagination)
 ```
