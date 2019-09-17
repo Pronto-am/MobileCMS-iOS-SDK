@@ -9,10 +9,10 @@ require 'base64'
 
 # ---------------------------------------
 
-CLIENT_ID         = "<#PRONTO_CLIENT_ID#>"
-CLIENT_SECRET     = "<#PRONTO_CLIENT_SECRET#>"
-PRONTO_HOST       = "<#PRONTO_HOST#>"
-RESOURCES_PATH    = "../ProjectName/Resources/" # Resource relative path
+CLIENT_ID       = "<#PRONTO_CLIENT_ID#>"
+CLIENT_SECRET   = "<#PRONTO_CLIENT_SECRET#>"
+PRONTO_HOST     = "<#PRONTO_HOST#>"
+RESOURCES_PATH  = "../ProjectName/Resources/" # Resource relative path
 
 # ---------------------------------------
 
@@ -31,11 +31,11 @@ def transform(text)
 end
 
 puts " "
-puts "\033[2m.--------------------------------------------.\033[m"
-puts "\033[2m|                                            |\033[m"
-puts "\033[2m|  \033[mPronto.am iOS Localization importer v1.0  \033[2m|\033[m"
-puts "\033[2m|                                            |\033[m"
-puts "\033[2m'--------------------------------------------'\033[m"
+puts "\033[2m.----------------------------------------------.\033[m"
+puts "\033[2m|                                              |\033[m"
+puts "\033[2m|  \033[mPronto.am iOS Localization importer v1.1.1  \033[2m|\033[m"
+puts "\033[2m|                                              |\033[m"
+puts "\033[2m'----------------------------------------------'\033[m"
 puts " "
 
 # Some predefined variables
@@ -89,7 +89,6 @@ request.add_field('Content-Type', 'application/json')
 request.add_field('Authorization', 'Bearer ' + access_token)
 response = http.request(request)
 body = response.body
-puts body
 begin
     json = JSON.parse(body)
 rescue
@@ -126,9 +125,7 @@ translations.each do |translation|
             next
         end
         text = langtrans["text"] || ""
-
-        text = transform(text)
-        line = "\"#{key}\" = \"#{text}\";"
+        line = "\"#{key}\" = \"#{transform(text)}\";"
         filename_locale = lang
 
         if lang == "sk"
@@ -162,9 +159,9 @@ translations.each do |translation|
             line = text[(0..(length - 1))]
 
         when "metadata"
-            file = "#{dir}/#{RESOURCES_PATH}/#{filename_locale}.lproj/InfoPlist.strings"
+            file = "#{dir}/#{RESOURCES_PATH}/Resources/#{filename_locale}.lproj/InfoPlist.strings"
         else
-            file = "#{dir}/#{RESOURCES_PATH}/#{filename_locale}.lproj/Localizable.strings"
+            file = "#{dir}/#{RESOURCES_PATH}/Resources/#{filename_locale}.lproj/Localizable.strings"
         end
 
         files_to_write[file] ||= []
