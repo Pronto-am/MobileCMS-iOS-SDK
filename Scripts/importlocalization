@@ -12,7 +12,7 @@ require 'base64'
 CLIENT_ID       = "<#PRONTO_CLIENT_ID#>"
 CLIENT_SECRET   = "<#PRONTO_CLIENT_SECRET#>"
 PRONTO_HOST     = "<#PRONTO_HOST#>"
-RESOURCES_PATH  = "../ProjectName/Resources/" # Resource relative path
+RESOURCES_PATH  = "../ProjectName/Resources" # Resource relative path
 
 # ---------------------------------------
 
@@ -159,9 +159,9 @@ translations.each do |translation|
             line = text[(0..(length - 1))]
 
         when "metadata"
-            file = "#{dir}/#{RESOURCES_PATH}/Resources/#{filename_locale}.lproj/InfoPlist.strings"
+            file = "#{dir}/#{RESOURCES_PATH}/#{filename_locale}.lproj/InfoPlist.strings"
         else
-            file = "#{dir}/#{RESOURCES_PATH}/Resources/#{filename_locale}.lproj/Localizable.strings"
+            file = "#{dir}/#{RESOURCES_PATH}/#{filename_locale}.lproj/Localizable.strings"
         end
 
         files_to_write[file] ||= []
