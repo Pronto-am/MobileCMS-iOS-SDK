@@ -52,6 +52,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C34A685F204FFE51009E3D83"
+               BuildableName = "ProntoSDKTests.xctest"
+               BlueprintName = "ProntoSDKTests"
+               ReferencedContainer = "container:ProntoSDK.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
