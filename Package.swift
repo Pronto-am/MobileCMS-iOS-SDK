@@ -1,27 +1,29 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
     name: "ProntoSDK",
+    platforms: [
+        .iOS(.v10)
+    ],
     products: [
-        .library(name: "ProntoSDK", targets: ["ProntoSDK", "ProntoSDKTests"])
+        .library(name: "ProntoSDK", targets: ["ProntoSDK"])
     ],
     dependencies: [
-        .package(url: "https://github.com/SwiftyJSON/SwiftyJSON", .upToNextMajor(from: "5.0.0")),
-        .package(url: "https://github.com/kishikawakatsumi/KeychainAccess", .upToNextMajor(from: "3.2.0")),
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift", .upToNextMajor(from: "1.0.0")),
-        .package(url: "https://github.com/Igor-Palaguta/Cache", .revision("560f00a9a9549db161ca70d96eed74fc580b03e3")), // See https://github.com/hyperoslo/Cache/issues/238
-        .package(url: "https://github.com/google/promises", .upToNextMajor(from: "1.2.8")),
-        .package(url: "https://github.com/ReactiveX/RxSwift", .upToNextMajor(from: "5.0.1")),
-
-        // Testing
-        .package(url: "https://github.com/Quick/Nimble", .upToNextMajor(from: "8.0.1")),
-        .package(url: "https://github.com/e-sites/Mockingjay", .branch("master")),
+        .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", .upToNextMajor(from: "5.0.0")),
+        .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", .upToNextMajor(from: "3.0.0")),
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/google/promises.git", .upToNextMajor(from: "1.0.0")),
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.0")),
 
         // E-sites
-        .package(url: "https://github.com/e-sites/Cobalt", .upToNextMajor(from: "5.8.2")),
-        .package(url: "https://github.com/e-sites/Erbium", .branch("master")),
-        .package(url: "https://github.com/e-sites/Einsteinium", .branch("master"))
+        .package(url: "https://github.com/e-sites/Cobalt.git", .upToNextMajor(from: "5.0.0")),
+        .package(url: "https://github.com/e-sites/Erbium.git", .upToNextMajor(from: "4.0.0")),
+        .package(url: "https://github.com/e-sites/Einsteinium.git", .upToNextMajor(from: "1.0.0")),
+
+        // Testing
+        .package(url: "https://github.com/Quick/Nimble.git", .branch("master")),
+        .package(url: "https://github.com/e-sites/Mockingjay.git", .upToNextMajor(from: "2.0.0"))
     ],
     targets: [
         .target(
@@ -30,7 +32,6 @@ let package = Package(
                 "SwiftyJSON",
                 "KeychainAccess",
                 "CryptoSwift",
-                "Cache",
                 "Promises",
                 "RxSwift",
                 "Erbium",
@@ -42,11 +43,13 @@ let package = Package(
         .testTarget(
             name: "ProntoSDKTests",
             dependencies: [
+                "ProntoSDK",
                 "Nimble",
                 "Mockingjay",
                 "Cobalt"
             ],
             path: "ProntoSDKTests"
         )
-    ]
+    ],
+    swiftLanguageVersions: [ .v5 ]
 )

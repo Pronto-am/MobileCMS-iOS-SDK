@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode10.2
+osx_image: xcode11
 
 addons:
   homebrew:
@@ -12,11 +12,9 @@ branches:
 cache:
   directories:
   - vendor/bundle
-  - Carthage
 
 script:
   - set -o pipefail
-  - carthage bootstrap --cache-builds --platform iOS
   - bundle exec pod lib lint --quick
   - travis_retry fastlane travis
 

@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.7.0
+- Xcode11 compatible / SwiftPM
+
 ## v2.6.2
 - Use "pronto_logs" firebase realtime database table to write logs to.
 

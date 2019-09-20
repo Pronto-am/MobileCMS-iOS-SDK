@@ -3,40 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70DBCAC1FBD71850634872CFA970E991 /* (null) in Carthage */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		A12C7A79EEFD9BF101AFD8360D2234FA /* (null) in Carthage */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C3124607210065AE00ACB824 /* ProntoAPIClient+authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3124606210065AE00ACB824 /* ProntoAPIClient+authentication.swift */; };
 		C319597A20E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319597920E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift */; };
 		C319598320E5052C00AF83B4 /* oauth_token.json in Resources */ = {isa = PBXBuildFile; fileRef = C319598220E5052C00AF83B4 /* oauth_token.json */; };
-		C31A5058227C612E00C802C3 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		C31A505A227C613600C802C3 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		C31A505C227C614700C802C3 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		C33AB4142285970A006836FA /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB40822859708006836FA /* SwiftyJSON.framework */; };
-		C33AB4152285970A006836FA /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB40922859708006836FA /* CryptoSwift.framework */; };
-		C33AB4162285970A006836FA /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB40A22859708006836FA /* RxCocoa.framework */; };
-		C33AB4172285970A006836FA /* Erbium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB40B22859708006836FA /* Erbium.framework */; };
-		C33AB4182285970A006836FA /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB40C22859708006836FA /* Cache.framework */; };
-		C33AB4192285970A006836FA /* Promises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB40D22859709006836FA /* Promises.framework */; };
-		C33AB41A2285970A006836FA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB40E22859709006836FA /* Alamofire.framework */; };
-		C33AB41B2285970A006836FA /* Einsteinium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB40F22859709006836FA /* Einsteinium.framework */; };
-		C33AB41C2285970A006836FA /* Cobalt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB41022859709006836FA /* Cobalt.framework */; };
-		C33AB41D2285970A006836FA /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB41122859709006836FA /* FBLPromises.framework */; };
-		C33AB41E2285970A006836FA /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB41222859709006836FA /* KeychainAccess.framework */; };
-		C33AB41F2285970A006836FA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB4132285970A006836FA /* RxSwift.framework */; };
-		C33AB42122859899006836FA /* Mockingjay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB42022859899006836FA /* Mockingjay.framework */; };
-		C33AB423228598C1006836FA /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33AB422228598C1006836FA /* Nimble.framework */; };
-		C34A6861204FFE52009E3D83 /* ProntoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34A6857204FFE51009E3D83 /* ProntoSDK.framework */; };
 		C34A6866204FFE52009E3D83 /* ProntoSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A6865204FFE52009E3D83 /* ProntoSDKTests.swift */; };
 		C34A6868204FFE52009E3D83 /* ProntoSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C34A685A204FFE51009E3D83 /* ProntoSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C34A687520500652009E3D83 /* ProntoSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A687420500652009E3D83 /* ProntoSDK.swift */; };
 		C34A687820500697009E3D83 /* ProntoNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A687720500697009E3D83 /* ProntoNotifications.swift */; };
 		C34A687A205009A3009E3D83 /* ProntoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A6879205009A3009E3D83 /* ProntoAPIClient.swift */; };
 		C34A687F20500C01009E3D83 /* ProntoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A687E20500C01009E3D83 /* ProntoError.swift */; };
-		C34A688220500CB2009E3D83 /* ProntoSDKTests_Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A688120500CB2009E3D83 /* ProntoSDKTests_Notifications.swift */; };
 		C34A688420500CEC009E3D83 /* v1_notifications-register-device.json in Resources */ = {isa = PBXBuildFile; fileRef = C34A688320500CEC009E3D83 /* v1_notifications-register-device.json */; };
 		C34A688720500DA4009E3D83 /* ProntoAPIClientNotificationsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A688620500DA4009E3D83 /* ProntoAPIClientNotificationsModule.swift */; };
 		C34A688C20501303009E3D83 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A688B20501303009E3D83 /* Device.swift */; };
@@ -47,10 +26,8 @@
 		C34A6896205032EB009E3D83 /* WebviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A6895205032EB009E3D83 /* WebviewController.swift */; };
 		C34CB0282108ACFB00861278 /* ProntoFilterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CB0272108ACFB00861278 /* ProntoFilterable.swift */; };
 		C3530F0220E4D7EA004657F0 /* ProntoAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3530F0120E4D7EA004657F0 /* ProntoAuthentication.swift */; };
-		C3530F0420E4D859004657F0 /* ProntoSDKTests_Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3530F0320E4D859004657F0 /* ProntoSDKTests_Authentication.swift */; };
 		C3530F0820E4D99A004657F0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3530F0720E4D99A004657F0 /* User.swift */; };
 		C359461D207F6AF8003E37F6 /* PushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C359461C207F6AF8003E37F6 /* PushNotification.swift */; };
-		C35AB8BA20EA76410051EB19 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35AB8B920EA76410051EB19 /* Models.swift */; };
 		C367B6972100696C00793F99 /* ProntoAPIClient+collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B6962100696C00793F99 /* ProntoAPIClient+collections.swift */; };
 		C367B69D210069C300793F99 /* ProntoCollectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B69C210069C300793F99 /* ProntoCollectionError.swift */; };
 		C367B6A02100701A00793F99 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B69F2100701A00793F99 /* Coordinate.swift */; };
@@ -61,6 +38,17 @@
 		C367B6B22100ADE600793F99 /* PaginatedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B6B12100ADE600793F99 /* PaginatedResult.swift */; };
 		C367B6B82100BA6600793F99 /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B6B72100BA6600793F99 /* SortOrder.swift */; };
 		C367B6BA2100CFA400793F99 /* v1_collections_all_get.json in Resources */ = {isa = PBXBuildFile; fileRef = C367B6B92100CFA400793F99 /* v1_collections_all_get.json */; };
+		C36D8E952334DF160062FBC6 /* Mockingjay in Frameworks */ = {isa = PBXBuildFile; productRef = C36D8E942334DF160062FBC6 /* Mockingjay */; };
+		C36D8E9C2334DFC10062FBC6 /* ProntoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34A6857204FFE51009E3D83 /* ProntoSDK.framework */; };
+		C36D8E9E2334DFF90062FBC6 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = C36D8E9D2334DFF90062FBC6 /* Nimble */; };
+		C36D8E9F2334E0FE0062FBC6 /* ProntoSDKTests_General.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B4094E2057F3B600802593 /* ProntoSDKTests_General.swift */; };
+		C36D8EA02334E0FE0062FBC6 /* ProntoSDKTests_Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34A688120500CB2009E3D83 /* ProntoSDKTests_Notifications.swift */; };
+		C36D8EA12334E0FE0062FBC6 /* ProntoSDKTests_Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3530F0320E4D859004657F0 /* ProntoSDKTests_Authentication.swift */; };
+		C36D8EA22334E0FE0062FBC6 /* ProntoSDKTests_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B2C2B20E65E7400FD89EF /* ProntoSDKTests_User.swift */; };
+		C36D8EA32334E0FE0062FBC6 /* ProntoSDKTests_Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76B9F20FF7DCB004B7578 /* ProntoSDKTests_Collections.swift */; };
+		C36D8EA42334E0FE0062FBC6 /* ProntoSDKTests_AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFAEE222140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift */; };
+		C36D8EA52334E0FE0062FBC6 /* ProntoSDKTests_Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCC3922296C1BB005BFECA /* ProntoSDKTests_Localization.swift */; };
+		C36D8EA62334E10E0062FBC6 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35AB8B920EA76410051EB19 /* Models.swift */; };
 		C374D7D62212DAB600134857 /* ProntoAppUpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374D7D52212DAB600134857 /* ProntoAppUpdateCheck.swift */; };
 		C374D7D92212DB0200134857 /* ProntoAPIClientAppUpdateCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374D7D82212DB0200134857 /* ProntoAPIClientAppUpdateCheck.swift */; };
 		C374D7DC2212DB4000134857 /* ProntoAPIClient+appupdatechecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C374D7DB2212DB4000134857 /* ProntoAPIClient+appupdatechecker.swift */; };
@@ -70,15 +58,21 @@
 		C37B2C1A20E60D0100FD89EF /* ProntoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B2C1920E60D0100FD89EF /* ProntoConfig.swift */; };
 		C37B2C1C20E60D2900FD89EF /* ProntoPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B2C1B20E60D2900FD89EF /* ProntoPlugin.swift */; };
 		C37B2C2A20E65DE600FD89EF /* v1_registeralready.json in Resources */ = {isa = PBXBuildFile; fileRef = C37B2C2920E65DE600FD89EF /* v1_registeralready.json */; };
-		C37B2C2C20E65E7400FD89EF /* ProntoSDKTests_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B2C2B20E65E7400FD89EF /* ProntoSDKTests_User.swift */; };
 		C37D63AB210615EF00A4DA6F /* ProntoCollectionMapper+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D63AA210615EF00A4DA6F /* ProntoCollectionMapper+JSON.swift */; };
+		C382771B2334D3A9002AE54A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C382771A2334D3A9002AE54A /* SwiftyJSON */; };
+		C382771E2334D3B7002AE54A /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C382771D2334D3B7002AE54A /* KeychainAccess */; };
+		C38277212334D3C9002AE54A /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C38277202334D3C9002AE54A /* CryptoSwift */; };
+		C38277242334D3DA002AE54A /* Promises in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C38277232334D3DA002AE54A /* Promises */; };
+		C38277272334D3F6002AE54A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C38277262334D3F6002AE54A /* RxSwift */; };
+		C38277292334D3F6002AE54A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C38277282334D3F6002AE54A /* RxCocoa */; };
+		C382772F2334D445002AE54A /* Cobalt in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C382772E2334D445002AE54A /* Cobalt */; };
+		C38277322334D461002AE54A /* Erbium in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C38277312334D461002AE54A /* Erbium */; };
+		C38277352334D47B002AE54A /* Einsteinium in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C38277342334D47B002AE54A /* Einsteinium */; };
 		C3AD68BD210A0ACD00A82A2F /* ApplicationWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AD68BC210A0ACD00A82A2F /* ApplicationWatcher.swift */; };
-		C3B4094F2057F3B600802593 /* ProntoSDKTests_General.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B4094E2057F3B600802593 /* ProntoSDKTests_General.swift */; };
 		C3B76B9820FF795C004B7578 /* ProntoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76B9720FF795C004B7578 /* ProntoCollection.swift */; };
 		C3B76B9A20FF79EE004B7578 /* ProntoCollectionMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76B9920FF79EE004B7578 /* ProntoCollectionMappable.swift */; };
 		C3B76B9C20FF7A73004B7578 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76B9B20FF7A73004B7578 /* Pagination.swift */; };
 		C3B76B9E20FF7B47004B7578 /* ProntoAPIClientCollectionsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76B9D20FF7B47004B7578 /* ProntoAPIClientCollectionsModule.swift */; };
-		C3B76BA020FF7DCC004B7578 /* ProntoSDKTests_Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76B9F20FF7DCB004B7578 /* ProntoSDKTests_Collections.swift */; };
 		C3B76BA220FF7E5B004B7578 /* v1_collections_all.json in Resources */ = {isa = PBXBuildFile; fileRef = C3B76BA120FF7E5B004B7578 /* v1_collections_all.json */; };
 		C3B76BA420FF8A56004B7578 /* ProntoCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76BA320FF8A56004B7578 /* ProntoCollectionMapper.swift */; };
 		C3B76BAA2100617E004B7578 /* Memoization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B76BA92100617E004B7578 /* Memoization.swift */; };
@@ -87,7 +81,6 @@
 		C3BCC38C2296BD0C005BFECA /* ProntoLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCC38B2296BD0C005BFECA /* ProntoLocalization.swift */; };
 		C3BCC38F2296BDB4005BFECA /* ProntoAPIClientLocalizationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCC38E2296BDB4005BFECA /* ProntoAPIClientLocalizationModule.swift */; };
 		C3BCC3912296C1AF005BFECA /* v1_localization.json in Resources */ = {isa = PBXBuildFile; fileRef = C3BCC3902296C1AF005BFECA /* v1_localization.json */; };
-		C3BCC3932296C1BB005BFECA /* ProntoSDKTests_Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BCC3922296C1BB005BFECA /* ProntoSDKTests_Localization.swift */; };
 		C3CB12A6205277F90095584D /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12A5205277F90095584D /* JSON.swift */; };
 		C3CB12AA2052BB0F0095584D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12A92052BB0F0095584D /* String.swift */; };
 		C3CB12AC2052C1710095584D /* FirebaseLogModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CB12AB2052C1710095584D /* FirebaseLogModule.swift */; };
@@ -96,56 +89,15 @@
 		C3D951E8210AFBBB00164EF6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D951E7210AFBBB00164EF6 /* Encodable.swift */; };
 		C3D951EA210B046100164EF6 /* ProntoNotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D951E9210B046100164EF6 /* ProntoNotificationsDelegate.swift */; };
 		C3DFAEE122140BAD00B7E7EC /* app_version.json in Resources */ = {isa = PBXBuildFile; fileRef = C3DFAEE022140BAC00B7E7EC /* app_version.json */; };
-		C3DFAEE322140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFAEE222140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift */; };
 		C3DFEFA52056D8F300CC744C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFEFA42056D8F300CC744C /* Text.swift */; };
 		C3EB24E7229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB24E6229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift */; };
 		C3FE2433212D37400061C8F6 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE2432212D37400061C8F6 /* KeychainHelper.swift */; };
-		E7DB338FC20C7DE7C637D99709AF7B6B /* (null) in Carthage */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C34A6862204FFE52009E3D83 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C34A684E204FFE51009E3D83 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C34A6856204FFE51009E3D83;
-			remoteInfo = ProntoSDK;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		35FAFC1FB9456AC9DE209DE7D8E693B8 /* Carthage */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstSubfolderSpec = 10;
-			files = (
-				70DBCAC1FBD71850634872CFA970E991 /* (null) in Carthage */,
-				E7DB338FC20C7DE7C637D99709AF7B6B /* (null) in Carthage */,
-				A12C7A79EEFD9BF101AFD8360D2234FA /* (null) in Carthage */,
-			);
-			name = Carthage;
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C3124606210065AE00ACB824 /* ProntoAPIClient+authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProntoAPIClient+authentication.swift"; sourceTree = "<group>"; };
 		C319597920E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoAPIClientUserModule.swift; sourceTree = "<group>"; };
 		C319598220E5052C00AF83B4 /* oauth_token.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oauth_token.json; sourceTree = "<group>"; };
-		C33AB40822859708006836FA /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		C33AB40922859708006836FA /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
-		C33AB40A22859708006836FA /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		C33AB40B22859708006836FA /* Erbium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Erbium.framework; path = Carthage/Build/iOS/Erbium.framework; sourceTree = "<group>"; };
-		C33AB40C22859708006836FA /* Cache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cache.framework; path = Carthage/Build/iOS/Cache.framework; sourceTree = "<group>"; };
-		C33AB40D22859709006836FA /* Promises.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Promises.framework; path = Carthage/Build/iOS/Promises.framework; sourceTree = "<group>"; };
-		C33AB40E22859709006836FA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		C33AB40F22859709006836FA /* Einsteinium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Einsteinium.framework; path = Carthage/Build/iOS/Einsteinium.framework; sourceTree = "<group>"; };
-		C33AB41022859709006836FA /* Cobalt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cobalt.framework; path = Carthage/Build/iOS/Cobalt.framework; sourceTree = "<group>"; };
-		C33AB41122859709006836FA /* FBLPromises.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBLPromises.framework; path = Carthage/Build/iOS/FBLPromises.framework; sourceTree = "<group>"; };
-		C33AB41222859709006836FA /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
-		C33AB4132285970A006836FA /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		C33AB42022859899006836FA /* Mockingjay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mockingjay.framework; path = Carthage/Build/iOS/Mockingjay.framework; sourceTree = "<group>"; };
-		C33AB422228598C1006836FA /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		C34A6857204FFE51009E3D83 /* ProntoSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProntoSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34A685A204FFE51009E3D83 /* ProntoSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProntoSDK.h; sourceTree = "<group>"; };
 		C34A685B204FFE51009E3D83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -227,18 +179,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C33AB4192285970A006836FA /* Promises.framework in Frameworks */,
-				C33AB4182285970A006836FA /* Cache.framework in Frameworks */,
-				C33AB4172285970A006836FA /* Erbium.framework in Frameworks */,
-				C33AB41E2285970A006836FA /* KeychainAccess.framework in Frameworks */,
-				C33AB41B2285970A006836FA /* Einsteinium.framework in Frameworks */,
-				C33AB4162285970A006836FA /* RxCocoa.framework in Frameworks */,
-				C33AB41C2285970A006836FA /* Cobalt.framework in Frameworks */,
-				C33AB41A2285970A006836FA /* Alamofire.framework in Frameworks */,
-				C33AB41F2285970A006836FA /* RxSwift.framework in Frameworks */,
-				C33AB4142285970A006836FA /* SwiftyJSON.framework in Frameworks */,
-				C33AB4152285970A006836FA /* CryptoSwift.framework in Frameworks */,
-				C33AB41D2285970A006836FA /* FBLPromises.framework in Frameworks */,
+				C38277292334D3F6002AE54A /* RxCocoa in Frameworks */,
+				C382771E2334D3B7002AE54A /* KeychainAccess in Frameworks */,
+				C38277322334D461002AE54A /* Erbium in Frameworks */,
+				C38277352334D47B002AE54A /* Einsteinium in Frameworks */,
+				C382771B2334D3A9002AE54A /* SwiftyJSON in Frameworks */,
+				C382772F2334D445002AE54A /* Cobalt in Frameworks */,
+				C38277272334D3F6002AE54A /* RxSwift in Frameworks */,
+				C38277242334D3DA002AE54A /* Promises in Frameworks */,
+				C38277212334D3C9002AE54A /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,12 +195,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C34A6861204FFE52009E3D83 /* ProntoSDK.framework in Frameworks */,
-				C33AB42122859899006836FA /* Mockingjay.framework in Frameworks */,
-				C31A505A227C613600C802C3 /* (null) in Frameworks */,
-				C33AB423228598C1006836FA /* Nimble.framework in Frameworks */,
-				C31A5058227C612E00C802C3 /* (null) in Frameworks */,
-				C31A505C227C614700C802C3 /* (null) in Frameworks */,
+				C36D8E9E2334DFF90062FBC6 /* Nimble in Frameworks */,
+				C36D8E9C2334DFC10062FBC6 /* ProntoSDK.framework in Frameworks */,
+				C36D8E952334DF160062FBC6 /* Mockingjay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,34 +213,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C33AB407228596EE006836FA /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				C33AB422228598C1006836FA /* Nimble.framework */,
-				C33AB42022859899006836FA /* Mockingjay.framework */,
-				C33AB40E22859709006836FA /* Alamofire.framework */,
-				C33AB40C22859708006836FA /* Cache.framework */,
-				C33AB41022859709006836FA /* Cobalt.framework */,
-				C33AB40922859708006836FA /* CryptoSwift.framework */,
-				C33AB40F22859709006836FA /* Einsteinium.framework */,
-				C33AB40B22859708006836FA /* Erbium.framework */,
-				C33AB41122859709006836FA /* FBLPromises.framework */,
-				C33AB41222859709006836FA /* KeychainAccess.framework */,
-				C33AB40D22859709006836FA /* Promises.framework */,
-				C33AB40A22859708006836FA /* RxCocoa.framework */,
-				C33AB4132285970A006836FA /* RxSwift.framework */,
-				C33AB40822859708006836FA /* SwiftyJSON.framework */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
 		C34A684D204FFE51009E3D83 = {
 			isa = PBXGroup;
 			children = (
-				C33AB407228596EE006836FA /* Dependencies */,
 				C34A6859204FFE51009E3D83 /* ProntoSDK */,
 				C34A6864204FFE52009E3D83 /* ProntoSDKTests */,
 				C34A6858204FFE51009E3D83 /* Products */,
+				C3EFF4E02334D74700CA88CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -627,6 +552,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		C3EFF4E02334D74700CA88CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -650,13 +582,23 @@
 				C34A6854204FFE51009E3D83 /* Headers */,
 				C34A6855204FFE51009E3D83 /* Resources */,
 				C34A6871204FFF53009E3D83 /* swiftlint */,
-				A0EB9DDBC005D44D79C1E3E4D98FBBCF /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ProntoSDK;
+			packageProductDependencies = (
+				C382771A2334D3A9002AE54A /* SwiftyJSON */,
+				C382771D2334D3B7002AE54A /* KeychainAccess */,
+				C38277202334D3C9002AE54A /* CryptoSwift */,
+				C38277232334D3DA002AE54A /* Promises */,
+				C38277262334D3F6002AE54A /* RxSwift */,
+				C38277282334D3F6002AE54A /* RxCocoa */,
+				C382772E2334D445002AE54A /* Cobalt */,
+				C38277312334D461002AE54A /* Erbium */,
+				C38277342334D47B002AE54A /* Einsteinium */,
+			);
 			productName = ProntoSDK;
 			productReference = C34A6857204FFE51009E3D83 /* ProntoSDK.framework */;
 			productType = "com.apple.product-type.framework";
@@ -668,14 +610,16 @@
 				C34A685C204FFE51009E3D83 /* Sources */,
 				C34A685D204FFE51009E3D83 /* Frameworks */,
 				C34A685E204FFE51009E3D83 /* Resources */,
-				35FAFC1FB9456AC9DE209DE7D8E693B8 /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C34A6863204FFE52009E3D83 /* PBXTargetDependency */,
 			);
 			name = ProntoSDKTests;
+			packageProductDependencies = (
+				C36D8E942334DF160062FBC6 /* Mockingjay */,
+				C36D8E9D2334DFF90062FBC6 /* Nimble */,
+			);
 			productName = ProntoSDKTests;
 			productReference = C34A6860204FFE51009E3D83 /* ProntoSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -710,6 +654,18 @@
 				Base,
 			);
 			mainGroup = C34A684D204FFE51009E3D83;
+			packageReferences = (
+				C38277192334D3A9002AE54A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				C382771C2334D3B7002AE54A /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				C382771F2334D3C9002AE54A /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				C38277222334D3DA002AE54A /* XCRemoteSwiftPackageReference "promises" */,
+				C38277252334D3F6002AE54A /* XCRemoteSwiftPackageReference "RxSwift" */,
+				C382772D2334D445002AE54A /* XCRemoteSwiftPackageReference "Cobalt" */,
+				C38277302334D460002AE54A /* XCRemoteSwiftPackageReference "Erbium" */,
+				C38277332334D47B002AE54A /* XCRemoteSwiftPackageReference "Einsteinium" */,
+				C36D8E8E2334DDED0062FBC6 /* XCRemoteSwiftPackageReference "Nimble" */,
+				C36D8E932334DF160062FBC6 /* XCRemoteSwiftPackageReference "Mockingjay" */,
+			);
 			productRefGroup = C34A6858204FFE51009E3D83 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -752,46 +708,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A0EB9DDBC005D44D79C1E3E4D98FBBCF /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Cache.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Cobalt.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Einsteinium.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Erbium.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FBLPromises.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Promises.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-			);
-			name = Carthage;
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cache.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Cobalt.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CryptoSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Einsteinium.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Erbium.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBLPromises.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainAccess.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Promises.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		C34A6871204FFF53009E3D83 /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -869,27 +785,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3530F0420E4D859004657F0 /* ProntoSDKTests_Authentication.swift in Sources */,
-				C37B2C2C20E65E7400FD89EF /* ProntoSDKTests_User.swift in Sources */,
-				C3B76BA020FF7DCC004B7578 /* ProntoSDKTests_Collections.swift in Sources */,
-				C3B4094F2057F3B600802593 /* ProntoSDKTests_General.swift in Sources */,
-				C35AB8BA20EA76410051EB19 /* Models.swift in Sources */,
+				C36D8EA12334E0FE0062FBC6 /* ProntoSDKTests_Authentication.swift in Sources */,
+				C36D8EA52334E0FE0062FBC6 /* ProntoSDKTests_Localization.swift in Sources */,
+				C36D8EA22334E0FE0062FBC6 /* ProntoSDKTests_User.swift in Sources */,
+				C36D8EA42334E0FE0062FBC6 /* ProntoSDKTests_AppVersion.swift in Sources */,
 				C34A6866204FFE52009E3D83 /* ProntoSDKTests.swift in Sources */,
-				C3BCC3932296C1BB005BFECA /* ProntoSDKTests_Localization.swift in Sources */,
-				C3DFAEE322140BC300B7E7EC /* ProntoSDKTests_AppVersion.swift in Sources */,
-				C34A688220500CB2009E3D83 /* ProntoSDKTests_Notifications.swift in Sources */,
+				C36D8E9F2334E0FE0062FBC6 /* ProntoSDKTests_General.swift in Sources */,
+				C36D8EA62334E10E0062FBC6 /* Models.swift in Sources */,
+				C36D8EA32334E0FE0062FBC6 /* ProntoSDKTests_Collections.swift in Sources */,
+				C36D8EA02334E0FE0062FBC6 /* ProntoSDKTests_Notifications.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C34A6863204FFE52009E3D83 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C34A6856204FFE51009E3D83 /* ProntoSDK */;
-			targetProxy = C34A6862204FFE52009E3D83 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C34A6869204FFE52009E3D83 /* Debug */ = {
@@ -1003,7 +911,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1018,22 +927,23 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KH7U9B5DS2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ProntoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esites.pronto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1044,21 +954,22 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = KH7U9B5DS2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ProntoSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esites.pronto;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1066,16 +977,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KH7U9B5DS2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ProntoSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esites.ProntoSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1083,16 +994,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KH7U9B5DS2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ProntoSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.esites.ProntoSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1127,6 +1038,147 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C36D8E8E2334DDED0062FBC6 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C36D8E932334DF160062FBC6 /* XCRemoteSwiftPackageReference "Mockingjay" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/e-sites/Mockingjay.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.4;
+			};
+		};
+		C38277192334D3A9002AE54A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C382771C2334D3B7002AE54A /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+		C382771F2334D3C9002AE54A /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		C38277222334D3DA002AE54A /* XCRemoteSwiftPackageReference "promises" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/promises.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.8;
+			};
+		};
+		C38277252334D3F6002AE54A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		C382772D2334D445002AE54A /* XCRemoteSwiftPackageReference "Cobalt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/e-sites/Cobalt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.7;
+			};
+		};
+		C38277302334D460002AE54A /* XCRemoteSwiftPackageReference "Erbium" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/e-sites/Erbium.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+		C38277332334D47B002AE54A /* XCRemoteSwiftPackageReference "Einsteinium" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/e-sites/Einsteinium.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C36D8E942334DF160062FBC6 /* Mockingjay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C36D8E932334DF160062FBC6 /* XCRemoteSwiftPackageReference "Mockingjay" */;
+			productName = Mockingjay;
+		};
+		C36D8E9D2334DFF90062FBC6 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C36D8E8E2334DDED0062FBC6 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+		C382771A2334D3A9002AE54A /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C38277192334D3A9002AE54A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		C382771D2334D3B7002AE54A /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C382771C2334D3B7002AE54A /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		C38277202334D3C9002AE54A /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C382771F2334D3C9002AE54A /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+		C38277232334D3DA002AE54A /* Promises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C38277222334D3DA002AE54A /* XCRemoteSwiftPackageReference "promises" */;
+			productName = Promises;
+		};
+		C38277262334D3F6002AE54A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C38277252334D3F6002AE54A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		C38277282334D3F6002AE54A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C38277252334D3F6002AE54A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C382772E2334D445002AE54A /* Cobalt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C382772D2334D445002AE54A /* XCRemoteSwiftPackageReference "Cobalt" */;
+			productName = Cobalt;
+		};
+		C38277312334D461002AE54A /* Erbium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C38277302334D460002AE54A /* XCRemoteSwiftPackageReference "Erbium" */;
+			productName = Erbium;
+		};
+		C38277342334D47B002AE54A /* Einsteinium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C38277332334D47B002AE54A /* XCRemoteSwiftPackageReference "Einsteinium" */;
+			productName = Einsteinium;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C34A684E204FFE51009E3D83 /* Project object */;
 }
