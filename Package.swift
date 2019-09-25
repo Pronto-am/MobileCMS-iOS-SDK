@@ -15,13 +15,9 @@ let package = Package(
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/google/promises.git", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.0")),
-
-        // E-sites
         .package(url: "https://github.com/e-sites/Cobalt.git", .upToNextMajor(from: "5.0.0")),
         .package(url: "https://github.com/e-sites/Erbium.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/e-sites/Einsteinium.git", .upToNextMajor(from: "1.0.0")),
-
-        // Testing
         .package(url: "https://github.com/Quick/Nimble.git", .branch("master")),
         .package(url: "https://github.com/e-sites/Mockingjay.git", .upToNextMajor(from: "2.0.0"))
     ],

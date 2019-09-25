@@ -82,7 +82,7 @@ collection.list().then { result in
 
 ```swift
 let collection = ProntoCollection<Location>()
-let pagination = Pagination(offset: 12, limit: 12) // This will get the 12th - 24th items
+let pagination = Pagination(offset: 12, limit: 12) // This will get the 13th - 24th items
 collection.list(pagination: pagination)
 ```
 
@@ -90,7 +90,7 @@ collection.list(pagination: pagination)
 
 ```swift
 let collection = ProntoCollection<Location>()
-let pagination = Pagination(offset: 24, limit: 12) // This will get the 24th - 36th items
+let pagination = Pagination(offset: 24, limit: 12) // This will get the 25th - 36th items
 let sorting = SortOrder(key: "name", direction: .ascending) // Sort A -> Z
 collection.list(sortBy: sorting, pagination: pagination)
 ```
@@ -114,24 +114,25 @@ For instance if you have got the following collections defined in the CMS:
 
 - **Team**
   - Name
+  
 -  **Player**
   - Name
   - Team
 
 With the following team entries:
 
-- Juventus
-- Barcelona
-- Manchester United
+- Juventu
+- FC Barcelona
+- Liverpool FC
 
 and the following player entries:
 
 - Christiano Ronaldo (Juventus)
-- Mario Mandžukić (Juventus)
-- Lionel Messie (Barcelona)
-- Paul Pogba (Manchester United)
-- David de Gea (Manchester United)
-- Marouane Fellaini (Manchester United)
+- Matthijs de Ligt (Juventus)
+- Lionel Messie (FC Barcelona)
+- Virgil van Dijk (Liverpool FC)
+- Mohamed Salah (Liverpool FC)
+- Alisson Becker (Liverpool FC)
 
 The following code will get you all the teams:
 
