@@ -11,6 +11,7 @@ import Promises
 import Alamofire
 import Erbium
 import Cobalt
+import UIKit
 
 class ProntoAPIClientNotificationsModule {
     private weak var prontoAPIClient: ProntoAPIClient!
