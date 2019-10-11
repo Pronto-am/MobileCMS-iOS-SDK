@@ -42,7 +42,6 @@ let package = Package(
                 "ProntoSDK",
                 "Nimble",
                 "Mockingjay",
-                "MockingjayXCTest",
                 "Cobalt"
             ],
             path: "ProntoSDKTests"
