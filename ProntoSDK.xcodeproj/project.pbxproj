@@ -58,7 +58,6 @@
 		C37B2C1C20E60D2900FD89EF /* ProntoPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B2C1B20E60D2900FD89EF /* ProntoPlugin.swift */; };
 		C37B2C2A20E65DE600FD89EF /* v1_registeralready.json in Resources */ = {isa = PBXBuildFile; fileRef = C37B2C2920E65DE600FD89EF /* v1_registeralready.json */; };
 		C37D63AB210615EF00A4DA6F /* ProntoCollectionMapper+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D63AA210615EF00A4DA6F /* ProntoCollectionMapper+JSON.swift */; };
-		C37DCD7123507BB400908FB6 /* MockingjayXCTest in Frameworks */ = {isa = PBXBuildFile; productRef = C37DCD7023507BB400908FB6 /* MockingjayXCTest */; };
 		C37DCD7323507BB400908FB6 /* Mockingjay in Frameworks */ = {isa = PBXBuildFile; productRef = C37DCD7223507BB400908FB6 /* Mockingjay */; };
 		C382771B2334D3A9002AE54A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C382771A2334D3A9002AE54A /* SwiftyJSON */; };
 		C382771E2334D3B7002AE54A /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C382771D2334D3B7002AE54A /* KeychainAccess */; };
@@ -199,7 +198,6 @@
 				C36D8E9E2334DFF90062FBC6 /* Nimble in Frameworks */,
 				C36D8E9C2334DFC10062FBC6 /* ProntoSDK.framework in Frameworks */,
 				C37DCD7323507BB400908FB6 /* Mockingjay in Frameworks */,
-				C37DCD7123507BB400908FB6 /* MockingjayXCTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,7 +618,6 @@
 			name = ProntoSDKTests;
 			packageProductDependencies = (
 				C36D8E9D2334DFF90062FBC6 /* Nimble */,
-				C37DCD7023507BB400908FB6 /* MockingjayXCTest */,
 				C37DCD7223507BB400908FB6 /* Mockingjay */,
 			);
 			productName = ProntoSDKTests;
@@ -1130,11 +1127,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C36D8E8E2334DDED0062FBC6 /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
-		};
-		C37DCD7023507BB400908FB6 /* MockingjayXCTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C37DCD6F23507BB400908FB6 /* XCRemoteSwiftPackageReference "Mockingjay" */;
-			productName = MockingjayXCTest;
 		};
 		C37DCD7223507BB400908FB6 /* Mockingjay */ = {
 			isa = XCSwiftPackageProductDependency;
