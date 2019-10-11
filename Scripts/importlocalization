@@ -28,6 +28,7 @@ def transform(text)
     .gsub("\n", "\\n")
     .gsub("\\\n", "\\n")
     .gsub("%s", "%@")
+    .gsub("\"", "\\\"")
 end
 
 puts " "

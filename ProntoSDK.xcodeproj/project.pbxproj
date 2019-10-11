@@ -38,7 +38,6 @@
 		C367B6B22100ADE600793F99 /* PaginatedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B6B12100ADE600793F99 /* PaginatedResult.swift */; };
 		C367B6B82100BA6600793F99 /* SortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367B6B72100BA6600793F99 /* SortOrder.swift */; };
 		C367B6BA2100CFA400793F99 /* v1_collections_all_get.json in Resources */ = {isa = PBXBuildFile; fileRef = C367B6B92100CFA400793F99 /* v1_collections_all_get.json */; };
-		C36D8E952334DF160062FBC6 /* Mockingjay in Frameworks */ = {isa = PBXBuildFile; productRef = C36D8E942334DF160062FBC6 /* Mockingjay */; };
 		C36D8E9C2334DFC10062FBC6 /* ProntoSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34A6857204FFE51009E3D83 /* ProntoSDK.framework */; };
 		C36D8E9E2334DFF90062FBC6 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = C36D8E9D2334DFF90062FBC6 /* Nimble */; };
 		C36D8E9F2334E0FE0062FBC6 /* ProntoSDKTests_General.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B4094E2057F3B600802593 /* ProntoSDKTests_General.swift */; };
@@ -59,6 +58,8 @@
 		C37B2C1C20E60D2900FD89EF /* ProntoPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37B2C1B20E60D2900FD89EF /* ProntoPlugin.swift */; };
 		C37B2C2A20E65DE600FD89EF /* v1_registeralready.json in Resources */ = {isa = PBXBuildFile; fileRef = C37B2C2920E65DE600FD89EF /* v1_registeralready.json */; };
 		C37D63AB210615EF00A4DA6F /* ProntoCollectionMapper+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D63AA210615EF00A4DA6F /* ProntoCollectionMapper+JSON.swift */; };
+		C37DCD7123507BB400908FB6 /* MockingjayXCTest in Frameworks */ = {isa = PBXBuildFile; productRef = C37DCD7023507BB400908FB6 /* MockingjayXCTest */; };
+		C37DCD7323507BB400908FB6 /* Mockingjay in Frameworks */ = {isa = PBXBuildFile; productRef = C37DCD7223507BB400908FB6 /* Mockingjay */; };
 		C382771B2334D3A9002AE54A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C382771A2334D3A9002AE54A /* SwiftyJSON */; };
 		C382771E2334D3B7002AE54A /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C382771D2334D3B7002AE54A /* KeychainAccess */; };
 		C38277212334D3C9002AE54A /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = C38277202334D3C9002AE54A /* CryptoSwift */; };
@@ -197,7 +198,8 @@
 			files = (
 				C36D8E9E2334DFF90062FBC6 /* Nimble in Frameworks */,
 				C36D8E9C2334DFC10062FBC6 /* ProntoSDK.framework in Frameworks */,
-				C36D8E952334DF160062FBC6 /* Mockingjay in Frameworks */,
+				C37DCD7323507BB400908FB6 /* Mockingjay in Frameworks */,
+				C37DCD7123507BB400908FB6 /* MockingjayXCTest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,8 +619,9 @@
 			);
 			name = ProntoSDKTests;
 			packageProductDependencies = (
-				C36D8E942334DF160062FBC6 /* Mockingjay */,
 				C36D8E9D2334DFF90062FBC6 /* Nimble */,
+				C37DCD7023507BB400908FB6 /* MockingjayXCTest */,
+				C37DCD7223507BB400908FB6 /* Mockingjay */,
 			);
 			productName = ProntoSDKTests;
 			productReference = C34A6860204FFE51009E3D83 /* ProntoSDKTests.xctest */;
@@ -664,7 +667,7 @@
 				C38277302334D460002AE54A /* XCRemoteSwiftPackageReference "Erbium" */,
 				C38277332334D47B002AE54A /* XCRemoteSwiftPackageReference "Einsteinium" */,
 				C36D8E8E2334DDED0062FBC6 /* XCRemoteSwiftPackageReference "Nimble" */,
-				C36D8E932334DF160062FBC6 /* XCRemoteSwiftPackageReference "Mockingjay" */,
+				C37DCD6F23507BB400908FB6 /* XCRemoteSwiftPackageReference "Mockingjay" */,
 			);
 			productRefGroup = C34A6858204FFE51009E3D83 /* Products */;
 			projectDirPath = "";
@@ -1048,12 +1051,12 @@
 				kind = branch;
 			};
 		};
-		C36D8E932334DF160062FBC6 /* XCRemoteSwiftPackageReference "Mockingjay" */ = {
+		C37DCD6F23507BB400908FB6 /* XCRemoteSwiftPackageReference "Mockingjay" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/e-sites/Mockingjay.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.4;
+				branch = master;
+				kind = branch;
 			};
 		};
 		C38277192334D3A9002AE54A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
@@ -1123,15 +1126,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C36D8E942334DF160062FBC6 /* Mockingjay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C36D8E932334DF160062FBC6 /* XCRemoteSwiftPackageReference "Mockingjay" */;
-			productName = Mockingjay;
-		};
 		C36D8E9D2334DFF90062FBC6 /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C36D8E8E2334DDED0062FBC6 /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
+		};
+		C37DCD7023507BB400908FB6 /* MockingjayXCTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37DCD6F23507BB400908FB6 /* XCRemoteSwiftPackageReference "Mockingjay" */;
+			productName = MockingjayXCTest;
+		};
+		C37DCD7223507BB400908FB6 /* Mockingjay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37DCD6F23507BB400908FB6 /* XCRemoteSwiftPackageReference "Mockingjay" */;
+			productName = Mockingjay;
 		};
 		C382771A2334D3A9002AE54A /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;

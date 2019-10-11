@@ -19,7 +19,7 @@ let package = Package(
         .package(url: "https://github.com/e-sites/Erbium.git", .upToNextMajor(from: "4.0.0")),
         .package(url: "https://github.com/e-sites/Einsteinium.git", .upToNextMajor(from: "1.0.0")),
         .package(url: "https://github.com/Quick/Nimble.git", .branch("master")),
-        .package(url: "https://github.com/e-sites/Mockingjay.git", .upToNextMajor(from: "2.0.0"))
+        .package(url: "https://github.com/e-sites/Mockingjay.git", .branch("master"))
     ],
     targets: [
         .target(
@@ -42,6 +42,7 @@ let package = Package(
                 "ProntoSDK",
                 "Nimble",
                 "Mockingjay",
+                "MockingjayXCTest",
                 "Cobalt"
             ],
             path: "ProntoSDKTests"

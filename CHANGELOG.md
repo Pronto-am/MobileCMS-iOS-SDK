@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.7.1
+- Fixed Mockingjay SwiftPM dependencies
+
 ## v2.7.0
 - Xcode11 compatible / SwiftPM
 

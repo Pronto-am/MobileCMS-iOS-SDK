@@ -9,6 +9,7 @@
 import SwiftyJSON
 import XCTest
 import Mockingjay
+import MockingjayXCTest
 import Cobalt
 import Nimble
 import Promises

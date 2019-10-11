@@ -8,6 +8,7 @@
 
 import XCTest
 import Mockingjay
+import MockingjayXCTest
 import Nimble
 import Promises
 
