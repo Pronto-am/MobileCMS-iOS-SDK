@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ProntoRemoteConfig Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ProntoRemoteConfig" class="dashAnchor"></a>
+    <a title="ProntoRemoteConfig Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ProntoSDK 2.3.0 Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ProntoSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ProntoRemoteConfig Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Core.html">Core</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoSDK.html">ProntoSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoError.html">ProntoError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoConfig.html">ProntoConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoPlugin.html">ProntoPlugin</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAPIClient.html">ProntoAPIClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Text.html">Text</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Push%20notifications.html">Push notifications</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Segment.html">Segment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device.html">Device</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PushNotification.html">PushNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoNotifications.html">ProntoNotifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoNotificationsDelegate.html">ProntoNotificationsDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WebviewController.html">WebviewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoNotificationsError.html">ProntoNotificationsError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Authentication.html">Authentication</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/User.html">User</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAuthentication.html">ProntoAuthentication</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Collections.html">Collections</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoCollectionMappable.html">ProntoCollectionMappable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoCollectionMapper.html">ProntoCollectionMapper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Collections.html#/s:9ProntoSDK0A18CollectionMapValueP">ProntoCollectionMapValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Pagination.html">Pagination</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoFilterable.html">ProntoFilterable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PaginatedResult.html">PaginatedResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoCollection.html">ProntoCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProntoCollectionError.html">ProntoCollectionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Coordinate.html">Coordinate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextURL.html">TextURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SortOrder.html">SortOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SortOrder/Direction.html">– Direction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Update%20check.html">Update check</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoAppUpdateCheck.html">ProntoAppUpdateCheck</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppVersion.html">AppVersion</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProntoAppUpdateCheckDelegate.html">ProntoAppUpdateCheckDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Localization.html">Localization</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoLocalization.html">ProntoLocalization</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Remote%20config.html">Remote config</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ProntoRemoteConfig.html">ProntoRemoteConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RemoteConfigItem.html">RemoteConfigItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RemoteConfigItem/ItemType.html">– ItemType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ProntoRemoteConfig</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">ProntoRemoteConfig</span> <span class="p">:</span> <span class="kt">PluginBase</span></code></pre>
+
+                </div>
+              </div>
+            <p>Remote Config plugin</p>
+
+<p>The remote config items are stored in the <code>UserDefaults</code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A12RemoteConfigC5itemsSayAA0cD4ItemCGvp"></a>
+                    <a name="//apple_ref/swift/Property/items" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A12RemoteConfigC5itemsSayAA0cD4ItemCGvp">items</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Return all Remote Config items</p>
+
+<p>This will keep the <code>releaseDate</code> in mind.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/RemoteConfigItem.html">RemoteConfigItem</a></span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>[RemoteConfigItem]</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A12RemoteConfigCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A12RemoteConfigCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default constructor</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A12RemoteConfigC5fetch8Promises7PromiseCySayAA0cD4ItemCGGyF"></a>
+                    <a name="//apple_ref/swift/Method/fetch()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A12RemoteConfigC5fetch8Promises7PromiseCySayAA0cD4ItemCGGyF">fetch()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetch the current Remote Config</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">fetch</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/RemoteConfigItem.html">RemoteConfigItem</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>Promise&lt;[RemoteConfigItem]&gt;</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A12RemoteConfigC3getyAA0cD4ItemCSgSSF"></a>
+                    <a name="//apple_ref/swift/Method/get(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A12RemoteConfigC3getyAA0cD4ItemCSgSSF">get(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a RemoteConfigItem for a specific identifier</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">get</span><span class="p">(</span><span class="n">_</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RemoteConfigItem.html">RemoteConfigItem</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>identifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>RemoteConfigItem?</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9ProntoSDK0A12RemoteConfigCyAA0cD4ItemCSgSScip"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9ProntoSDK0A12RemoteConfigCyAA0cD4ItemCSgSScip">subscript(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Subscript. The same as <code><a href="../Classes/ProntoRemoteConfig.html#/s:9ProntoSDK0A12RemoteConfigC3getyAA0cD4ItemCSgSSF">get(_:)</a></code></p>
+
+<ul>
+<li><p>Paramaters:</p>
+
+<ul>
+<li>identifier: String</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RemoteConfigItem.html">RemoteConfigItem</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>RemoteConfigItem?</code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© E-sites 2019</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

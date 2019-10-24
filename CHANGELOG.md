@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.8.0
+- Remote config plugin
+
 ## v2.7.1
 - Fixed Mockingjay SwiftPM dependencies
 

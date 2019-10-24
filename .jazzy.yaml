@@ -62,3 +62,8 @@ custom_categories:
   - name: Localization
     children:
     - ProntoLocalization
+
+  - name: Remote config
+    children:
+    - ProntoRemoteConfig
+    - RemoteConfigItem

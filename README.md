@@ -43,6 +43,7 @@ pod 'ProntoSDK'
 - `ProntoSDK/Collections`
 - `ProntoSDK/AppUpdateCheck`
 - `ProntoSDK/Localization`
+- `ProntoSDK/RemoteConfig`
 
 And run:
 
@@ -145,6 +146,10 @@ func application(_ application: UIApplication,
 ### Localization
 
  → 🇪🇺 [Read localization documentation](docs/LOCALIZATION.md)
+
+### Remote config
+
+ → ⚙️ [Read remote config documentation](docs/REMOTE-CONFIG.md)
 
 ## Promises
 

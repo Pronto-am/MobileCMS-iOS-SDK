@@ -8,7 +8,6 @@
 
 import XCTest
 import Mockingjay
-import Mockingjay
 import Nimble
 import Cobalt
 @testable import ProntoSDK

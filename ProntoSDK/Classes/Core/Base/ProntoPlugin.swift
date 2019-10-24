@@ -29,6 +29,9 @@ public enum ProntoPlugin: String {
 
     /// Localization
     case localization
+
+    /// Remote config
+    case remoteConfig
 }
 
 extension PluginBase {

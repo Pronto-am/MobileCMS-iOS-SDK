@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ProntoSDK"
-  s.version      = "2.7.1"
+  s.version      = "2.8.0"
   s.author       = { "Bas van Kuijck" => "bas@e-sites.nl" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.homepage     = "http://www.e-sites.nl"
@@ -55,19 +55,8 @@ Pod::Spec.new do |s|
     ss.source_files = "ProntoSDK/Classes/Localization/**/*.{h,m,swift}"
   end
 
-  # s.test_spec 'Tests' do |test_spec|
-  #   test_spec.dependency 'ProntoSDK/Collections'
-  #   test_spec.dependency 'ProntoSDK/Authentication'
-  #   test_spec.dependency 'ProntoSDK/Notifications'
-  #   test_spec.dependency 'Lithium'
-  #   test_spec.dependency 'Lithium/Cobalt'
-  #   test_spec.dependency 'Nimble'
-  #   test_spec.dependency 'Mockingjay'
-
-
-  #   test_spec.requires_app_host = false
-  #   test_spec.source_files = 'ProntoSDKTests/**/*.{h,swift}'
-  #   test_spec.resources = 'ProntoSDKTests/Mocking/*.json'
-  # end
-
+  s.subspec 'RemoteConfig' do |ss|
+    ss.dependency 'ProntoSDK/Core'
+    ss.source_files = "ProntoSDK/Classes/RemoteConfig/**/*.{h,m,swift}"
+  end
 end
