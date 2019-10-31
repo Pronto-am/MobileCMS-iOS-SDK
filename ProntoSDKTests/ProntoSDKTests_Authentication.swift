@@ -22,6 +22,26 @@ class ProntoSDKTestsAuthentication: ProntoSDKTests {
 
     func testAccessToken() {
         let loginStub = stub(http(.post, uri: "/oauth/v2/token"),
+                             mockJSONFile("oauth_invalidgrant", status: 400))
+
+        waitUntil { done in
+            self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "invalid_password").then { user in
+                XCTAssert(false, "Expected to fail, got \(user)")
+            }.catch { error in
+                guard let prontoError = error as? ProntoError else {
+                    XCTAssert(false, "Expected error to be ProntoError, got \(error)")
+                    return
+                }
+                expect(prontoError) == ProntoError.invalidCredentials
+            }.always {
+                self.removeStub(loginStub)
+                done()
+            }
+        }
+    }
+
+    func testInvalidGrant() {
+        let loginStub = stub(http(.post, uri: "/oauth/v2/token"),
                              mockJSONFile("oauth_token"))
 
         let profileStub = stub(http(.get, uri: "/api/\(apiVersion)/users/app/profile"),

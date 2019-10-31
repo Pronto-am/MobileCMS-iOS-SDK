@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.8.1
+- [Authentication] Throw ProntoError.invalidCredentials on invalid login
+
 ## v2.8.0
 - Remote config plugin
 

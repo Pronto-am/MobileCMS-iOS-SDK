@@ -94,6 +94,11 @@ public class ProntoAuthentication: PluginBase {
         }.then { user -> Promise<User> in
             self.currentUser = user
             return Promise(user)
+        }.recover { error -> Promise<User> in
+            if let cobaltError = error as? Cobalt.Error, cobaltError == .invalidGrant {
+                throw ProntoError.invalidCredentials
+            }
+            throw error
         }
     }
 

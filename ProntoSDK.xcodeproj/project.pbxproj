@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C309445F236ADDB90043FF3C /* oauth_invalidgrant.json in Resources */ = {isa = PBXBuildFile; fileRef = C309445E236ADDAB0043FF3C /* oauth_invalidgrant.json */; };
 		C3124607210065AE00ACB824 /* ProntoAPIClient+authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3124606210065AE00ACB824 /* ProntoAPIClient+authentication.swift */; };
 		C319597A20E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C319597920E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift */; };
 		C319598320E5052C00AF83B4 /* oauth_token.json in Resources */ = {isa = PBXBuildFile; fileRef = C319598220E5052C00AF83B4 /* oauth_token.json */; };
@@ -101,6 +102,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C309445E236ADDAB0043FF3C /* oauth_invalidgrant.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oauth_invalidgrant.json; sourceTree = "<group>"; };
 		C3124606210065AE00ACB824 /* ProntoAPIClient+authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProntoAPIClient+authentication.swift"; sourceTree = "<group>"; };
 		C319597920E4E6F700AF83B4 /* ProntoAPIClientUserModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProntoAPIClientUserModule.swift; sourceTree = "<group>"; };
 		C319598220E5052C00AF83B4 /* oauth_token.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = oauth_token.json; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				C3D6BB3020515ED9007FA9BF /* v1_notifications-devices-unregister.json */,
 				C3B76BA120FF7E5B004B7578 /* v1_collections_all.json */,
 				C367B6B92100CFA400793F99 /* v1_collections_all_get.json */,
+				C309445E236ADDAB0043FF3C /* oauth_invalidgrant.json */,
 				C319598220E5052C00AF83B4 /* oauth_token.json */,
 				C37B2C1720E50AC800FD89EF /* accesstoken_expired.json */,
 				C37B2C1520E5075B00FD89EF /* v1_userprofile.json */,
@@ -740,6 +743,7 @@
 			files = (
 				C319598320E5052C00AF83B4 /* oauth_token.json in Resources */,
 				C3B4812D2361A21300CA6BCA /* v1_remoteconfig.json in Resources */,
+				C309445F236ADDB90043FF3C /* oauth_invalidgrant.json in Resources */,
 				C3B76BA220FF7E5B004B7578 /* v1_collections_all.json in Resources */,
 				C34A688E20501AD4009E3D83 /* v1_notifications-signin-device.json in Resources */,
 				C37B2C2A20E65DE600FD89EF /* v1_registeralready.json in Resources */,

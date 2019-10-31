@@ -28,6 +28,9 @@ public enum ProntoError: Swift.Error {
 
     /// Login / registration: Invalid E-mail address
     case invalidEmailAddress
+
+    /// Login: Invalid credentials
+    case invalidCredentials
     
     /// Missing a specific field
     case missingField(String)
