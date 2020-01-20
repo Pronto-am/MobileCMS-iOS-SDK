@@ -59,3 +59,4 @@ extension String: ProntoCollectionMapValue { }
 extension Date: ProntoCollectionMapValue { }
 extension Double: ProntoCollectionMapValue { }
 extension Float: ProntoCollectionMapValue { }
+extension URL: ProntoCollectionMapValue { }

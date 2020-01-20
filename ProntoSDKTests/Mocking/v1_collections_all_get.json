@@ -20,6 +20,7 @@
         "url": {
             "nl": "https://www.pronto.am"
         },
+        "singleURL": "https://www.nu.nl",
         "number": 5,
         "json": {
             "test": "123"

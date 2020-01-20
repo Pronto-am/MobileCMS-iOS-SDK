@@ -50,6 +50,7 @@ class AllTestModel: ProntoCollectionMappable, CustomStringConvertible {
     var multiText: Text?
     var htmlText: Text?
     var url: TextURL?
+    var singleURL: URL?
     var coordinate: Coordinate?
     var bool: Bool = false
     var select: Select?
@@ -78,6 +79,7 @@ class AllTestModel: ProntoCollectionMappable, CustomStringConvertible {
         try mapper.map(key: "selectmulti", to: &multiSelect)
         try mapper.map(key: "related", to: &related)
         try mapper.map(key: "relations", to: &relations)
+        try mapper.map(key: "singleURL", to: &singleURL)
     }
 
     var description: String {

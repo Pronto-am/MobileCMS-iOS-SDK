@@ -99,6 +99,13 @@ public class ProntoCollectionMapper {
                 object = date as? T
             }
 
+        } else if type == Optional<URL>.self {
+            guard jsonObject.type == .string, let string = jsonObject.string else {
+                throw ProntoCollectionError.invalidType(key, "\(jsonObject.type)", "url")
+            }
+
+            object = URL(string: string) as? T
+
         } else if type == Optional<Bool>.self {
             guard jsonObject.type == .bool else {
                 throw ProntoCollectionError.invalidType(key, "\(jsonObject.type)", "bool")

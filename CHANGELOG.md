@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.8.2
+- [Collections] Add URL as mappable
+
 ## v2.8.1
 - [Authentication] Throw ProntoError.invalidCredentials on invalid login
 

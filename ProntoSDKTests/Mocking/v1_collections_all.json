@@ -14,6 +14,7 @@
       "url": {
         "nl": "https://www.pronto.am"
       },
+      "singleURL": "https://www.e-sites.nl",
       "number": 5,
       "coordinates": {
         "address": "Lunetstraat 88, 4814 AL Breda, Netherlands",
@@ -40,6 +41,7 @@
       "last_name": "Kuijck",
       "full_name": "Bas van Kuijck"
     },
+    "singleURL": "https://www.nu.nl",
     "updated_at": "2018-07-19T07:46:57+00:00",
     "updated_by": {
       "id": 2,
