@@ -44,7 +44,7 @@ public class ProntoAuthentication: PluginBase {
 
     init(apiClient: ProntoAPIClient) {
         self.apiClient = apiClient
-        rx.authorizationGrantType.subscribe(onNext: { [weak self] grantType in
+        rx.authorizationGrantType.skip(1).subscribe(onNext: { [weak self] grantType in
             if grantType == nil {
                 self?._clear()
             }
