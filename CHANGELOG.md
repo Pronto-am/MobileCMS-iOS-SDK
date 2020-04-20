@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v2.8.4
+- [RemoteConfig] public variables fixed
+
 ## v2.8.3
 - [Authentication] Fixed a bug where the user would be automatically logged out
 

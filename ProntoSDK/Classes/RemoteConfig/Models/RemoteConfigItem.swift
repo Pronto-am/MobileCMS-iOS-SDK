@@ -69,16 +69,16 @@ public class RemoteConfigItem: Codable, CustomDebugStringConvertible {
     internal(set) public var description: String?
 
     /// Bool value
-    private(set) var boolValue: Bool?
+    private(set) public var boolValue: Bool?
 
     /// Integer value
-    private(set) var integerValue: Int?
+    private(set) public var integerValue: Int?
 
     /// String value
-    private(set) var stringValue: String?
+    private(set) public var stringValue: String?
 
     /// Dictionary value (JSON type)
-    private(set) var dictionaryValue: [String: String]?
+    private(set) public var dictionaryValue: [String: String]?
 
     /// The date when this items was available
     private(set) public var releaseDate: Date?
