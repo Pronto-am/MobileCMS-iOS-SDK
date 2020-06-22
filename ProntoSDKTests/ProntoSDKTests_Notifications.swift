@@ -9,7 +9,8 @@
 import XCTest
 import Mockingjay
 import Nimble
-import Promises
+import RxSwift
+import RxCocoa
 
 @testable import ProntoSDK
 
@@ -25,27 +26,29 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
         Device.clearCurrent()
 
         let authStub = stub(http(.post, uri: "/oauth/v2/token"),
-                             mockJSONFile("oauth_token"))
+                            mockJSONFile("oauth_token"))
 
         let registerStub = stub(http(.post, uri: "/api/\(apiVersion)/devices/registration"),
                                 mockJSONFile("\(apiVersion)_notifications-register-device"))
         _ = apiClient.notifications.registerDevice(deviceToken: "123")
         _ = apiClient.notifications.registerDevice(deviceToken: "123")
         waitUntil { done in
-            self.apiClient.notifications.registerDevice(deviceToken: "123").then { device in
-                expect(device.id) == "84cfe80f-8d23-43f7-9016-53dc0e23860b"
-                guard let current = Device.current else {
-                    XCTAssert(false, "Current device is empty")
-                    return
+            self.apiClient.notifications.registerDevice(deviceToken: "123").subscribe { event in
+                switch event {
+                case .success(let device):
+                    expect(device.id) == "84cfe80f-8d23-43f7-9016-53dc0e23860b"
+                    guard let current = Device.current else {
+                        XCTAssert(false, "Current device is empty")
+                        return
+                    }
+                    expect(current) == device
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
                 }
-                expect(current) == device
-            }.catch { error in
-                XCTAssert(false, "\(error)")
-            }.always {
                 self.removeStub(registerStub)
                 self.removeStub(authStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
@@ -54,18 +57,21 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
         let authStub = stub(http(.post, uri: "/oauth/v2/token"),
                             mockJSONFile("oauth_token"))
         let unregisterStub = stub(http(.delete, uri: "/api/\(apiVersion)/devices/registration/{device_id}"),
-                              mockJSONFile("\(apiVersion)_notifications-devices-unregister"))
+                                  mockJSONFile("\(apiVersion)_notifications-devices-unregister"))
 
         waitUntil { done in
-            self.prontoNotifications.unregister(device: Device.mock())
-            .catch { error in
-                XCTAssert(false, "\(error)")
+            self.prontoNotifications.unregister(device: Device.mock()).subscribe { event in
+                switch event {
+                case .success:
+                    break
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
 
-            }.always {
+                }
                 self.removeStub(unregisterStub)
                 self.removeStub(authStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
@@ -77,22 +83,24 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
                                 mockJSONFile("\(apiVersion)_notifications-segments"))
 
         waitUntil { done in
-            self.prontoNotifications.segments(for: Device.mock()).then { segments in
-                expect(segments.count) == 2
-                expect(segments.filter { $0.isSubscribed }.count) == 1
-                if let segment = segments.first {
-                    expect(segment.name?.string(for: ProntoSDK.config.defaultLocale)) == "Segment one"
+            self.prontoNotifications.segments(for: Device.mock()).subscribe { event in
+                switch event {
+                case .success(let segments):
+                    expect(segments.count) == 2
+                    expect(segments.filter { $0.isSubscribed }.count) == 1
+                    if let segment = segments.first {
+                        expect(segment.name?.string(for: ProntoSDK.config.defaultLocale)) == "Segment one"
+                    }
+                    if let segment = segments.last {
+                        expect(segment.name?.string(for: ProntoSDK.config.defaultLocale)) == "Segment two"
+                    }
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
                 }
-                if let segment = segments.last {
-                    expect(segment.name?.string(for: ProntoSDK.config.defaultLocale)) == "Segment two"
-                }
-            }.catch { error in
-                XCTAssert(false, "\(error)")
-            }.always {
                 self.removeStub(segmentsStub)
                 self.removeStub(authStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
@@ -101,7 +109,7 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
         let authStub = stub(http(.post, uri: "/oauth/v2/token"),
                             mockJSONFile("oauth_token"))
         let segmentsSubscribeStub = stub(http(.put, uri: "/api/\(apiVersion)/notifications/segments"),
-                                mockJSONFile("\(apiVersion)_notifications-segments-subscribe"))
+                                         mockJSONFile("\(apiVersion)_notifications-segments-subscribe"))
 
         let segments: [Segment] = [(1, true), (2, false)].map { tuple in
             let segment = Segment()
@@ -111,13 +119,17 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
         }
 
         waitUntil { done in
-            self.prontoNotifications.update(segments: segments, device: Device.mock()).catch { error in
-                XCTAssert(false, "\(error)")
-            }.always {
+            self.prontoNotifications.update(segments: segments, device: Device.mock()).subscribe { event in
+                switch event {
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
+                case .success:
+                    break
+                }
                 self.removeStub(segmentsSubscribeStub)
                 self.removeStub(authStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
@@ -126,7 +138,7 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
         viewController.viewDidLoad()
         let request = URLRequest(url: URL(string: "https://www.pronto.am")!)
         viewController.load(urlRequest: request)
-        expect(viewController.loadingIndicator.isAnimating).toEventually(equal(false), timeout: 60)
+        expect(viewController.loadingIndicator.isAnimating).toEventually(equal(false), timeout: .seconds(60))
     }
 
     func testWebViewControllerError() {
@@ -134,8 +146,8 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
         viewController.viewDidLoad()
         let request = URLRequest(url: URL(string: "https://www.somenoneexisting.domain.pronto")!)
         viewController.load(urlRequest: request)
-        expect(viewController.loadingIndicator.isAnimating).toEventually(equal(false), timeout: 60)
-        expect(viewController.webView.isHidden).toEventually(equal(true), timeout: 60)
-        expect(viewController.errorLabel.isHidden).toEventually(equal(false), timeout: 60)
+        expect(viewController.loadingIndicator.isAnimating).toEventually(equal(false), timeout: .seconds(60))
+        expect(viewController.webView.isHidden).toEventually(equal(true), timeout: .seconds(60))
+        expect(viewController.errorLabel.isHidden).toEventually(equal(false), timeout: .seconds(60))
     }
 }

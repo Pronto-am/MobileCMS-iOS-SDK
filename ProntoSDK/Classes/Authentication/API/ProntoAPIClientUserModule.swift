@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Promises
+import RxSwift
+import RxCocoa
 import Cobalt
 import SwiftyJSON
 
@@ -22,27 +23,26 @@ class ProntoAPIClientUserModule {
     /// Get the user profile of the current access-token
     ///
     /// - Returns: `Promise<User>`
-    func profile() -> Promise<User> {
+    func profile() -> Single<User> {
         let request = Cobalt.Request({
             $0.authentication = .oauth2(.password)
             $0.path = prontoAPIClient.versionPath(for: "/users/app/profile")
         })
         
-        return prontoAPIClient.request(request).then { json -> Promise<User> in
-            let user = try json["data"].map(to: User.self)
-            return Promise(user)
+        return prontoAPIClient.request(request).map { json -> User in
+            return try json["data"].map(to: User.self)
         }
     }
     
-    private func _checkValid(user: User) -> Promise<User>? {
+    private func _checkValid(user: User) -> Single<User>? {
         if user.firstName.isEmpty {
-            return Promise(ProntoError.missingField("firstName"))
+            return Single<User>.error(ProntoError.missingField("firstName"))
             
         } else if user.email.isEmpty {
-            return Promise(ProntoError.missingField("email"))
+            return Single<User>.error(ProntoError.missingField("email"))
             
         } else if !user.email.isValidEmail {
-            return Promise(ProntoError.invalidEmailAddress)
+            return Single<User>.error(ProntoError.invalidEmailAddress)
         }
         return nil
     }
@@ -55,9 +55,9 @@ class ProntoAPIClientUserModule {
     ///   - user: `User` The user
     ///
     /// - Returns: `Promise<User>`
-    func update(_ user: User) -> Promise<User> {
-        if let promiseError = _checkValid(user: user) {
-            return promiseError
+    func update(_ user: User) -> Single<User> {
+        if let singleError = _checkValid(user: user) {
+            return singleError
         }
         
         do {
@@ -77,12 +77,11 @@ class ProntoAPIClientUserModule {
                 $0.parameters = obj
             })
 
-            return prontoAPIClient.request(request).then { json -> Promise<User> in
-                let user = try json["data"].map(to: User.self)
-                return Promise(user)
+            return prontoAPIClient.request(request).map { json -> User in
+                return try json["data"].map(to: User.self)
             }
         } catch let error {
-            return Promise<User>(error)
+            return Single<User>.error(error)
         }
     }
     
@@ -92,7 +91,7 @@ class ProntoAPIClientUserModule {
     ///  - email: String The email address
     ///
     /// - Returns: `Promise<Void>`
-    func passwordResetRequest(email: String) -> Promise<Void> {
+    func passwordResetRequest(email: String) -> Single<Void> {
         let request = Cobalt.Request({
             $0.authentication = .oauth2(.clientCredentials)
             $0.path = prontoAPIClient.versionPath(for: "/users/app/password/reset")
@@ -102,14 +101,12 @@ class ProntoAPIClientUserModule {
             ]
         })
         
-        return prontoAPIClient.request(request).then { _ -> Promise<Void> in
-            return Promise(())
-        }
+        return prontoAPIClient.request(request).map { _ in }
     }
     
-    func register(_ user: User, password: String) -> Promise<User> {
-        if let promiseError = _checkValid(user: user) {
-            return promiseError
+    func register(_ user: User, password: String) -> Single<User> {
+        if let singleError = _checkValid(user: user) {
+            return singleError
         }
         
         do {
@@ -130,24 +127,21 @@ class ProntoAPIClientUserModule {
                 $0.parameters = obj
             })
             
-            return prontoAPIClient.request(request).then { json -> Promise<User> in
-                let user = try json["data"].map(to: User.self)
-                return Promise(user)
+            return prontoAPIClient.request(request).map { json -> User in
+                return try json["data"].map(to: User.self)
             }
         } catch let error {
-            return Promise<User>(error)
+            return Single<User>.error(error)
         }
     }
 
-    func unregister(_ user: User) -> Promise<Void> {
+    func unregister(_ user: User) -> Single<Void> {
         let request = Cobalt.Request({
             $0.httpMethod = .delete
             $0.authentication = .oauth2(.password)
             $0.path = prontoAPIClient.versionPath(for: "/users/app/registration/\(user.id)")
         })
 
-        return prontoAPIClient.request(request).then { _ -> Promise<Void> in
-            return Promise(())
-        }
+        return prontoAPIClient.request(request).map { _ in }
     }
 }

@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 /// Delegate protocol to receive update
 public protocol ProntoAppUpdateCheckDelegate: class {
@@ -42,6 +44,7 @@ public class ProntoAppUpdateCheck: PluginBase {
     public weak var delegate: ProntoAppUpdateCheckDelegate?
 
     private var _isChecking = false
+    private lazy var disposeBag = DisposeBag()
 
     /// Should the SDK automatically check for a new version when the app goes into the foreground
     public var shouldCheckOnAppLaunch = true {
@@ -94,10 +97,17 @@ public class ProntoAppUpdateCheck: PluginBase {
         }
         _isChecking = true
         ProntoLogger.info("Checking new app version...")
-        ProntoAPIClient.default.appUpdateChecker.check().then { appVersion in
-            self.delegate?.prontoAppUpdateCheck(self, newVersion: appVersion)
-        }.always {
+        ProntoAPIClient.default.appUpdateChecker.check().subscribe { [weak self] event in
+            guard let self = self else {
+                return
+            }
+            switch event {
+            case .success(let appVersion):
+                self.delegate?.prontoAppUpdateCheck(self, newVersion: appVersion)
+            case .error:
+                break
+            }
             self._isChecking = false
-        }
+        }.disposed(by: disposeBag)
     }
 }

@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Promises
+import RxSwift
+import RxCocoa
 import Cobalt
 import Erbium
 import UIKit
@@ -19,7 +20,7 @@ class ProntoAPIClientAppUpdateCheckModule {
         self.prontoAPIClient = prontoAPIClient
     }
 
-    func check() -> Promise<AppVersion> {
+    func check() -> Single<AppVersion> {
         var version = Bundle.main.version
         let count = version.components(separatedBy: ".").count
         if count == 1 {
@@ -36,9 +37,6 @@ class ProntoAPIClientAppUpdateCheckModule {
             ]
         }
 
-        return prontoAPIClient.request(requestObject).then { json in
-            let appVersion = try json.map(to: AppVersion.self)
-            return Promise(appVersion)
-        }
+        return prontoAPIClient.request(requestObject).map { json in return try json.map(to: AppVersion.self) }
     }
 }

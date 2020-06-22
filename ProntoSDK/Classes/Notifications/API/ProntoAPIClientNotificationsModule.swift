@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Promises
+import RxSwift
+import RxCocoa
 import Alamofire
 import Erbium
 import Cobalt
@@ -38,7 +39,7 @@ class ProntoAPIClientNotificationsModule {
     @discardableResult
     func registerDevice(deviceToken: String,
                         sandbox: Bool = false,
-                        additionalData: [String: Any] = [:]) -> Promise<Device> {
+                        additionalData: [String: Any] = [:]) -> Single<Device> {
         let parameters = _parameters(withDeviceToken: deviceToken, additionalData: additionalData)
         // TODO: Enable sandbox mode
 //        if sandbox {
@@ -51,8 +52,7 @@ class ProntoAPIClientNotificationsModule {
             $0.parameters = parameters
         })
 
-        return prontoAPIClient.request(requestObject)
-        .then { json -> Device in
+        return prontoAPIClient.request(requestObject).map { json -> Device in
             let jsonData = json["data"]
             let device = try jsonData.map(to: Device.self)
             device.store()
@@ -61,32 +61,41 @@ class ProntoAPIClientNotificationsModule {
     }
 
     @discardableResult
-    func signIn(device: Device, additionalData: [String: Any] = [:]) -> Promise<Void> {
+    func signIn(device: Device, additionalData: [String: Any] = [:]) -> Single<Void> {
         var parameters = _parameters(withDeviceToken: device.deviceToken,
                                      additionalData: additionalData)
         parameters["device_identifier"] = device.id
-        return Promise {
-            return try self.prontoAPIClient.firebaseLog.add(type: .signInDevice, parameters)
+        return Single<Void>.just(()).flatMap { [prontoAPIClient] _ in
+            guard let prontoAPIClient = prontoAPIClient else {
+                return Single<Void>.never()
+            }
+            return try prontoAPIClient.firebaseLog.add(type: .signInDevice, parameters)
         }
     }
 
     @discardableResult
-    func notificationReceived(notificationIdentifier: String, device: Device) -> Promise<Void> {
-        return Promise {
-            return try self.prontoAPIClient.firebaseLog.add(type: .notificationReceived, [
+    func notificationReceived(notificationIdentifier: String, device: Device) -> Single<Void> {
+        return Single<Void>.just(()).flatMap { [prontoAPIClient] _ in
+            guard let prontoAPIClient = prontoAPIClient else {
+                return Single<Void>.never()
+            }
+            return try prontoAPIClient.firebaseLog.add(type: .notificationReceived, [
                 "notification_identifier": notificationIdentifier,
                 "device_identifier": device.id
-                ])
+            ])
         }
     }
 
     @discardableResult
-    func notificationOpened(notificationIdentifier: String, device: Device) -> Promise<Void> {
-        return Promise {
-            return try self.prontoAPIClient.firebaseLog.add(type: .notificationOpened, [
+    func notificationOpened(notificationIdentifier: String, device: Device) -> Single<Void> {
+        return Single<Void>.just(()).flatMap { [prontoAPIClient] _ in
+            guard let prontoAPIClient = prontoAPIClient else {
+                return Single<Void>.never()
+            }
+            return try prontoAPIClient.firebaseLog.add(type: .notificationOpened, [
                 "notification_identifier": notificationIdentifier,
                 "device_identifier": device.id
-                ])
+            ])
         }
     }
 }
@@ -103,15 +112,14 @@ extension ProntoAPIClientNotificationsModule {
     ///
     /// - Returns: `Promise<Void>`
     @discardableResult
-    func unregister(device: Device) -> Promise<Void> {
+    func unregister(device: Device) -> Single<Void> {
         let requestObject = Cobalt.Request({
             $0.path = prontoAPIClient.versionPath(for: "/devices/registration/\(device.id)")
             $0.httpMethod = .delete
             $0.authentication = .oauth2(.clientCredentials)
         })
 
-        return prontoAPIClient.request(requestObject)
-        .then { _ -> Void in
+        return prontoAPIClient.request(requestObject).map { _ in
             Device.clearCurrent()
             return ()
         }
@@ -129,14 +137,13 @@ extension ProntoAPIClientNotificationsModule {
     ///
     /// - Returns: `Promise<[Segment]>`
     @discardableResult
-    func segments(`for` device: Device) -> Promise<[Segment]> {
+    func segments(`for` device: Device) -> Single<[Segment]> {
         let requestObject = Cobalt.Request({
             $0.path = prontoAPIClient.versionPath(for: "/notifications/segments/\(device.id)")
             $0.authentication = .oauth2(.clientCredentials)
         })
 
-        return prontoAPIClient.request(requestObject)
-        .then { json -> [Segment] in
+        return prontoAPIClient.request(requestObject).map { json -> [Segment] in
             return try json["data"].map(to: [Segment].self)
         }
     }
@@ -149,7 +156,7 @@ extension ProntoAPIClientNotificationsModule {
     ///
     /// - Returns: `Promise<Void>`
     @discardableResult
-    func subscribe(segments: [Segment], device: Device) -> Promise<Void> {
+    func subscribe(segments: [Segment], device: Device) -> Single<Void> {
         let encodedSegments = (try? segments.encode()) ?? []
         let requestObject = Cobalt.Request({
             $0.path = prontoAPIClient.versionPath(for: "/notifications/segments")
@@ -161,9 +168,6 @@ extension ProntoAPIClientNotificationsModule {
             ]
         })
 
-        return prontoAPIClient.request(requestObject)
-        .then { _ in
-            return ()
-        }
+        return prontoAPIClient.request(requestObject).map { _ in }
     }
 }

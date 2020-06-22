@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Promises
+import RxCocoa
+import RxSwift
 
 /// Remote Config plugin
 ///
@@ -71,12 +72,15 @@ public class ProntoRemoteConfig: PluginBase {
 
     /// Fetch the current Remote Config
     ///
-    /// - Returns: `Promise<[RemoteConfigItem]>`
+    /// - Returns: `Single<[RemoteConfigItem]>`
     @discardableResult
-    public func fetch() -> Promise<[RemoteConfigItem]> {
-        return ProntoAPIClient.default.remoteConfig.fetch().then { items -> Promise<[RemoteConfigItem]> in
-            self._items = items
-            return Promise(self.items)
+    public func fetch() -> Single<[RemoteConfigItem]> {
+        return ProntoAPIClient.default.remoteConfig.fetch().map { [weak self] items -> [RemoteConfigItem] in
+            self?._items = items
+            guard let self = self else {
+                return []
+            }
+            return self.items
         }
     }
 

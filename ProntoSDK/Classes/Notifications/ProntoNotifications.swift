@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import Einsteinium
 import UserNotifications
-import Promises
+import RxSwift
+import RxCocoa
 import KeychainAccess
 import SwiftyJSON
 
@@ -35,6 +36,8 @@ public class ProntoNotifications: PluginBase {
     var requiredPlugins: [ProntoPlugin] {
         return [ .notifications ]
     }
+
+    fileprivate lazy var disposeBag = DisposeBag()
 
     private var _storeInKeyChain = false
 
@@ -155,7 +158,7 @@ extension ProntoNotifications {
     ///   - device: The `Device` to show if device subscribed to the specific segment
     ///
     /// - Returns: `Promise<[Segment]>`
-    public func segments(`for` device: Device) -> Promise<[Segment]> {
+    public func segments(`for` device: Device) -> Single<[Segment]> {
         return apiClient.notifications.segments(for: device)
     }
 
@@ -166,7 +169,7 @@ extension ProntoNotifications {
     ///   - device: The current device
     ///
     /// - Returns: `Promise<Void>`
-    public func update(segments: [Segment], device: Device) -> Promise<Void> {
+    public func update(segments: [Segment], device: Device) -> Single<Void> {
         return apiClient.notifications.subscribe(segments: segments, device: device)
     }
 
@@ -177,7 +180,7 @@ extension ProntoNotifications {
     ///   - device: The current device
     ///
     /// - Returns: `Promise<Void>`
-    public func update(segment: Segment, device: Device) -> Promise<Void> {
+    public func update(segment: Segment, device: Device) -> Single<Void> {
         return update(segments: [ segment ], device: device)
     }
 
@@ -188,7 +191,7 @@ extension ProntoNotifications {
     ///
     /// - Returns: `Promise<Void>`
     @discardableResult
-    public func unregister(device: Device) -> Promise<Void> {
+    public func unregister(device: Device) -> Single<Void> {
         return apiClient.notifications.unregister(device: device)
     }
 }
@@ -237,22 +240,22 @@ extension ProntoNotifications {
             apiClient.notifications.notificationOpened(
                 notificationIdentifier: pushNotification.identifier,
                 device: device)
-                .then {
-                    fetchCompletionHandler(.newData)
-                }.catch { _ in
-                    fetchCompletionHandler(.failed)
-                }
+            .subscribe(onSuccess: {
+                fetchCompletionHandler(.newData)
+            }, onError: { _ in
+                fetchCompletionHandler(.failed)
+            }).disposed(by: disposeBag)
 
         // App launched through tapping on the push notification
         case .inactive:
             apiClient.notifications.notificationOpened(
                 notificationIdentifier: pushNotification.identifier,
                 device: device)
-            .then {
+            .subscribe(onSuccess: {
                 fetchCompletionHandler(.newData)
-            }.catch { _ in
+            }, onError: { _ in
                 fetchCompletionHandler(.failed)
-            }
+            }).disposed(by: disposeBag)
 
             if let url = pushNotification.clickActionURL {
                 let webviewController = _presentWebViewController(withURL: url)
@@ -321,16 +324,16 @@ extension ProntoNotifications {
             apiClient.notifications.registerDevice(deviceToken: deviceTokenString,
                                                                  sandbox: sandbox,
                                                                  additionalData: additionalDeviceData)
-            .then { _ in
+            .subscribe(onSuccess: { _ in
                 ProntoLogger.success("Device succesfully registered")
                 NotificationCenter.default.post(name: notification, object: nil)
-            }.catch { error in
+            }, onError: { error in
                 ProntoLogger.error("Error registering device: \(error)")
                 
                 NotificationCenter.default.post(name: notification,
                                                 object: nil,
                                                 userInfo: [ "error": ProntoNotificationsError.underlying(error) ])
-            }
+            }).disposed(by: disposeBag)
             return
         }
 

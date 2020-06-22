@@ -11,7 +11,6 @@ import XCTest
 import Mockingjay
 import Cobalt
 import Nimble
-import Promises
 
 @testable import ProntoSDK
 

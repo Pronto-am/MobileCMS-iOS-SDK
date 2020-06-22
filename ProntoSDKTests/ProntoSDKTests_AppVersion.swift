@@ -9,7 +9,6 @@
 import XCTest
 import Mockingjay
 import Nimble
-import Promises
 import Einsteinium
 import SwiftyJSON
 import CoreLocation

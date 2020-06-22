@@ -151,20 +151,21 @@ func application(_ application: UIApplication,
 
  → ⚙️ [Read remote config documentation](docs/REMOTE-CONFIG.md)
 
-## Promises
+## RxSwift
 
-Almost every asynchronous function ProntoSDK uses `Promises` internally:
+Almost every asynchronous function ProntoSDK uses `RxSwift` internally:
 
 ```swift
-let collection = ProntoCollection<Location>()
-collection.list().then { result in
-    // ...
-}.catch { error in 
-    print("Error fetching locations: \(error)")
-}
-```
+import RxSwift
+import RxCocoa
 
-If you want to convert it to your own handler [read the promises guide](docs/PROMISES.md).
+let single = ProntoCollection<Location>().list() // = Single<[Location]>
+single.subscribe(onSuccess: { locations in 
+    // ...
+}, onError: { error in 
+    print("Error fetching locations: \(error)")
+}).disposed(by: disposeBag)
+```
 
 ## References
 - [iOS SDK reference](https://htmlpreview.github.io/?https://github.com/Pronto-am/MobileCMS-iOS-SDK/blob/master/documentation/index.html) 🔗

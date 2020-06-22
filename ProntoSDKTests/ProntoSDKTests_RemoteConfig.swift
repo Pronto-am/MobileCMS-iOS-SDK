@@ -9,7 +9,8 @@
 import XCTest
 import Mockingjay
 import Nimble
-import Promises
+import RxSwift
+import RxCocoa
 import Einsteinium
 import SwiftyJSON
 import CoreLocation
@@ -28,52 +29,58 @@ class ProntoSDKTestsRemoteConfig: ProntoSDKTests {
     func testFetch() {
         let authStub = stub(http(.post, uri: "/oauth/v2/token"), mockJSONFile("oauth_token"))
         let expectation = self.expectation(description: "remote-config")
-        remoteConfig.fetch().then { items in
-            expect(items.count) == 5
+        remoteConfig.fetch().subscribe { event in
+            switch event {
+            case .success(let items):
+                expect(items.count) == 5
 
-        }.catch { error in
-            XCTAssert(false, "\(error)")
-        }.always {
+            case .error(let error):
+                XCTAssert(false, "\(error)")
+            }
             self.removeStub(authStub)
             expectation.fulfill()
-        }
+        }.disposed(by: disposeBag)
         waitForExpectations(timeout: 15, handler: nil)
     }
 
     func testCache() {
         let authStub = stub(http(.post, uri: "/oauth/v2/token"), mockJSONFile("oauth_token"))
         let expectation = self.expectation(description: "remote-config")
-        remoteConfig.fetch().then { items in
-            let all = self.remoteConfig.items
-            expect(items.count) == all.count
+        remoteConfig.fetch().subscribe { event in
+            switch event {
+            case .success(let items):
+                let all = self.remoteConfig.items
+                expect(items.count) == all.count
 
-            let newRemoteConfig = ProntoRemoteConfig()
-            expect(newRemoteConfig.items.count) == items.count
+                let newRemoteConfig = ProntoRemoteConfig()
+                expect(newRemoteConfig.items.count) == items.count
 
-        }.catch { error in
-            XCTAssert(false, "\(error)")
-        }.always {
+            case .error(let error):
+                XCTAssert(false, "\(error)")
+            }
             self.removeStub(authStub)
             expectation.fulfill()
-        }
+        }.disposed(by: disposeBag)
         waitForExpectations(timeout: 15, handler: nil)
     }
 
     func testGetSingleItems() {
         let authStub = stub(http(.post, uri: "/oauth/v2/token"), mockJSONFile("oauth_token"))
         let expectation = self.expectation(description: "remote-config")
-        remoteConfig.fetch().then { _ in
-            expect(self.remoteConfig.get("string_example")?.stringValue) == "hello 123"
-            expect(self.remoteConfig.get("bool_key")?.boolValue) == true
-            expect(self.remoteConfig.get("pronto_does_rule")?.integerValue) == 12
-            expect(self.remoteConfig["epic_config"]?.dictionaryValue?["client_id"]) == "123344555a"
-
-        }.catch { error in
-            XCTAssert(false, "\(error)")
-        }.always {
+        remoteConfig.fetch().subscribe { [unowned self] event in
+            switch event {
+            case .success:
+                expect(self.remoteConfig.get("string_example")?.stringValue) == "hello 123"
+                expect(self.remoteConfig.get("bool_key")?.boolValue) == true
+                expect(self.remoteConfig.get("pronto_does_rule")?.integerValue) == 12
+                expect(self.remoteConfig["epic_config"]?.dictionaryValue?["client_id"]) == "123344555a"
+                
+            case .error(let error):
+                XCTAssert(false, "\(error)")
+            }
             self.removeStub(authStub)
             expectation.fulfill()
-        }
+        }.disposed(by: disposeBag)
         waitForExpectations(timeout: 15, handler: nil)
     }
 }

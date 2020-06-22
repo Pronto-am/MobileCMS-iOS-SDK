@@ -7,9 +7,10 @@
 //
 
 import Foundation
-import Promises
 import CryptoSwift
 import Cobalt
+import RxSwift
+import RxCocoa
 
 enum LogType: String {
     case notificationReceived = "notification_received"
@@ -33,7 +34,7 @@ class FirebaseLogModule {
     }
 
     @discardableResult
-    func add(type: LogType, _ logParameters: [AnyHashable: Any]) throws -> Promise<Void> {
+    func add(type: LogType, _ logParameters: [AnyHashable: Any]) throws -> Single<Void> {
         let initializationVector = String.random(size: 16)
         let cipherText: String
         do {
@@ -61,8 +62,6 @@ class FirebaseLogModule {
             $0.parameters = parameters
         })
 
-        return prontoAPIClient.request(requestObject).then { _ in
-            return ()
-        }
+        return prontoAPIClient.request(requestObject).map { _ in () }
     }
 }

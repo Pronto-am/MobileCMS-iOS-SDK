@@ -9,7 +9,8 @@
 import XCTest
 import Mockingjay
 import Nimble
-import Promises
+import RxSwift
+import RxCocoa
 import Einsteinium
 
 @testable import ProntoSDK
@@ -21,22 +22,25 @@ class ProntoSDKTestUser: ProntoSDKTests {
     }()
     
     func testRegisterUser() {
+
         let authStub = stub(http(.post, uri: "/oauth/v2/token"),
                             mockJSONFile("oauth_token"))
         let registerStub = stub(http(.post, uri: "/api/\(apiVersion)/users/app/registration"),
-                               mockJSONFile("\(apiVersion)_userprofile"))
+                                mockJSONFile("\(apiVersion)_userprofile"))
 
         waitUntil { [unowned self] done in
             let user = User.mock()
-            self.prontoAuthentication.register(user: user, password: "1234").then { user in
-                ProntoSDKTestsAuthentication.userExpectTest(user)
-            }.catch { error in
-                XCTAssert(false, "\(error)")
-            }.always {
+            self.prontoAuthentication.register(user: user, password: "1234").subscribe { event in
+                switch event {
+                case .success(let user):
+                    ProntoSDKTestsAuthentication.userExpectTest(user)
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
+                }
                 self.removeStub(authStub)
                 self.removeStub(registerStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
@@ -49,15 +53,18 @@ class ProntoSDKTestUser: ProntoSDKTests {
         waitUntil { done in
             let user = User.mock()
 
-            self.prontoAuthentication.register(user: user, password: "1234").then { _ in
-                XCTAssert(false, "Should not reach this")
-            }.catch { error in
-                XCTAssert(error == ProntoError.alreadyRegistered, "Expects ProntoError.alreadyRegistered, got \(error)")
-            }.always {
+            self.prontoAuthentication.register(user: user, password: "1234").subscribe { event in
+                switch event {
+                case .success:
+                    XCTAssert(false, "Should not reach this")
+                case .error(let error):
+                    XCTAssert(error == ProntoError.alreadyRegistered,
+                              "Expects ProntoError.alreadyRegistered, got \(error)")
+                }
                 self.removeStub(authStub)
                 self.removeStub(registerStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
@@ -67,33 +74,41 @@ class ProntoSDKTestUser: ProntoSDKTests {
         let profileStub = stub(http(.get, uri: "/api/\(apiVersion)/users/app/profile"),
                                mockJSONFile("\(apiVersion)_userprofile"))
         let unregisterStub = stub(http(.delete, uri: "/api/\(apiVersion)/users/app/registration/{id}"),
-                                mockJSONFile("\(apiVersion)_userprofile"))
+                                  mockJSONFile("\(apiVersion)_userprofile"))
         
         waitUntil { done in
-            self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234").then { user -> Promise<Void> in
+            self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234")
+            .flatMap { [unowned self] user -> Single<Void> in
                 return self.prontoAuthentication.unregister(user: user)
-            }.catch { error in
-                XCTAssert(false, "\(error)")
-            }.always {
+            }.subscribe { event in
+                switch event {
+                case .success:
+                    break
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
+                }
                 expect(self.prontoAuthentication.currentUser).to(beNil())
                 self.removeStub(profileStub)
                 self.removeStub(authStub)
                 self.removeStub(unregisterStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
         
     }
     
     func testAnonymouseUser() {
         waitUntil { [unowned self] done in
-            self.apiClient.user.profile().then { _ in
-                XCTAssert(false, "Should not reach this")
-
-            }.always {
+            self.apiClient.user.profile().subscribe { event in
+                switch event {
+                case .success:
+                    XCTAssert(false, "Should not reach this")
+                case .error:
+                    break
+                }
                 expect(self.prontoAuthentication.currentUser).to(beNil())
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
@@ -102,24 +117,27 @@ class ProntoSDKTestUser: ProntoSDKTests {
         let authStub = stub(http(.post, uri: "/oauth/v2/token"),
                             mockJSONFile("oauth_token"))
         let profileUpdateStub = stub(http(.put, uri: "/api/\(apiVersion)/users/app/profile"),
-                               mockJSONFile("\(apiVersion)_userprofile"))
+                                     mockJSONFile("\(apiVersion)_userprofile"))
         let profileStub = stub(http(.get, uri: "/api/\(apiVersion)/users/app/profile"),
                                mockJSONFile("\(apiVersion)_userprofile"))
 
         waitUntil { done in
-            self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234").then { _ -> Promise<User> in
+            self.prontoAuthentication.login(email: "bas@e-sites.nl", password: "1234")
+            .flatMap { [unowned self] _ -> Single<User> in
                 let user = User.mock()
                 return self.apiClient.user.update(user)
-            }.then { user in
-                ProntoSDKTestsAuthentication.userExpectTest(user)
-            }.catch { error in
-                XCTAssert(false, "\(error)")
-            }.always {
+            }.subscribe { event in
+                switch event {
+                case .success(let user):
+                    ProntoSDKTestsAuthentication.userExpectTest(user)
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
+                }
                 self.removeStub(authStub)
                 self.removeStub(profileStub)
                 self.removeStub(profileUpdateStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 }

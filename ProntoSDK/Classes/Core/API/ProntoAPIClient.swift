@@ -6,7 +6,8 @@
 //  Copyright © 2018 E-sites. All rights reserved.
 
 import Foundation
-import Promises
+import RxSwift
+import RxCocoa
 import SwiftyJSON
 import Cobalt
 
@@ -70,8 +71,8 @@ public class ProntoAPIClient: PluginBase {
     ///
     /// - Returns: `Promise<JSON>`
 
-    public func request(_ requestObject: Cobalt.Request) -> Promise<JSON> {
-        return client.request(requestObject).recover { error throws -> Promise<JSON> in
+    public func request(_ requestObject: Cobalt.Request) -> Single<JSON> {
+        return client.request(requestObject).catchError { error throws -> Single<JSON> in
             let prontoError = ProntoError(error: error)
             ProntoLogger.error("ProntoError: \(prontoError)")
             throw prontoError

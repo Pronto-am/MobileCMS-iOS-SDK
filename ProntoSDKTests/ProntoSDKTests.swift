@@ -9,6 +9,8 @@
 import XCTest
 import Mockingjay
 import Nimble
+import RxSwift
+import RxCocoa
 import Cobalt
 @testable import ProntoSDK
 
@@ -62,10 +64,12 @@ class ProntoSDKTests: XCTestCase {
     let apiVersion = "v1"
     let apiClient = ProntoAPIClient.default
 
+    lazy var disposeBag = DisposeBag()
+
     override func setUp() {
         super.setUp()
         URLSessionConfiguration.mockingjaySwizzleDefaultSessionConfiguration()
-        AsyncDefaults.Timeout = 5
+        AsyncDefaults.timeout = .seconds(5)
 
         ProntoSDK.configure(ProntoConfig({
             $0.clientID = "client_id"

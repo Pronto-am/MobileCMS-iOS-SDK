@@ -7,11 +7,11 @@
 //
 
 import Foundation
-import Promises
+import RxSwift
+import RxCocoa
 import KeychainAccess
 import SwiftyJSON
 import Cobalt
-import RxSwift
 
 /// Helper class for all authentication related functions
 public class ProntoAuthentication: PluginBase {
@@ -44,11 +44,15 @@ public class ProntoAuthentication: PluginBase {
 
     init(apiClient: ProntoAPIClient) {
         self.apiClient = apiClient
-        rx.authorizationGrantType.skip(1).subscribe(onNext: { [weak self] grantType in
-            if grantType == nil {
-                self?._clear()
-            }
-        }).disposed(by: disposeBag)
+        rx.authorizationGrantType
+            .observeOn(MainScheduler.asyncInstance)
+            .skip(1)
+            .subscribe(onNext: { [weak self] grantType in
+                if grantType == nil {
+                    self?._clear()
+                }
+            }).disposed(by: disposeBag)
+        
         checkPlugin()
     }
 
@@ -83,18 +87,20 @@ public class ProntoAuthentication: PluginBase {
     ///   - password: `String` the password
     ///
     /// - Returns: `Promise<User>`
-    public func login(email: String, password: String) -> Promise<User> {
+    public func login(email: String, password: String) -> Single<User> {
         if !email.isValidEmail {
-            return Promise(ProntoError.invalidEmailAddress)
+            return Single<User>.error(ProntoError.invalidEmailAddress)
         }
-        return apiClient.client.login(username: email, password: password)
-        .then { () -> Promise<User> in
+        return apiClient.client.login(username: email, password: password).flatMap { [apiClient] _ -> Single<User> in
+            guard let apiClient = apiClient else {
+                return Single<User>.never()
+            }
             ProntoLogger.success("Succesfully logged in!")
-            return self.apiClient.user.profile()
-        }.then { user -> Promise<User> in
+            return apiClient.user.profile()
+        }.map { user -> User in
             self.currentUser = user
-            return Promise(user)
-        }.recover { error -> Promise<User> in
+            return user
+        }.catchError { error -> Single<User> in
             if let cobaltError = error as? Cobalt.Error, cobaltError == .invalidGrant {
                 throw ProntoError.invalidCredentials
             }
@@ -113,7 +119,7 @@ public class ProntoAuthentication: PluginBase {
     ///   - password: `String` the password
     ///
     /// - Returns: `Promise<User>`
-    public func register(user: User, password: String) -> Promise<User> {
+    public func register(user: User, password: String) -> Single<User> {
         return apiClient.user.register(user, password: password)
     }
 
@@ -121,9 +127,9 @@ public class ProntoAuthentication: PluginBase {
     ///
     /// - Parameters:
     ///   - user: `User` the user
-    public func unregister(user: User) -> Promise<Void> {
-        return apiClient.user.unregister(user).then {
-            self.clear()
+    public func unregister(user: User) -> Single<Void> {
+        return apiClient.user.unregister(user).map { [weak self] _ in
+            self?.clear()
         }
     }
 
@@ -133,7 +139,7 @@ public class ProntoAuthentication: PluginBase {
     ///  - email: String The email address
     ///
     /// - Returns: `Promise<Void>`
-    public func passwordResetRequest(email: String) -> Promise<Void> {
+    public func passwordResetRequest(email: String) -> Single<Void> {
         return apiClient.user.passwordResetRequest(email: email)
     }
 
@@ -145,14 +151,14 @@ public class ProntoAuthentication: PluginBase {
     ///   - user: `User` The user
     ///
     /// - Returns: `Promise<User>`
-    public func update(user: User) -> Promise<User> {
+    public func update(user: User) -> Single<User> {
         return apiClient.user.update(user)
     }
 
     /// Get the user profile of the current access-token
     ///
     /// - Returns: `Promise<User>`
-    public func getProfile() -> Promise<User> {
+    public func getProfile() -> Single<User> {
         return apiClient.user.profile()
     }
 

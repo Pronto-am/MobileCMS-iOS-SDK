@@ -1,4 +1,4 @@
-///Users/bvkuijck/Desktop/workspace/ios/ProntoSDK/ProntoSDKTests/Mocking/v1_localization.json
+//
 //  ProntoAPIClientLocalizationModule.swift
 //  ProntoSDK
 //
@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Promises
+import RxSwift
+import RxCocoa
 import Alamofire
 import Cobalt
 import SwiftyJSON
@@ -20,7 +21,7 @@ class ProntoAPIClientLocalizationModule {
     }
 
     @discardableResult
-    func fetch() -> Promise<[String: [String: String]]> {
+    func fetch() -> Single<[String: [String: String]]> {
         let requestObject = Cobalt.Request({
             $0.path = prontoAPIClient.versionPath(for: "/translations")
             $0.httpMethod = .get
@@ -30,7 +31,7 @@ class ProntoAPIClientLocalizationModule {
 
         return prontoAPIClient
             .request(requestObject)
-            .then { json -> [String: [String: String]] in
+            .map { json -> [String: [String: String]] in
                 var dictionary: [String: [String: String]] = [:]
                 for keyValue in json["data"].arrayValue {
                     guard let identifier = keyValue["identifier"].string,

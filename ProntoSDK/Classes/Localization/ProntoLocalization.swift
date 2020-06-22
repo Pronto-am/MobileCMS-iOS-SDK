@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Promises
+import RxSwift
+import RxCocoa
 import SwiftyJSON
 
 /// Helper class to handle all the localization logic
@@ -54,10 +55,10 @@ open class ProntoLocalization: PluginBase {
     ///
     /// - returns: `Promise<Void>`
     @discardableResult
-    public func fetch() -> Promise<Void> {
-        return apiClient.localization.fetch().then { dictionary in
-            self._convertTranslation(dictionary)
-            return Promise(())
+    public func fetch() -> Single<Void> {
+        return apiClient.localization.fetch().map { [weak self] dictionary -> Void in
+            self?._convertTranslation(dictionary)
+            return ()
         }
     }
 

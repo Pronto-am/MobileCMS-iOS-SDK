@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import Promises
+import RxSwift
+import RxCocoa
 import Cobalt
 import SwiftyJSON
 import Alamofire
@@ -22,7 +23,7 @@ class ProntoAPIClientCollectionsModule {
     func list(name: String,
               sortBy sortOrder: SortOrder? = nil,
               parameters queryParameters: [String: String]? = nil,
-              pagination: Pagination) -> Promise<JSON> {
+              pagination: Pagination) -> Single<JSON> {
         var parameters: Parameters = [
             "offset": pagination.offset,
             "limit": pagination.limit
@@ -50,7 +51,7 @@ class ProntoAPIClientCollectionsModule {
         return prontoAPIClient.request(request)
     }
     
-    func get(name: String, id: String) -> Promise<JSON> {
+    func get(name: String, id: String) -> Single<JSON> {
         let request = Cobalt.Request({
             $0.httpMethod = .get
             $0.authentication = .oauth2(.clientCredentials)

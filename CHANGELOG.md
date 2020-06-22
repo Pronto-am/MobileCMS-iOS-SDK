@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v3.0.0
+- Replaced Promises with RxSwift / RxCocoa
+
 ## v2.8.4
 - [RemoteConfig] public variables fixed
 

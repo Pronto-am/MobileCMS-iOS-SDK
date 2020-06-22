@@ -6,7 +6,8 @@
 //  Copyright © 2019 E-sites. All rights reserved.
 //
 
-import Promises
+import RxCocoa
+import RxSwift
 import Cobalt
 
 class ProntoAPIClientRemoteConfigModule {
@@ -16,17 +17,16 @@ class ProntoAPIClientRemoteConfigModule {
         self.prontoAPIClient = prontoAPIClient
     }
 
-    func fetch() -> Promise<[RemoteConfigItem]> {
+    func fetch() -> Single<[RemoteConfigItem]> {
         let requestObject = Cobalt.Request {
             $0.authentication = .oauth2(.clientCredentials)
             $0.path = prontoAPIClient.versionPath(for: "/config")
         }
 
-        return prontoAPIClient.request(requestObject).then { json in
-            let items = try json["data"]
+        return prontoAPIClient.request(requestObject).map { json -> [RemoteConfigItem] in
+            return try json["data"]
                 .map(to: [RemoteConfigItem].self) { $0.dateDecodingStrategy = .iso8601 }
                 .filter { $0.isIOS }
-            return Promise(items)
         }
     }
 }

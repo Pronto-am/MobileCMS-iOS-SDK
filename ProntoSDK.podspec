@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ProntoSDK"
-  s.version      = "2.8.4"
+  s.version      = "3.0.0"
   s.author       = { "Bas van Kuijck" => "bas@e-sites.nl" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.homepage     = "http://www.e-sites.nl"
@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
     ss.dependency 'SwiftyJSON'
     ss.dependency 'KeychainAccess'
     ss.dependency 'CryptoSwift'
-    ss.dependency 'PromisesSwift'
-
+    ss.dependency 'RxSwift'
+    ss.dependency 'RxCocoa'
     ss.dependency 'Cobalt'
     ss.dependency 'Einsteinium'
 

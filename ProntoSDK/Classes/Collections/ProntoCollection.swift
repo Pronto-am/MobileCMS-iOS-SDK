@@ -9,7 +9,8 @@
 import Foundation
 import SwiftyJSON
 import Cobalt
-import Promises
+import RxSwift
+import RxCocoa
 
 /// Helper class to handle all the collections logic
 public class ProntoCollection<CollectionType: ProntoCollectionMappable>: PluginBase {
@@ -43,24 +44,22 @@ public class ProntoCollection<CollectionType: ProntoCollectionMappable>: PluginB
     /// - Returns: `Promise<PaginatedResult<CollectionType>>`
     public func list(sortBy: SortOrder? = nil,
                      filterBy: [String: ProntoFilterable]? = nil,
-                     pagination: Pagination = Pagination()) -> Promise<PaginatedResult<CollectionType>> {
+                     pagination: Pagination = Pagination()) -> Single<PaginatedResult<CollectionType>> {
         let filterDictionary = filterBy?.mapValues { $0.filterValue }
 
         return apiClient.collections.list(
             name: CollectionType.collectionName,
             sortBy: sortBy,
             parameters: filterDictionary,
-            pagination: pagination)
-            .then { json -> Promise<PaginatedResult<CollectionType>> in
+            pagination: pagination).map { json -> PaginatedResult<CollectionType> in
                 let items = try json["data"].arrayValue.map {
                     try ProntoCollectionMapper.createCollectionEntry(type: CollectionType.self, json: $0)
                 }
                 var pagination = pagination
                 pagination.total = json["pagination"]["total"].int
                 
-                let result = PaginatedResult(pagination: pagination, items: items)
-                return Promise(result)
-            }
+                return PaginatedResult(pagination: pagination, items: items)
+        }
     }
 
     /// Collection detail
@@ -69,12 +68,11 @@ public class ProntoCollection<CollectionType: ProntoCollectionMappable>: PluginB
     ///   - id: `String` the unique ID of the collection entry
     ///
     /// - Returns: `Promise<CollectionType>`
-    public func get(id: String) -> Promise<CollectionType> {
+    public func get(id: String) -> Single<CollectionType> {
         return apiClient.collections.get(name: CollectionType.collectionName, id: id)
-            .then { json -> Promise<CollectionType> in
-                let item = try ProntoCollectionMapper.createCollectionEntry(type: CollectionType.self,
-                                                                               json: json["data"])
-                return Promise(item)
+            .map { json -> CollectionType in
+                return try ProntoCollectionMapper.createCollectionEntry(type: CollectionType.self,
+                                                                        json: json["data"])
             }
     }
 }

@@ -9,7 +9,7 @@
 import XCTest
 import Mockingjay
 import Nimble
-import Promises
+import RxSwift
 import Einsteinium
 import SwiftyJSON
 import CoreLocation
@@ -34,27 +34,28 @@ class ProntoSDKTestsCollections: ProntoSDKTests {
         waitUntil { done in
             let collection = ProntoCollection<AllTestModel>()
             let sortBy = SortOrder(key: "id", direction: .ascending)
-            collection.list(sortBy: sortBy).then { result in
-                expect(result.pagination.total) == 1
-                expect(result.pagination.hasMoreResults) == false
-                expect(result.items.count) == 1
-                guard let object = result.items.first else {
-                    XCTAssert(false, "No objects")
-                    return
+            collection.list(sortBy: sortBy).subscribe { [unowned self] event in
+                switch event {
+                case .success(let result):
+                    expect(result.pagination.total) == 1
+                    expect(result.pagination.hasMoreResults) == false
+                    expect(result.items.count) == 1
+                    guard let object = result.items.first else {
+                        XCTAssert(false, "No objects")
+                        return
+                    }
+                    self._testAllModel(object, isFull: false)
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
                 }
-                self._testAllModel(object, isFull: false)
-            }.catch { error in
-                XCTAssert(false, "\(error)")
-            }.always {
                 self.removeStub(loginStub)
                 self.removeStub(collectionsStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
     func testCollectionsGet() {
-
         let loginStub = stub(http(.post, uri: "/oauth/v2/token"),
                              mockJSONFile("oauth_token"))
 
@@ -63,15 +64,17 @@ class ProntoSDKTestsCollections: ProntoSDKTests {
 
         waitUntil { done in
             let collection = ProntoCollection<AllTestModel>()
-            collection.get(id: "73E68BA2-8261-4C87-92E5-FF53207A5333").then { object in
-                self._testAllModel(object, isFull: true)
-            }.catch { error in
-                XCTAssert(false, "\(error)")
-            }.always {
+            collection.get(id: "73E68BA2-8261-4C87-92E5-FF53207A5333").subscribe { [unowned self] event in
+                switch event {
+                case .success(let object):
+                    self._testAllModel(object, isFull: true)
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
+                }
                 self.removeStub(loginStub)
                 self.removeStub(collectionsStub)
                 done()
-            }
+            }.disposed(by: self.disposeBag)
         }
     }
 
