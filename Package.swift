@@ -14,7 +14,7 @@ let package = Package(
         .package(url: "https://github.com/kishikawakatsumi/KeychainAccess.git", .upToNextMajor(from: "4.1.0")),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.3.0")),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.1")),
-        .package(url: "https://github.com/e-sites/Cobalt.git", .upToNextMajor(from: "5.10.4")),
+        .package(url: "https://github.com/e-sites/Cobalt.git", .upToNextMajor(from: "6.0.0")),
         .package(url: "https://github.com/e-sites/Erbium.git", .upToNextMajor(from: "4.4.1")),
         .package(url: "https://github.com/e-sites/Einsteinium.git", .upToNextMajor(from: "1.2.2"))
         // ,.package(url: "https://github.com/Quick/Nimble.git", .branch("master")),
