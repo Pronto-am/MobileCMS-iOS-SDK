@@ -93,7 +93,7 @@ open class WebviewController: UIViewController {
     ///   - urlRequest: `URLRequestz
     public func load(urlRequest: URLRequest) {
         _setup()
-        ProntoLogger.debug("Load url: \(urlRequest.url?.absoluteString ?? "(nil)")")
+        ProntoLogger?.debug("Load url: \(urlRequest.url?.absoluteString ?? "(nil)")")
         webView.isHidden = false
         webView.load(urlRequest)
         loadingIndicator.startAnimating()
@@ -115,7 +115,7 @@ private class WebviewControllerNavigationDelegate: NSObject, WKNavigationDelegat
     }
     
     private func _show(error: Error) {
-        ProntoLogger.error("Error loading url \(self.webViewController.webView.url?.absoluteString ?? ""): \(error)")
+        ProntoLogger?.error("Error loading url \(self.webViewController.webView.url?.absoluteString ?? ""): \(error)")
         let headerText = "Error\n\n"
         let bodyText = "Error loading page.\n\(error.localizedDescription)"
         let str = headerText + bodyText

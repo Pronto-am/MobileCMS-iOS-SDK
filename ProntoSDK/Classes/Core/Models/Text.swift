@@ -32,7 +32,7 @@ public struct Text: Codable, CustomStringConvertible {
         if let string = localizationDictionary[language] {
             return string
         }
-        ProntoLogger.warning("Cannot find string for language '\(language)'")
+        ProntoLogger?.warning("Cannot find string for language '\(language)'")
         return nil
     }
 

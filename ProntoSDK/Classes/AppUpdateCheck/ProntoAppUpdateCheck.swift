@@ -92,11 +92,11 @@ public class ProntoAppUpdateCheck: PluginBase {
     @objc
     public func check() {
         if _isChecking {
-            ProntoLogger.warning("Already checking for new app versions")
+            ProntoLogger?.warning("Already checking for new app versions")
             return
         }
         _isChecking = true
-        ProntoLogger.info("Checking new app version...")
+        ProntoLogger?.info("Checking new app version...")
         ProntoAPIClient.default.appUpdateChecker.check().subscribe { [weak self] event in
             guard let self = self else {
                 return

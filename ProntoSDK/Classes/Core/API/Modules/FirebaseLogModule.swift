@@ -43,7 +43,7 @@ class FirebaseLogModule {
             let data = Data(bytes)
             cipherText = data.base64EncodedString()
         } catch let error {
-            ProntoLogger.error("Error encrypting: \(error)")
+            ProntoLogger?.error("Error encrypting: \(error)")
             throw ProntoError(error: error)
         }
         let dateFormatter = DateFormatting.iso8601DateTimeFormatter

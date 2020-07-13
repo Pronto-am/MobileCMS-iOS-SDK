@@ -8,6 +8,7 @@
 
 import Foundation
 import Cobalt
+import Logging
 
 /// Configuration class
 public class ProntoConfig {
@@ -40,7 +41,7 @@ public class ProntoConfig {
     public var applicationVersion: String = "V1"
 
     /// The logger
-    public var logger: Cobalt.Logger?
+    public var logger: Logger?
 
     /// :nodoc:
     public init() {

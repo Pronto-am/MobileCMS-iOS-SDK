@@ -217,16 +217,16 @@ extension ProntoNotifications {
     public func handleNotification(userInfo: [AnyHashable: Any],
                                    fetchCompletionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
-        ProntoLogger.log("Remote notification payload: " + userInfo.rawJSONString)
+        ProntoLogger?.notice("Remote notification payload: \(userInfo.rawJSONString)")
 
         guard let pushNotification = PushNotification(userInfo: userInfo) else {
-            ProntoLogger.warning("UserInfo: notificationIdentifier is not set")
+            ProntoLogger?.warning("UserInfo: notificationIdentifier is not set")
             fetchCompletionHandler(.failed)
             return
         }
 
         guard let device = Device.current else {
-            ProntoLogger.warning("Device.current is not set")
+            ProntoLogger?.warning("Device.current is not set")
             fetchCompletionHandler(.failed)
             return
         }
@@ -234,7 +234,7 @@ extension ProntoNotifications {
         switch UIApplication.shared.applicationState {
         // App is in foreground
         case .active:
-            ProntoLogger.info("Notification received when the app was active")
+            ProntoLogger?.info("Notification received when the app was active")
             delegate?.prontoNotifications(self, didReceivePushNotification: pushNotification)
 
             apiClient.notifications.notificationOpened(
@@ -325,10 +325,10 @@ extension ProntoNotifications {
                                                                  sandbox: sandbox,
                                                                  additionalData: additionalDeviceData)
             .subscribe(onSuccess: { _ in
-                ProntoLogger.success("Device succesfully registered")
+                ProntoLogger?.info("Device succesfully registered")
                 NotificationCenter.default.post(name: notification, object: nil)
             }, onError: { error in
-                ProntoLogger.error("Error registering device: \(error)")
+                ProntoLogger?.error("Error registering device: \(error)")
                 
                 NotificationCenter.default.post(name: notification,
                                                 object: nil,
@@ -362,7 +362,7 @@ extension ProntoNotifications {
     /// - Parameters:
     ///   - error: `Error`
     public func didFailToRegisterForRemoteNotifications(with error: Error) {
-        ProntoLogger.error("Error registering device: \(error)")
+        ProntoLogger?.error("Error registering device: \(error)")
         let notification = Notification.Name(rawValue: Constants.didRegisterRemoteNotificationsKey)
         NotificationCenter.default.post(name: notification,
                                         object: nil,

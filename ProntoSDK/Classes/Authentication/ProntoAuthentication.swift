@@ -95,7 +95,7 @@ public class ProntoAuthentication: PluginBase {
             guard let apiClient = apiClient else {
                 return Single<User>.never()
             }
-            ProntoLogger.success("Succesfully logged in!")
+            ProntoLogger?.info("Succesfully logged in!")
             return apiClient.user.profile()
         }.map { user -> User in
             self.currentUser = user
@@ -164,7 +164,7 @@ public class ProntoAuthentication: PluginBase {
 
     /// Logs out the currently logged in user
     public func clear() {
-        ProntoLogger.debug("Cleared access-token.")
+        ProntoLogger?.debug("Cleared access-token.")
         _clear()
     }
 
@@ -184,7 +184,7 @@ extension ProntoAuthentication {
             let json = try JSON(data: data)
             return try json.map(to: User.self)
         } catch let error {
-            ProntoLogger.error("Error getting: \(error)")
+            ProntoLogger?.error("Error getting: \(error)")
             return nil
         }
     }
@@ -201,7 +201,7 @@ extension ProntoAuthentication {
             
             KeychainHelper.store(data: data, for: Constants.user)
         } catch let error {
-            ProntoLogger.error("Error setting: \(error)")
+            ProntoLogger?.error("Error setting: \(error)")
         }
     }
 }

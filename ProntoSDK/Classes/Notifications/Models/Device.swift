@@ -92,9 +92,9 @@ extension Device {
             KeychainHelper.store(data: rawData, for: Constant.keychainCurrentDeviceKey)
             UserDefaults.standard.set(true, forKey: Constant.hasRegisteredDevice)
             UserDefaults.standard.synchronize()
-            ProntoLogger.info("Device stored: \(self)")
+            ProntoLogger?.info("Device stored: \(self)")
         } catch let error {
-            ProntoLogger.error("Error encoding: \(error)")
+            ProntoLogger?.error("Error encoding: \(error)")
         }
     }
 

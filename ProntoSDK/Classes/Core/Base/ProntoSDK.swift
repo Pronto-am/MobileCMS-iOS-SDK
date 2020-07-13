@@ -8,21 +8,9 @@
 
 import Foundation
 import KeychainAccess
-import Cobalt
+import Logging
 
-private class TempLogger: Cobalt.Logger {
-    func verbose(_ items: Any...) { }
-    func warning(_ items: Any...) { }
-    func debug(_ items: Any...) { }
-    func success(_ items: Any...) { }
-    func error(_ items: Any...) { }
-    func request(_ items: Any...) { }
-    func response(_ items: Any...) { }
-    func log(_ items: Any...) { }
-    func info(_ items: Any...) { }
-}
-
-let ProntoLogger: Cobalt.Logger = ProntoSDK.config.logger ?? TempLogger() // swiftlint:disable:this identifier_name
+let ProntoLogger: Logger? = ProntoSDK.config.logger // swiftlint:disable:this identifier_name
 
 /// The main class, for setting up the pronto SDK
 ///

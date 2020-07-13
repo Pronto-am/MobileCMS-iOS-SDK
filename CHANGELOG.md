@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v4.0.0
+- Updated Cobalt
+
 ## v3.0.0
 - Replaced Promises with RxSwift / RxCocoa
 
