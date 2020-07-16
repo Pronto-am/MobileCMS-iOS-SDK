@@ -143,14 +143,14 @@ public class ProntoNotifications: PluginBase {
                     ) { notification in
                         self?.registerTimeoutTimer?.invalidate()
                         self?.registerTimeoutTimer = nil
-                        
+
                         if let observer = self?.registerObserver {
                             NotificationCenter.default.removeObserver(observer)
                         }
                         self?.registerObserver = nil
                         let error = notification.userInfo?["error"] as? ProntoNotificationsError
                         handler?(error)
-                }
+                    }
 
                 UIApplication.shared.registerForRemoteNotifications()
                 guard let self = self else {

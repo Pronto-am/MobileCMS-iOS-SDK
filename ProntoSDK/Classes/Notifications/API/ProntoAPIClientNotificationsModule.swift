@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Alamofire
 import Erbium
 import Cobalt
 import UIKit
@@ -22,7 +21,7 @@ class ProntoAPIClientNotificationsModule {
     }
 
     private func _parameters(withDeviceToken deviceToken: String,
-                             additionalData: [String: Any]) -> Parameters {
+                             additionalData: [String: Any]) -> [String: Any] {
         return [
             "apns_token": deviceToken,
             "name": UIDevice.current.name,

@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import Cobalt
 import SwiftyJSON
-import Alamofire
 
 class ProntoAPIClientCollectionsModule {
     private weak var prontoAPIClient: ProntoAPIClient!
@@ -24,7 +23,7 @@ class ProntoAPIClientCollectionsModule {
               sortBy sortOrder: SortOrder? = nil,
               parameters queryParameters: [String: String]? = nil,
               pagination: Pagination) -> Single<JSON> {
-        var parameters: Parameters = [
+        var parameters: [String: Any] = [
             "offset": pagination.offset,
             "limit": pagination.limit
         ]

@@ -9,7 +9,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import Alamofire
 import Cobalt
 import SwiftyJSON
 

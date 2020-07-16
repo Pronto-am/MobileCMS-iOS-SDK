@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v4.0.2
+- Updated Alamofire to v5
+
 ## v4.0.1
 - [Notifications] Throw a timeout error when registration does not respond
 
