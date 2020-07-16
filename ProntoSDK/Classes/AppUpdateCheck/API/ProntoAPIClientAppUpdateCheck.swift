@@ -35,6 +35,7 @@ class ProntoAPIClientAppUpdateCheckModule {
                 "version": version,
                 "platform": "ios"
             ]
+            $0.loggingOption = LoggingOption(request: [ "*": .ignore ], response: [ "*": .ignore ])
         }
 
         return prontoAPIClient.request(requestObject).map { json in return try json.map(to: AppVersion.self) }

@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v4.0.3
+- Hide Cobalt logs for version check
+
 ## v4.0.2
 - Updated Alamofire to v5
 
