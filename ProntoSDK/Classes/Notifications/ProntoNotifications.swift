@@ -21,6 +21,9 @@ public enum ProntoNotificationsError: Error {
     /// Not authorized
     case notAuthorized
 
+    /// Request timed out
+    case timeout
+
     /// Any other error
     case underlying(Error)
 }
@@ -38,6 +41,8 @@ public class ProntoNotifications: PluginBase {
     }
 
     fileprivate lazy var disposeBag = DisposeBag()
+    fileprivate var registerObserver: NSObjectProtocol?
+    fileprivate var registerTimeoutTimer: Timer?
 
     private var _storeInKeyChain = false
 
@@ -123,24 +128,39 @@ public class ProntoNotifications: PluginBase {
         }
         
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { granted, _ in
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { [weak self] granted, _ in
             DispatchQueue.main.async {
-                if granted {
-                    let notification = Notification.Name(rawValue: Constants.didRegisterRemoteNotificationsKey)
-                    var observer: NSObjectProtocol!
-                    observer = NotificationCenter.default
-                        .addObserver(forName: notification,
-                                     object: nil,
-                                     queue: nil) { notification in
-                                        NotificationCenter.default.removeObserver(observer!)
-                                        let error = notification.userInfo?["error"] as? ProntoNotificationsError
-                                        handler?(error)
-                        }
-                    
-                    UIApplication.shared.registerForRemoteNotifications()
-                } else {
+                if !granted {
                     handler?(.notAuthorized)
+                    return
                 }
+
+                let notification = Notification.Name(rawValue: Constants.didRegisterRemoteNotificationsKey)
+                self?.registerObserver = NotificationCenter.default
+                    .addObserver(forName: notification,
+                                 object: nil,
+                                 queue: nil
+                    ) { notification in
+                        self?.registerTimeoutTimer?.invalidate()
+                        self?.registerTimeoutTimer = nil
+                        
+                        if let observer = self?.registerObserver {
+                            NotificationCenter.default.removeObserver(observer)
+                        }
+                        self?.registerObserver = nil
+                        let error = notification.userInfo?["error"] as? ProntoNotificationsError
+                        handler?(error)
+                }
+
+                UIApplication.shared.registerForRemoteNotifications()
+                guard let self = self else {
+                    return
+                }
+                self.registerTimeoutTimer = Timer(timeInterval: 5, repeats: false) { _ in
+                    self.registerTimeoutTimer = nil
+                    handler?(ProntoNotificationsError.timeout)
+                }
+                RunLoop.main.add(self.registerTimeoutTimer!, forMode: .common)
             }
         }
     }
