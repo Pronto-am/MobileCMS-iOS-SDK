@@ -74,7 +74,10 @@ public class ProntoAPIClient: PluginBase {
     public func request(_ requestObject: Cobalt.Request) -> Single<JSON> {
         return client.request(requestObject).catchError { error throws -> Single<JSON> in
             let prontoError = ProntoError(error: error)
-            ProntoLogger?.error("ProntoError: \(prontoError)")
+            if let logReq = requestObject.loggingOption?.request?["*"], case KeyLoggingOption.ignore = logReq {
+            } else {
+                ProntoLogger?.error("ProntoError: \(prontoError)")
+            }
             throw prontoError
         }
     }

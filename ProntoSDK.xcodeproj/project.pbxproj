@@ -1152,7 +1152,7 @@
 			repositoryURL = "https://github.com/e-sites/Cobalt.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.2;
+				minimumVersion = 7.0.4;
 			};
 		};
 		C38277302334D460002AE54A /* XCRemoteSwiftPackageReference "Erbium" */ = {
