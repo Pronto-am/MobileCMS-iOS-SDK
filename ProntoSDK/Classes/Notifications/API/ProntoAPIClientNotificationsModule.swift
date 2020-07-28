@@ -170,3 +170,29 @@ extension ProntoAPIClientNotificationsModule {
         return prontoAPIClient.request(requestObject).map { _ in }
     }
 }
+
+// MARK: - Sent notifications
+// --------------------------------------------------------
+
+extension ProntoAPIClientNotificationsModule {
+    /// Retrieve all the sent notifications of a device
+    ///
+    /// - Parameters
+    ///   - device: The `Device` which the notifications were sent to
+    ///
+    /// - Returns: `Single<[SentPushNotification]>`
+    @discardableResult
+    public func getSent(`to` device: Device) -> Single<[SentPushNotification]> {
+        let requestObject = Cobalt.Request({
+            $0.path = prontoAPIClient.versionPath(for: "/notifications/\(device.id)")
+            $0.authentication = .oauth2(.clientCredentials)
+        })
+
+        return prontoAPIClient.request(requestObject).map { json -> [Segment] in
+            let data = try json["data"].rawData()
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            return try decoder.decode([Segment].self, from: data)
+        }
+    }
+}

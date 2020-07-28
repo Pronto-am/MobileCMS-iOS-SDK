@@ -172,6 +172,16 @@ public class ProntoNotifications: PluginBase {
 }
 
 extension ProntoNotifications {
+    /// Retrieve all the sent notifications of a device
+    ///
+    /// - Parameters
+    ///   - device: The `Device` which the notifications were sent to
+    ///
+    /// - Returns: `Single<[PushNotification]>`
+    public func getSent(`to` device: Device) -> Single<[PushNotification]> {
+        return apiClient.notifications.getSent(to: device)
+    }
+    
     /// Retrieve all the segments available for this particular application
     ///
     /// - Parameters
