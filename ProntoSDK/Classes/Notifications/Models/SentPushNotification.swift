@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SentPushNotification: CustomStringConvertible, Codable, Equatable {
+public class SentPushNotification: CustomStringConvertible, Codable, Equatable {
     enum CodingKeys: String, CodingKey {
         case id
         case title

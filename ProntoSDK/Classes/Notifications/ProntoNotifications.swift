@@ -177,8 +177,8 @@ extension ProntoNotifications {
     /// - Parameters
     ///   - device: The `Device` which the notifications were sent to
     ///
-    /// - Returns: `Single<[PushNotification]>`
-    public func getSent(`to` device: Device) -> Single<[PushNotification]> {
+    /// - Returns: `Single<[SentPushNotification]>`
+    public func getSent(`to` device: Device) -> Single<[SentPushNotification]> {
         return apiClient.notifications.getSent(to: device)
     }
     

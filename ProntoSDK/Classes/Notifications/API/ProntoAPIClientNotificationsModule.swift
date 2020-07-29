@@ -188,11 +188,11 @@ extension ProntoAPIClientNotificationsModule {
             $0.authentication = .oauth2(.clientCredentials)
         })
 
-        return prontoAPIClient.request(requestObject).map { json -> [Segment] in
+        return prontoAPIClient.request(requestObject).map { json -> [SentPushNotification] in
             let data = try json["data"].rawData()
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
-            return try decoder.decode([Segment].self, from: data)
+            return try decoder.decode([SentPushNotification].self, from: data)
         }
     }
 }
