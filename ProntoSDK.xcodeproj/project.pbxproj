@@ -99,6 +99,8 @@
 		C3DFEFA52056D8F300CC744C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DFEFA42056D8F300CC744C /* Text.swift */; };
 		C3EB24E7229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB24E6229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift */; };
 		C3FE2433212D37400061C8F6 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE2432212D37400061C8F6 /* KeychainHelper.swift */; };
+		C82FD62224E2A86900682EB0 /* SentPushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FD62124E2A86900682EB0 /* SentPushNotification.swift */; };
+		C82FD62424E2A89700682EB0 /* v1_notifications.json in Resources */ = {isa = PBXBuildFile; fileRef = C82FD62324E2A89700682EB0 /* v1_notifications.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +188,8 @@
 		C3DFEFA42056D8F300CC744C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		C3EB24E6229D4F1F007B8F0B /* ProntoAuthentication+authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProntoAuthentication+authentication.swift"; sourceTree = "<group>"; };
 		C3FE2432212D37400061C8F6 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		C82FD62124E2A86900682EB0 /* SentPushNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentPushNotification.swift; sourceTree = "<group>"; };
+		C82FD62324E2A89700682EB0 /* v1_notifications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = v1_notifications.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +328,7 @@
 		C34A688020500C90009E3D83 /* Mocking */ = {
 			isa = PBXGroup;
 			children = (
+				C82FD62324E2A89700682EB0 /* v1_notifications.json */,
 				C3DFAEE022140BAC00B7E7EC /* app_version.json */,
 				C34A688320500CEC009E3D83 /* v1_notifications-register-device.json */,
 				C3BCC3902296C1AF005BFECA /* v1_localization.json */,
@@ -383,6 +388,7 @@
 		C367B6982100697D00793F99 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C82FD62124E2A86900682EB0 /* SentPushNotification.swift */,
 				C359461C207F6AF8003E37F6 /* PushNotification.swift */,
 				C34A688F2050264C009E3D83 /* Segment.swift */,
 				C34A688B20501303009E3D83 /* Device.swift */,
@@ -742,6 +748,7 @@
 			files = (
 				C319598320E5052C00AF83B4 /* oauth_token.json in Resources */,
 				C3B4812D2361A21300CA6BCA /* v1_remoteconfig.json in Resources */,
+				C82FD62424E2A89700682EB0 /* v1_notifications.json in Resources */,
 				C309445F236ADDB90043FF3C /* oauth_invalidgrant.json in Resources */,
 				C3B76BA220FF7E5B004B7578 /* v1_collections_all.json in Resources */,
 				C34A688E20501AD4009E3D83 /* v1_notifications-signin-device.json in Resources */,
@@ -805,6 +812,7 @@
 				C3B48122236196FF00CA6BCA /* ProntoRemoteConfig.swift in Sources */,
 				C367B6B02100ACF700793F99 /* DateFormatting.swift in Sources */,
 				C367B6AD2100A5C100793F99 /* ProntoCollectionMapper+Relation.swift in Sources */,
+				C82FD62224E2A86900682EB0 /* SentPushNotification.swift in Sources */,
 				C34CB0282108ACFB00861278 /* ProntoFilterable.swift in Sources */,
 				C3B76B9A20FF79EE004B7578 /* ProntoCollectionMappable.swift in Sources */,
 				C359461D207F6AF8003E37F6 /* PushNotification.swift in Sources */,

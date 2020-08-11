@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SentPushNotification.swift
 //  
 //
 //  Created by Thomas Roovers on 28/07/2020.
@@ -12,6 +12,9 @@ public class SentPushNotification: CustomStringConvertible, Codable, Equatable {
         case id
         case title
         case content
+        case clickActionUrl = "click_action_url"
+        case clickActionHtml = "click_action_html"
+        case clickActionHtmlUrl = "click_action_html_url"
         case sent
     }
     
@@ -23,6 +26,15 @@ public class SentPushNotification: CustomStringConvertible, Codable, Equatable {
 
     /// The (localized) content of the notification
     internal(set) public var content: Text!
+    
+    /// A (localized) url which is opened after the user clicks on the notification
+    internal(set) public var clickActionUrl: Text!
+    
+    /// (localized) HTML which is shown after someone opens the notification
+    internal(set) public var clickActionHtml: Text!
+    
+    /// A (localized) static url for the html file stored at Firebase
+    internal(set) public var clickActionHtmlUrl: Text!
 
     /// Is the current device subscribed to that particular segment
     public var sent: Date = Date()

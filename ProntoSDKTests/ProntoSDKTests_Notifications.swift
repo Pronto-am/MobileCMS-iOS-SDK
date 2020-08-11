@@ -104,6 +104,34 @@ class ProntoSDKTestsNotifications: ProntoSDKTests {
         }
     }
 
+    func testSentNotifications() {
+
+        let authStub = stub(http(.post, uri: "/oauth/v2/token"),
+                            mockJSONFile("oauth_token"))
+        let notificationsStub = stub(http(.get, uri: "/api/\(apiVersion)/notifications/{device_id}"),
+                                mockJSONFile("\(apiVersion)_notifications"))
+
+        waitUntil { done in
+            self.prontoNotifications.getSent(to: Device.mock()).subscribe { event in
+                switch event {
+                case .success(let notifications):
+                    expect(notifications.count) == 2
+                    if let notification = notifications.first {
+                        expect(notification.name?.string(for: ProntoSDK.config.defaultLocale)) == "Segment one"
+                    }
+                    if let notification = notifications.last {
+                        expect(notification.name?.string(for: ProntoSDK.config.defaultLocale)) == "Segment two"
+                    }
+                case .error(let error):
+                    XCTAssert(false, "\(error)")
+                }
+                self.removeStub(notificationsStub)
+                self.removeStub(authStub)
+                done()
+            }.disposed(by: self.disposeBag)
+        }
+    }
+
     func testSubscribeSegments() {
 
         let authStub = stub(http(.post, uri: "/oauth/v2/token"),

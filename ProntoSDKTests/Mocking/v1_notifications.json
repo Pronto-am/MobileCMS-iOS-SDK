@@ -1,0 +1,37 @@
+{
+    "error": false,
+    "data": [
+        {
+            "id": "dfb7a004-0a3c-11ea-bd61-52540007831e",
+            "sent_by": {
+                "id": 37,
+                "first_name": "Thomas",
+                "insertion": null,
+                "last_name": "Roovers",
+                "full_name": "Thomas Roovers"
+            },
+            "title": {
+                "en": "Digital progress",
+                "nl": "Digitale vooruitgang."
+            },
+            "content": {
+                "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "nl": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            },
+            "click_action_url": {
+                "en": "https://e-sites.nl/en",
+                "nl": "https://e-sites.nl"
+            },
+            "click_action_html": {
+                "en": "",
+                "nl": ""
+            },
+            "click_action_html_url": {
+                "en": "",
+                "nl": ""
+            },
+            "sent": "2019-11-18T20:51:55+0000",
+            "test": false
+        }
+    ]
+}
