@@ -12,10 +12,17 @@ public class SentPushNotification: CustomStringConvertible, Codable, Equatable {
         case id
         case title
         case content
+        case clickAction = "click_action"
         case clickActionUrl = "click_action_url"
         case clickActionHtml = "click_action_html"
         case clickActionHtmlUrl = "click_action_html_url"
         case sent
+    }
+    
+    public enum ClickAction: Int, Codable {
+        case none = 0
+        case url = 1
+        case html = 2
     }
     
     /// Unique ID
@@ -26,6 +33,8 @@ public class SentPushNotification: CustomStringConvertible, Codable, Equatable {
 
     /// The (localized) content of the notification
     internal(set) public var content: Text!
+    
+    internal(set) public var clickAction: Int!
     
     /// A (localized) url which is opened after the user clicks on the notification
     internal(set) public var clickActionUrl: Text!

@@ -18,6 +18,7 @@
                 "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 "nl": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             },
+            "click_action": 1,
             "click_action_url": {
                 "en": "https://e-sites.nl/en",
                 "nl": "https://e-sites.nl"
