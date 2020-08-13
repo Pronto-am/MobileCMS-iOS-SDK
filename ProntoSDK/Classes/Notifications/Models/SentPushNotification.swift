@@ -34,7 +34,8 @@ public class SentPushNotification: CustomStringConvertible, Codable, Equatable {
     /// The (localized) content of the notification
     internal(set) public var content: Text!
     
-    internal(set) public var clickAction: Int!
+    /// The type of clickaction specified for the notification
+    internal(set) public var clickAction: ClickAction!
     
     /// A (localized) url which is opened after the user clicks on the notification
     internal(set) public var clickActionUrl: Text!
