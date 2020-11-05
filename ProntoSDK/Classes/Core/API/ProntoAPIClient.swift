@@ -24,15 +24,15 @@ public class ProntoAPIClient: PluginBase {
 
     /// API documentation: https://prontocms.e-staging.nl/apidoc/index.html
     lazy var client: Cobalt.Client = {
-        let config = Cobalt.Config({
-            $0.clientID = ProntoSDK.config.clientID
+        let config = Cobalt.Config {
+            $0.authentication.clientID = ProntoSDK.config.clientID
+            $0.authentication.clientSecret = ProntoSDK.config.clientSecret
             $0.host = host
-            $0.clientSecret = ProntoSDK.config.clientSecret
-            $0.logger = ProntoLogger
+            $0.logging.logger = ProntoLogger
             #if !DEBUG
-            $0.maskTokens = true
+            $0.logging.maskTokens = true
             #endif
-        })
+        }
         return Cobalt.Client(config: config)
     }()
 
@@ -58,10 +58,10 @@ public class ProntoAPIClient: PluginBase {
         if ProntoSDK.config.clientID.isEmpty || ProntoSDK.config.clientSecret.isEmpty {
             fatalError("clientID and clientSecret should be set prior to ProntoAPIClient.configure()")
         }
-        client.config.clientID = ProntoSDK.config.clientID
+        client.config.authentication.clientID = ProntoSDK.config.clientID
+        client.config.authentication.clientSecret = ProntoSDK.config.clientSecret
+        client.config.logging.logger = ProntoLogger
         client.config.host = host
-        client.config.clientSecret = ProntoSDK.config.clientSecret
-        client.config.logger = ProntoLogger
     }
 
     /// Make a API request
@@ -72,6 +72,7 @@ public class ProntoAPIClient: PluginBase {
     /// - Returns: `Promise<JSON>`
 
     public func request(_ requestObject: Cobalt.Request) -> Single<JSON> {
+        requestObject.headers?["Accept-Language"] = ProntoSDK.config.defaultLocale.identifier
         return client.request(requestObject).catchError { error throws -> Single<JSON> in
             let prontoError = ProntoError(error: error)
             if let logReq = requestObject.loggingOption?.request?["*"], case KeyLoggingOption.ignore = logReq {

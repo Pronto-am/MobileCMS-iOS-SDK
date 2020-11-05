@@ -1,5 +1,9 @@
 # ProntoSDK Changelog
 
+## v4.0.4
+- Updated Cobalt
+- Add Accept-Language to all API calls
+
 ## v4.0.3
 - Hide Cobalt logs for version check
 
