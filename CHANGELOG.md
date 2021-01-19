@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v4.1.0
+- [Notifications] Add FCM-token
+
 ## v4.0.4
 - Updated Cobalt
 - Add Accept-Language to all API calls

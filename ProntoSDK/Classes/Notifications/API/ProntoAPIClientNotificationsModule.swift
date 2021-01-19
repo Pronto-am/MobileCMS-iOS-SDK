@@ -21,29 +21,32 @@ class ProntoAPIClientNotificationsModule {
     }
 
     private func _parameters(withDeviceToken deviceToken: String,
+                             fcmToken: String?,
                              additionalData: [String: Any]) -> [String: Any] {
-        return [
-            "apns_token": deviceToken,
+        var parameters: [String: Any] = [
             "name": UIDevice.current.name,
             "model": Erbium.Device.version.name,
             "manufacturer": "Apple",
+            "apns_token": deviceToken,
             "platform": "iOS",
             "language": Locale.current.languageCode?.uppercased() ?? "EN",
             "app_version": Bundle.main.version,
             "os_version": UIDevice.current.systemVersion,
             "extra_data": additionalData
         ]
+        if let useFcmToken = fcmToken {
+            parameters["firebase_token"] = useFcmToken
+        }
+        return parameters
     }
 
     @discardableResult
     func registerDevice(deviceToken: String,
-                        sandbox: Bool = false,
+                        fcmToken: String? = nil,
                         additionalData: [String: Any] = [:]) -> Single<Device> {
-        let parameters = _parameters(withDeviceToken: deviceToken, additionalData: additionalData)
-        // TODO: Enable sandbox mode
-//        if sandbox {
-//            parameters["sandbox"] = true
-//        }
+        let parameters = _parameters(withDeviceToken: deviceToken,
+                                     fcmToken: fcmToken,
+                                     additionalData: additionalData)
         let requestObject = Cobalt.Request({
             $0.path = prontoAPIClient.versionPath(for: "/devices/registration")
             $0.httpMethod = .post
@@ -62,6 +65,7 @@ class ProntoAPIClientNotificationsModule {
     @discardableResult
     func signIn(device: Device, additionalData: [String: Any] = [:]) -> Single<Void> {
         var parameters = _parameters(withDeviceToken: device.deviceToken,
+                                     fcmToken: device.fcmToken,
                                      additionalData: additionalData)
         parameters["device_identifier"] = device.id
         return Single<Void>.just(()).flatMap { [prontoAPIClient] _ in

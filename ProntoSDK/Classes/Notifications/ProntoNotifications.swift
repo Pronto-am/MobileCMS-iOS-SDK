@@ -344,16 +344,16 @@ extension ProntoNotifications {
     ///
     /// - Parameters:
     ///   - deviceToken: `Data`
-    ///   - sandbox: Is the registration done in a sandbox environmnet (aka #DEBUG) (Default = false)
-    public func didRegisterForRemoteNotifications(deviceToken: Data, sandbox: Bool = false) {
+    ///   - fcmToken: `String` The FCM-token. (Defaults to `nil`)
+    public func didRegisterForRemoteNotifications(deviceToken: Data, fcmToken: String? = nil) {
         let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1) })
         let notification = Notification.Name(rawValue: Constants.didRegisterRemoteNotificationsKey)
         
         // No current device set, register with pronto
         guard let currentDevice = Device.current else {
             apiClient.notifications.registerDevice(deviceToken: deviceTokenString,
-                                                                 sandbox: sandbox,
-                                                                 additionalData: additionalDeviceData)
+                                                   fcmToken: fcmToken,
+                                                   additionalData: additionalDeviceData)
             .subscribe(onSuccess: { _ in
                 ProntoLogger?.info("Device succesfully registered")
                 NotificationCenter.default.post(name: notification, object: nil)
