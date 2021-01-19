@@ -27,7 +27,6 @@ class ProntoAPIClientNotificationsModule {
             "name": UIDevice.current.name,
             "model": Erbium.Device.version.name,
             "manufacturer": "Apple",
-            "apns_token": deviceToken,
             "platform": "iOS",
             "language": Locale.current.languageCode?.uppercased() ?? "EN",
             "app_version": Bundle.main.version,
@@ -36,6 +35,8 @@ class ProntoAPIClientNotificationsModule {
         ]
         if let useFcmToken = fcmToken {
             parameters["firebase_token"] = useFcmToken
+        } else {
+            parameters["apns_token"] = deviceToken
         }
         return parameters
     }

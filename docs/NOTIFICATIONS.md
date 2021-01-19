@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ProntoNotificationsDelega
     }
 	
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        prontoNotifications.didRegisterForRemoteNotifications(deviceToken: deviceToken)
+        prontoNotifications.didRegisterForRemoteNotifications(deviceToken: deviceToken, fcmToken: Messaging.messaging().fcmToken)
     }
 	
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
