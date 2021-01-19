@@ -27,14 +27,14 @@ public class Device: CustomStringConvertible, Codable, Equatable {
     internal(set) public var id: String = ""
     
     /// The apns device token returned from Apple's Push Notification Service
-    internal(set) public var deviceToken: String = ""
+    internal(set) public var deviceToken: String?
     
     /// The FCM-token
     internal(set) public var fcmToken: String?
 
     /// :nodoc:
     public var description: String {
-        return "<Device> [ id: \(id), deviceToken: \(deviceToken), fcmToken: \(fcmToken ?? "(nil)") ]"
+        return "<Device> [ id: \(id), deviceToken: \(deviceToken ?? "(nil)"), fcmToken: \(fcmToken ?? "(nil)") ]"
     }
 
     /// :nodoc:
