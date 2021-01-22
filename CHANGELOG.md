@@ -1,5 +1,8 @@
 # ProntoSDK Changelog
 
+## v4.0.5
+- Added public accessible access token of API client
+
 ## v4.0.4
 - Updated Cobalt
 - Add Accept-Language to all API calls
