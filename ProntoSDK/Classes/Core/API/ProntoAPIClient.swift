@@ -38,6 +38,10 @@ public class ProntoAPIClient: PluginBase {
 
     /// The default singleton
     public static let `default` = ProntoAPIClient()
+    
+    public var accessToken: String? {
+        return self.client.accessToken?.accessToken
+    }
 
     var host: String {
         return "https://\(ProntoSDK.config.domain)"
