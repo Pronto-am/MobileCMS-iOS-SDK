@@ -137,7 +137,7 @@
         }
       },
       {
-        "package": "URITemplate",
+        "package": "URITemplate.swift",
         "repositoryURL": "https://github.com/e-sites/URITemplate.swift.git",
         "state": {
           "branch": "master",

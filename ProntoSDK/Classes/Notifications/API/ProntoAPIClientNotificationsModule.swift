@@ -20,11 +20,10 @@ class ProntoAPIClientNotificationsModule {
         self.prontoAPIClient = prontoAPIClient
     }
 
-    private func _parameters(withDeviceToken deviceToken: String,
+    private func _parameters(withDeviceToken deviceToken: String?,
                              fcmToken: String?,
                              additionalData: [String: Any]) -> [String: Any] {
         var parameters: [String: Any] = [
-            "apns_token": deviceToken,
             "name": UIDevice.current.name,
             "model": Erbium.Device.version.name,
             "manufacturer": "Apple",
@@ -34,6 +33,9 @@ class ProntoAPIClientNotificationsModule {
             "os_version": UIDevice.current.systemVersion,
             "extra_data": additionalData
         ]
+        if let apnsToken = deviceToken {
+            parameters["apns_token"] = apnsToken
+        }
         if let useFcmToken = fcmToken {
             parameters["firebase_token"] = useFcmToken
         }
