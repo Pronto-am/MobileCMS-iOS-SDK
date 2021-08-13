@@ -104,7 +104,7 @@ public class ProntoAppUpdateCheck: PluginBase {
             switch event {
             case .success(let appVersion):
                 self.delegate?.prontoAppUpdateCheck(self, newVersion: appVersion)
-            case .error:
+            case .failure(_):
                 break
             }
             self._isChecking = false
