@@ -101,7 +101,7 @@ public class ProntoAuthentication: PluginBase {
             self.currentUser = user
             return user
         }.catchError { error -> Single<User> in
-            if let cobaltError = error as? Cobalt.Error, cobaltError == .invalidGrant {
+            if let cobaltError = error as? CobaltError, cobaltError == .invalidGrant {
                 throw ProntoError.invalidCredentials
             }
             throw error

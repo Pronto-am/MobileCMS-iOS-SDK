@@ -1,0 +1,124 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+          "version": "5.8.1"
+        }
+      },
+      {
+        "package": "Cobalt",
+        "repositoryURL": "https://github.com/e-sites/Cobalt.git",
+        "state": {
+          "branch": null,
+          "revision": "c66df0acd4e611fca834c263fc6a99f5934b3f76",
+          "version": "10.0.1"
+        }
+      },
+      {
+        "package": "CryptoSwift",
+        "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "7892a123f7e8d0fe62f9f03728b17bbd4f94df5c",
+          "version": "1.8.1"
+        }
+      },
+      {
+        "package": "CwlCatchException",
+        "repositoryURL": "https://github.com/mattgallagher/CwlCatchException.git",
+        "state": {
+          "branch": null,
+          "revision": "3b123999de19bf04905bc1dfdb76f817b0f2cc00",
+          "version": "2.1.2"
+        }
+      },
+      {
+        "package": "CwlPreconditionTesting",
+        "repositoryURL": "https://github.com/mattgallagher/CwlPreconditionTesting.git",
+        "state": {
+          "branch": null,
+          "revision": "dc9af4781f2afdd1e68e90f80b8603be73ea7abc",
+          "version": "2.2.0"
+        }
+      },
+      {
+        "package": "DebugMasking",
+        "repositoryURL": "https://github.com/UnlockAgency/DebugMasking.git",
+        "state": {
+          "branch": null,
+          "revision": "39d630a333547c0463f4c199d05140e296b41b8e",
+          "version": "1.0.1"
+        }
+      },
+      {
+        "package": "Einsteinium",
+        "repositoryURL": "https://github.com/e-sites/Einsteinium.git",
+        "state": {
+          "branch": null,
+          "revision": "6fb4530339a8bdaf71614237d488d94ad732de90",
+          "version": "1.3.0"
+        }
+      },
+      {
+        "package": "Erbium",
+        "repositoryURL": "https://github.com/e-sites/Erbium.git",
+        "state": {
+          "branch": null,
+          "revision": "b30ecade572875dbc821a63a869e1f2128ffb4b6",
+          "version": "4.6.4"
+        }
+      },
+      {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess.git",
+        "state": {
+          "branch": null,
+          "revision": "84e546727d66f1adc5439debad16270d0fdd04e7",
+          "version": "4.2.2"
+        }
+      },
+      {
+        "package": "Nimble",
+        "repositoryURL": "https://github.com/Quick/Nimble.git",
+        "state": {
+          "branch": null,
+          "revision": "eb5e3d717224fa0d1f6aff3fc2c5e8e81fa1f728",
+          "version": "11.2.2"
+        }
+      },
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "cec68169a048a079f461ba203fe85636548d7a89",
+          "version": "5.1.3"
+        }
+      },
+      {
+        "package": "swift-log",
+        "repositoryURL": "https://github.com/apple/swift-log.git",
+        "state": {
+          "branch": null,
+          "revision": "e97a6fcb1ab07462881ac165fdbb37f067e205d5",
+          "version": "1.5.4"
+        }
+      },
+      {
+        "package": "SwiftyJSON",
+        "repositoryURL": "https://github.com/SwiftyJSON/SwiftyJSON.git",
+        "state": {
+          "branch": null,
+          "revision": "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
+          "version": "5.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
