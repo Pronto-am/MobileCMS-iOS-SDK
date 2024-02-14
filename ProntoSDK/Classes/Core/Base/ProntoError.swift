@@ -40,7 +40,7 @@ public enum ProntoError: Swift.Error {
             self = prontoError
             return
 
-        } else if let apiError = error as? Cobalt.Error {
+        } else if let apiError = error as? CobaltError {
             if let json = apiError.json {
                 switch json["error"]["code"].intValue {
                 case 1122:
